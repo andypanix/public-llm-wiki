@@ -1,0 +1,119 @@
+/* ==========================================================================
+   Typewriter Minimalist Theme for Zensical (wiki.andypanix.com)
+   ========================================================================== */
+
+:root {
+  --md-default-bg-color: #fcfbf9;
+  --md-default-fg-color: #1a1a1c;
+  --md-default-fg-color--light: #5a5955;
+  --md-primary-fg-color: #2b2b29;
+  --md-accent-fg-color: #1a1a1c;
+  --md-code-bg-color: #f4f2eb;
+  --md-code-fg-color: #1c1d1f;
+  --md-border-color: #e5e2d8;
+  --font-typewriter: "JetBrains Mono", monospace;
+  --font-serif: "Newsreader", "Charter", "Lora", serif;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #161617;
+  --md-default-fg-color: #e3e1d8;
+  --md-default-fg-color--light: #9c9a92;
+  --md-primary-fg-color: #222224;
+  --md-accent-fg-color: #ffffff;
+  --md-code-bg-color: #1f1f21;
+  --md-code-fg-color: #eae8df;
+  --md-border-color: #2c2c2f;
+}
+
+/* Tipografia Principale */
+.md-typeset {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--md-default-fg-color);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Intestazioni e Metadati in Monospace Typewriter */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-header,
+.md-nav,
+.md-footer {
+  font-family: var(--font-typewriter);
+  letter-spacing: -0.02em;
+}
+
+.md-typeset h1 {
+  font-size: 1.85rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--md-border-color);
+  padding-bottom: 0.4rem;
+  margin-top: 1.2rem;
+}
+
+/* 4-Level Breadcrumb Styling */
+.md-path {
+  font-family: var(--font-typewriter);
+  font-size: 0.8rem;
+  color: var(--md-default-fg-color--light);
+  margin-bottom: 1.2rem;
+}
+
+/* Homepage 7-Card Grid */
+.wiki-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.wiki-card {
+  display: block;
+  padding: 1.25rem 1.4rem;
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-border-color);
+  border-radius: 3px;
+  text-decoration: none !important;
+  transition: border-color 0.2s, transform 0.15s;
+}
+
+.wiki-card:hover {
+  border-color: var(--md-default-fg-color);
+  transform: translateY(-2px);
+}
+
+.wiki-card__title {
+  font-family: var(--font-typewriter);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  color: var(--md-default-fg-color);
+}
+
+.wiki-card__desc {
+  font-size: 0.9rem;
+  color: var(--md-default-fg-color--light);
+  line-height: 1.45;
+  margin-bottom: 0.75rem;
+}
+
+.wiki-card__meta {
+  font-family: var(--font-typewriter);
+  font-size: 0.75rem;
+  color: var(--md-default-fg-color--light);
+}
+
+/* Footnotes e Badge di Provenienza */
+.footnote {
+  border-top: 1px solid var(--md-border-color);
+  margin-top: 3rem;
+  padding-top: 1.2rem;
+  font-size: 0.88rem;
+  color: var(--md-default-fg-color--light);
+}

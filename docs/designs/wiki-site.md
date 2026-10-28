@@ -15,7 +15,7 @@ L'architettura adotta un paradigma serverless Docs-as-Code:
 2. Il repository privato della wiki ospita un workflow GitHub Actions che intercetta i push su `main`, azzerando i rischi di interferenza con la memoria RAM dell'agente Hermes.
 3. Uno script Python di staging dedicato (`tools/build_public_site.py`) realizza un **airgap deterministico a whitelist**: esclude categoricamente le trascrizioni integrali private (`raw/`), i log interni e i prompt (`.agents/`), converte i wikilink `[[slug|alias]]` in collegamenti Markdown relativi standard, trasforma i marcatori di provenienza `^[raw/...]` e cross-wiki `^[../<wiki>/raw/...]` in note bibliografiche esterne con link al `source_url` originale (YouTube o articoli web) e arresta la pipeline con codice 1 se rileva link orfani o rotti.
 4. Il generatore statico **Zensical** (successore in Rust/Python di Material for MkDocs) compila le sole pagine curate applicando un foglio di stile minimale **Typewriter** (`extra.css`), orientato alla lettura serale su smartphone (375 px) con palette carta/inchiostro, senza schede superiori e con breadcrumb gerarchico a 4 livelli.
-5. L'output compilato viene distribuito automaticamente su un repository pubblico dedicato (`andypanix/wiki-site`) tramite un Fine-Grained Personal Access Token (FG-PAT) con privilegi strettamente limitati e servito sulla radice `/` del dominio personalizzato.
+5. L'output compilato viene distribuito automaticamente su un repository pubblico dedicato (`andypanix/public-llm-wiki`) tramite un Fine-Grained Personal Access Token (FG-PAT) con privilegi strettamente limitati e servito sulla radice `/` del dominio personalizzato.
 
 ---
 
@@ -49,7 +49,7 @@ La soluzione consiste nello spostare compilazione e hosting sui servizi gestiti 
 *   **G4 — Quality Gate Bloccante**: Eseguire una scansione di integrità prima della compilazione. Se viene rilevato anche un solo link Markdown rotto verso un file inesistente, lo script esce con codice 1, interrompendo il deploy su GitHub Pages.
 *   **G5 — Zero Infrastruttura sull'Host LXC 111**: Nessun container Docker, nessun server Nginx, nessun timer systemd e nessun runtime Node.js installato o in esecuzione sulla macchina Proxmox. L'LXC resta client di authoring puro.
 *   **G6 — Esperienza Mobile Typewriter (375 px)**: Homepage responsive a 7 card (una per dominio), assenza di schede superiori orizzontali (`no top tabs`), breadcrumb gerarchico a 4 livelli (`Home › [Wiki] › [Categoria] › [Titolo]`) e tema tipografico editoriale carta/inchiostro via `extra.css`.
-*   **G7 — Deploy Cross-Repo Gratuito su Dominio Personalizzato**: Distribuzione automatica dell'HTML compilato su repository pubblico dedicato (`andypanix/wiki-site`) via Fine-Grained Personal Access Token (FG-PAT), servito su `https://wiki.andypanix.com/` su radice `/`.
+*   **G7 — Deploy Cross-Repo Gratuito su Dominio Personalizzato**: Distribuzione automatica dell'HTML compilato su repository pubblico dedicato (`andypanix/public-llm-wiki`) via Fine-Grained Personal Access Token (FG-PAT), servito su `https://wiki.andypanix.com/` su radice `/`.
 
 ---
 
@@ -121,7 +121,7 @@ flowchart TD
         GHA --> Linter --> Tests --> Staging --> Zensical --> DeployStep
     end
 
-    subgraph GitHub_Public["GitHub Pubblico (andypanix/wiki-site)"]
+    subgraph GitHub_Public["GitHub Pubblico (andypanix/public-llm-wiki)"]
         RepoPublic["Branch gh-pages\n(Solo HTML compilato, CSS, asset)"]
         CDN["GitHub Pages CDN + Let's Encrypt TLS\nhttps://wiki.andypanix.com/"]
 
@@ -240,7 +240,7 @@ Prima di invocare Zensical, lo script scansiona tutti i file Markdown nella cart
 site_name: Personal LLM Wiki
 site_url: https://wiki.andypanix.com/
 site_description: "Knowledge base curata su 7 domini tecnici (stile Karpathy LLM-Wiki)"
-repo_url: https://github.com/andypanix/wiki-site
+repo_url: https://github.com/andypanix/public-llm-wiki
 site_dir: ../public_dist
 
 theme:
@@ -472,7 +472,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4.0.0
         with:
           personal_token: ${{ secrets.PUBLIC_WIKI_DEPLOY_TOKEN }}
-          external_repository: andypanix/wiki-site
+          external_repository: andypanix/public-llm-wiki
           publish_branch: gh-pages
           publish_dir: ./public_dist
           cname: wiki.andypanix.com
@@ -499,7 +499,7 @@ jobs:
 
 ### Security & Privacy
 *   **Airgap a Whitelist**: Lo script di staging copia unicamente le sottocartelle esplicite (`entities/`, `concepts/`, `comparisons/`, `queries/`). `raw/`, `.agents/` e log non raggiungono mai la cartella di compilazione né il repository pubblico.
-*   **Principio del Minimo Privilegio (Least Privilege)**: Il Fine-Grained PAT dispone unicamente dei permessi `Contents: Read and write` sul solo repository pubblico `andypanix/wiki-site`.
+*   **Principio del Minimo Privilegio (Least Privilege)**: Il Fine-Grained PAT dispone unicamente dei permessi `Contents: Read and write` sul solo repository pubblico `andypanix/public-llm-wiki`.
 *   **Audit del Dominio `finanza-personale`**: Certificato che la wiki contiene esclusivamente concetti educativi/metodologici astratti per risparmiatori italiani e nessun dato patrimoniale personale.
 
 ### Performance & Client-Side Budget
@@ -573,7 +573,7 @@ Il piano operativo è strutturato nei due repository coinvolti e nelle configura
     - Step 6: `python3 tools/build_public_site.py --source . --output staged_site`.
     - Step 7: `zensical build --clean -f staged_site/mkdocs.yml`.
     - Step 8: Iniezione `public_dist/CNAME` e `public_dist/.nojekyll`.
-    - Step 9: Deploy con `peaceiris/actions-gh-pages@4f9cc...` con `personal_token: ${{ secrets.PUBLIC_WIKI_DEPLOY_TOKEN }}` e `external_repository: andypanix/wiki-site`.
+    - Step 9: Deploy con `peaceiris/actions-gh-pages@4f9cc...` con `personal_token: ${{ secrets.PUBLIC_WIKI_DEPLOY_TOKEN }}` e `external_repository: andypanix/public-llm-wiki`.
 
 ##### 5. `tests/test_build_public_site.py` (Create)
 *   **Type / Scope**: Test unitari automatizzati pytest basati su fixture temporanee isolate (`tmp_path`).
@@ -587,12 +587,12 @@ Il piano operativo è strutturato nei due repository coinvolti e nelle configura
 
 ---
 
-#### Repository `andypanix/wiki-site` (Repository Pubblico di Hosting)
+#### Repository `andypanix/public-llm-wiki` (Repository Pubblico di Hosting)
 
 ##### 6. Creazione Repository e Sequenza di Setup (Create/Clean)
 *   **Type / Scope**: Repository pubblico per GitHub Pages.
 *   **Proposed Changes**:
-    - Creazione del repository pubblico `andypanix/wiki-site` inizialmente vuoto.
+    - Creazione del repository pubblico `andypanix/public-llm-wiki` inizialmente vuoto.
     - Prima esecuzione della Action dal repo privato per generare automaticamente il branch `gh-pages`.
     - Attivazione in `Settings > Pages`: Source *Deploy from a branch* -> `gh-pages` / `/(root)`.
     - Impostazione Custom Domain: `wiki.andypanix.com` con flag *Enforce HTTPS*.
@@ -611,7 +611,7 @@ Il piano operativo è strutturato nei due repository coinvolti e nelle configura
 ##### 8. Fine-Grained Personal Access Token (Create/Configure)
 *   **Type / Scope**: Credenziale per deploy cross-repo.
 *   **Proposed Changes**:
-    - Generazione FG-PAT su account `andypanix` con permessi `Contents: Read and write` limitati al solo repo `andypanix/wiki-site` (scadenza 365 giorni).
+    - Generazione FG-PAT su account `andypanix` con permessi `Contents: Read and write` limitati al solo repo `andypanix/public-llm-wiki` (scadenza 365 giorni).
     - Salvataggio del valore nei Secrets di `personal-llm-wiki` con chiave `PUBLIC_WIKI_DEPLOY_TOKEN`.
 
 ---

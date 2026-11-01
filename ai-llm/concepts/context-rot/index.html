@@ -689,10 +689,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#evidenze" class="md-nav__link">
+  <a href="#perche-un-contesto-lungo-non-e-tutto-uguale" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Evidenze
+        Perché un contesto lungo non è tutto uguale
       </span>
     </span>
   </a>
@@ -700,10 +700,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#implicazioni" class="md-nav__link">
+  <a href="#perche-una-conversazione-a-piu-turni-peggiora-i-risultati" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Implicazioni
+        Perché una conversazione a più turni peggiora i risultati
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compattazione-del-contesto-quando-il-riassunto-perde-un-dettaglio" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Compattazione del contesto: quando il riassunto perde un dettaglio
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#come-si-mitiga-e-cosa-resta-aperto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Come si mitiga e cosa resta aperto
       </span>
     </span>
   </a>
@@ -6132,10 +6154,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#evidenze" class="md-nav__link">
+  <a href="#perche-un-contesto-lungo-non-e-tutto-uguale" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Evidenze
+        Perché un contesto lungo non è tutto uguale
       </span>
     </span>
   </a>
@@ -6143,10 +6165,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#implicazioni" class="md-nav__link">
+  <a href="#perche-una-conversazione-a-piu-turni-peggiora-i-risultati" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Implicazioni
+        Perché una conversazione a più turni peggiora i risultati
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compattazione-del-contesto-quando-il-riassunto-perde-un-dettaglio" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Compattazione del contesto: quando il riassunto perde un dettaglio
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#come-si-mitiga-e-cosa-resta-aperto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Come si mitiga e cosa resta aperto
       </span>
     </span>
   </a>
@@ -6320,15 +6364,23 @@
 
 
 <h1 id="context-rot">Context Rot</h1>
-<p>Degrado delle performance quando la finestra di contesto si riempie di token intermedi. Non tutti i token nel contesto (oggi di solito 1M) hanno lo stesso peso.<sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="evidenze">Evidenze</h2>
-<ul>
-<li><strong>Multiturn</strong> (mag 2025, su modelli ormai obsoleti): -39% di performance in media, su modelli open e closed, spezzando i problemi in una conversazione multi-turn invece che in un'unica domanda. Il modello formula ipotesi iniziali per colmare i buchi e ci rimane appiccicato; secondo Enkk oggi l'effetto è molto più attenuato</li>
-<li><strong>Context rot</strong> (lavoro recente, su modelli attuali): LLM che monitora le tracce di ragionamento di un altro LLM (es. uno che tenta di violare un firewall) → calo notevole nel rilevare l'azione malevola quando la precedono molti token di operazioni innocue</li>
-<li><strong>Compattazione</strong> (report dell'AI Security Institute su un incidente del 4 agosto; non un paper, ed è un sospetto): la compattazione automatica del contesto può perdere sottigliezze → fatti sbagliati → incidenti (es. una persona considerata reale che dopo le compattazioni viene trattata come agente del contesto di test)<sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-</ul>
-<h2 id="implicazioni">Implicazioni</h2>
-<p>La memoria è un problema reale e strutturale: è stato mitigato in molti modi (sistemi RAG, file esterni), ma restano problemi strutturali non banali.<sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Il <strong>context rot</strong> è il degrado delle prestazioni di un modello quando il suo contesto si riempie. Enkk lo presenta nel video sulle capacità reali dei large language model come una delle prove a favore della quinta critica al "pappagallo stocastico", quella secondo cui i modelli "non hanno memoria". La critica dice che la memoria di un modello è limitata, che il dialogo può degradare e che le informazioni date prima nella conversazione possono andare perse o essere usate male. Secondo Enkk il problema è reale e strutturale: è stato mitigato in molti modi, ma non è risolto. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Il termine "context rot" ha in realtà un significato stretto nel video: Enkk lo usa per un lavoro recente su modelli attuali, descritto più sotto. Le altre due evidenze che porta sulla memoria (la conversazione multi-turn e la compattazione) parlano di meccanismi diversi, che però vanno nella stessa direzione.</p>
+<h2 id="perche-un-contesto-lungo-non-e-tutto-uguale">Perché un contesto lungo non è tutto uguale</h2>
+<p>La finestra di contesto dei modelli attuali è di solito di 1 milione di token. Enkk osserva che, per quanto grande, questo contesto "non è proprio tutto uguale", cioè i token che contiene non contano tutti allo stesso modo per il modello. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>L'esperimento che lo mostra riguarda un LLM che deve giudicare l'operato di un altro LLM. Il secondo modello sta cercando di violare un firewall, il primo sta sopra di lui e legge la sua traccia di ragionamento alla ricerca di azioni malevole, in particolare di cose illegali. Quando in quella traccia si inseriscono moltissimi token di operazioni innocue, il compito diventa più difficile: il monitor rileva molto peggio l'azione malevola se la precedono così tanti altri token. Enkk lo cita come lavoro "assai più recente", che usa modelli di oggi, e conclude che questo meccanismo di context rot è possibile.</p>
+<h2 id="perche-una-conversazione-a-piu-turni-peggiora-i-risultati">Perché una conversazione a più turni peggiora i risultati</h2>
+<p>Un'altra evidenza è un "outstanding paper" di maggio 2025, che Enkk dice di apprezzare per l'osservazione ma da prendere con le pinze, perché testa modelli ormai obsoleti. Gli autori notano che i benchmark danno di solito al modello una domanda grande e completa, mentre nell'uso reale si scrive un po', il modello risponde, si aggiungono dettagli, il modello risponde di nuovo. Così scompongono interi problemi in pezzi e li presentano in una conversazione multi-turn. Le prestazioni scendono in media del 39%, sia sui modelli open sia su quelli closed. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>La causa che Enkk riporta è questa: poiché all'inizio non riceve tutti i dettagli, il modello formula ipotesi per colmare i buchi e poi ci rimane appiccicato. È difficile staccarlo da quelle ipotesi, e anche se l'utente ripete "no, dovevi fare questo", il modello tende a proseguire per la sua strada.</p>
+<p>Enkk aggiunge, come impressione personale e non come risultato di uno studio ("non l'ho fatto io il lavoro"), che oggi l'effetto è molto più attenuato di quel 39% grazie alle novità introdotte nei modelli. Lo include comunque perché il paper gli sembra interessante.</p>
+<h2 id="compattazione-del-contesto-quando-il-riassunto-perde-un-dettaglio">Compattazione del contesto: quando il riassunto perde un dettaglio</h2>
+<p>La finestra di contesto ha una dimensione limitata, quindi per farci stare una conversazione lunga bisogna compattarla, tenendo i dettagli più importanti. La compattazione è un meccanismo automatico. Secondo un report dell'AI Security Institute, un'istituzione autorevole che si occupa di cybersecurity e large language model, a volte la compattazione può perdere delle sottigliezze, che alla lunga portano il modello a lavorare con fatti sbagliati e possono generare incidenti. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Il report parte da un incidente recente, avvenuto il 4 agosto, e fa un esempio. Una persona è considerata reale, quindi non parte del test, e il modello si comporta di conseguenza. Dopo varie compattazioni questo dettaglio si perde, e la stessa persona viene trattata come un agente incluso nel contesto di testing, per cui il modello si comporta in modo diverso.</p>
+<p>Enkk precisa che questa evidenza non ha il rigore di un paper, perché viene da un report, e che il report stesso la presenta come un sospetto. La definisce "un'altra spezia" da aggiungere al tema della memoria.</p>
+<h2 id="come-si-mitiga-e-cosa-resta-aperto">Come si mitiga e cosa resta aperto</h2>
+<p>Le mitigazioni citate da Enkk per il problema della memoria sono i sistemi RAG e la presenza di file esterni. Nel passaggio sul fatto che i modelli "non si aggiornano" aggiunge che ciò che il modello impara durante una conversazione non è persistente, ma che RAG e file permettono di inserirci persistenza, di nuovo con l'aiuto di un harness (il software esterno al modello che gli dà accesso a funzioni come la ricerca sul web o l'esecuzione di codice). Su questo apprendimento dal prompt si veda <a href="../in-context-learning/">In-Context Learning</a>. <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Il suo riassunto è che si tratta di un problema reale e strutturale, che si cerca di tamponare in vari modi: molto è stato fatto, molto resta da fare.</p>
+<p>Nel suo modello mentale finale Enkk include lo stesso tratto: i modelli possono produrre ragionamenti solidi e subito dopo commettere errori banali, come dimenticare un vincolo.</p>
 <p>Vedi anche: <a href="../pappagallo-stocastico/">Pappagallo Stocastico (Stochastic Parrot)</a>, <a href="../in-context-learning/">In-Context Learning</a>, <a href="../../entities/enk/">Enkk</a></p>
 <hr />
 <h2 id="fonti-e-riferimenti">Fonti e Riferimenti</h2>
@@ -6336,7 +6388,7 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/8ohhq9Im7Lg" target="_blank">Autopsia di un pappagallo: le reali capacità dell'AI</a> (Enkk) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/8ohhq9Im7Lg" target="_blank">Autopsia di un pappagallo: le reali capacità dell'AI</a> (Enkk) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

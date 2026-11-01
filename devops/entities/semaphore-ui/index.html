@@ -2303,10 +2303,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vantaggi-vs-awx" class="md-nav__link">
+  <a href="#a-cosa-serve-ansible-con-uninterfaccia-grafica" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Vantaggi vs AWX
+        A cosa serve: Ansible con un'interfaccia grafica
       </span>
     </span>
   </a>
@@ -2314,10 +2314,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#funzionalita" class="md-nav__link">
+  <a href="#perche-lee-lo-preferisce-ad-ansible-awx" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Funzionalità
+        Perché Lee lo preferisce ad Ansible AWX
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#non-solo-ansible" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Non solo Ansible
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#il-ruolo-nel-video-configuration-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Il ruolo nel video: configuration automation
       </span>
     </span>
   </a>
@@ -6132,10 +6154,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vantaggi-vs-awx" class="md-nav__link">
+  <a href="#a-cosa-serve-ansible-con-uninterfaccia-grafica" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Vantaggi vs AWX
+        A cosa serve: Ansible con un'interfaccia grafica
       </span>
     </span>
   </a>
@@ -6143,10 +6165,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#funzionalita" class="md-nav__link">
+  <a href="#perche-lee-lo-preferisce-ad-ansible-awx" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Funzionalità
+        Perché Lee lo preferisce ad Ansible AWX
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#non-solo-ansible" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Non solo Ansible
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#il-ruolo-nel-video-configuration-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Il ruolo nel video: configuration automation
       </span>
     </span>
   </a>
@@ -6286,27 +6330,28 @@
 
 
 <h1 id="semaphore-ui">Semaphore UI</h1>
-<p>Interfaccia grafica moderna per gestire Ansible playbook, inventari, credenziali e automation job. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="vantaggi-vs-awx">Vantaggi vs AWX</h2>
-<p>Brandon Lee (VirtualizationHowto) lo preferisce ad Ansible AWX perché: <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<ul>
-<li>Più leggero</li>
-<li>Più facile da gestire</li>
-<li>Più adatto ad ambienti homelab</li>
-</ul>
-<h2 id="funzionalita">Funzionalità</h2>
-<ul>
-<li>Gestione playbook, inventari, credenziali e automation job <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Supporto anche PowerShell e altri scripting language (non solo Ansible)</li>
-</ul>
-<p>Vedi anche: <a href="../../../homelab/entities/cockpit/">Cockpit</a>, Patchman, <a href="../../../homelab/entities/sencho/">Sencho</a>, <a href="../../concepts/homelab-automation-overnight/">Homelab Automation (Overnight)</a></p>
+<p>Semaphore UI è un'interfaccia grafica web per eseguire e gestire automazioni, nata attorno ad Ansible. <sup id="fnref:gk"><a class="footnote-ref" href="#fn:gk">2</a></sup> Brandon Lee (VirtualizationHowto) la presenta come l'ultimo dei nove strumenti Linux del suo video sulla gestione dell'home lab, e la descrive come una moderna interfaccia grafica per gestire playbook Ansible, inventari, credenziali e automation job. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<h2 id="a-cosa-serve-ansible-con-uninterfaccia-grafica">A cosa serve: Ansible con un'interfaccia grafica</h2>
+<p>Lee usa Ansible per il configuration management sia nel suo home lab sia negli ambienti di produzione. Secondo lui l'automazione è uno dei modi migliori per risparmiare tempo e per gestire in modo coerente tutta l'infrastruttura. Semaphore UI sta sopra questo lavoro: offre un'interfaccia grafica moderna per gestire i playbook Ansible, gli inventari, le credenziali e i job di automazione. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Un inventario Ansible è l'elenco dei server che Ansible deve gestire. <sup id="fnref2:gk"><a class="footnote-ref" href="#fn:gk">2</a></sup></p>
+<p>Ansible è lo strumento di configuration management di cui Lee parla, e Semaphore UI ne fornisce l'interfaccia di gestione.</p>
+<h2 id="perche-lee-lo-preferisce-ad-ansible-awx">Perché Lee lo preferisce ad Ansible AWX</h2>
+<p>Ansible AWX è la soluzione "nativa" di Ansible per gestire playbook e job da interfaccia grafica. <sup id="fnref3:gk"><a class="footnote-ref" href="#fn:gk">2</a></sup> Lee dice di preferire Semaphore UI ad AWX per tre motivi, che sono impressioni personali e non misure: lo trova più leggero, più facile da gestire e più adatto agli ambienti home lab. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>La fonte non spiega cosa renda AWX più pesante né confronta i due strumenti con dati. Il giudizio è quindi quello di un singolo utente, riferito soprattutto al contesto home lab.</p>
+<h2 id="non-solo-ansible">Non solo Ansible</h2>
+<p>Lee sottolinea che Semaphore UI non è uno strumento solo per Ansible. Secondo lui i suoi sviluppatori hanno aggiunto molte funzioni che permettono di gestire anche PowerShell e altri linguaggi di scripting. Lo raccomanda comunque soprattutto a chi vuole gestire playbook Ansible e automazioni. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<h2 id="il-ruolo-nel-video-configuration-automation">Il ruolo nel video: configuration automation</h2>
+<p>Nelle conclusioni del video Lee elenca i problemi risolti dai nove strumenti: gestione dei server, patching centralizzato, monitoraggio dell'infrastruttura, gestione di Docker, alerting sui log e configuration automation. Semaphore UI copre l'ultimo punto. Gli altri strumenti della lista sono per esempio <a href="../../../homelab/entities/cockpit/">Cockpit</a>, per l'amministrazione dei server da browser, Patchman, per il patch management, e <a href="../../../homelab/entities/sencho/">Sencho</a>, per i deployment Docker Compose. <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Vedi anche <a href="../../concepts/homelab-automation-overnight/">Homelab Automation (Overnight)</a>.</p>
 <hr />
 <h2 id="fonti-e-riferimenti">Fonti e Riferimenti</h2>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/xN-kvrwpzGs" target="_blank">These 9 Linux Tools Made Managing My Home Lab Much Easier</a> (VirtualizationHowto) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/xN-kvrwpzGs" target="_blank">These 9 Linux Tools Made Managing My Home Lab Much Easier</a> (VirtualizationHowto) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:gk">
+<p><em>Dato consolidato di dominio (senza fonte primaria singola).</em>&#160;<a class="footnote-backref" href="#fnref:gk" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:gk" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:gk" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

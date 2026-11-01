@@ -2276,10 +2276,32 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#quale-problema-risolve" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Quale problema risolve
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#come-funziona" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
         Come funziona
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dove-si-inserisce-nellautomazione-del-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dove si inserisce nell'automazione del lab
       </span>
     </span>
   </a>
@@ -6121,10 +6143,32 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#quale-problema-risolve" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Quale problema risolve
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#come-funziona" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
         Come funziona
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dove-si-inserisce-nellautomazione-del-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dove si inserisce nell'automazione del lab
       </span>
     </span>
   </a>
@@ -6264,12 +6308,15 @@
 
 
 <h1 id="docker-autoheal">docker-autoheal</h1>
-<p>Tool che riavvia automaticamente container Docker unhealthy basandosi sui health check.<sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>docker-autoheal è uno strumento che riavvia in automatico i container Docker in base ai health check e ad altri problemi che si presentano. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> L'unica fonte della pagina è un articolo di Brandon Lee, che lo usa nel proprio home lab, e la pagina riporta solo ciò che l'articolo dice: il funzionamento interno e la configurazione dello strumento non sono descritti.</p>
+<h2 id="quale-problema-risolve">Quale problema risolve</h2>
+<p>Brandon Lee affida i container importanti o critici dei suoi servizi self-hosted a due meccanismi di Docker, i health check e le restart policy. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Un health check è il controllo con cui Docker verifica se un servizio dentro il container funziona davvero. <sup id="fnref:gk"><a class="footnote-ref" href="#fn:gk">2</a></sup> Una restart policy è l'impostazione che dice a Docker quando riavviare un container.</p>
+<p>Secondo Lee questi due meccanismi non bastano: docker-autoheal è lo strumento che li ha "completati" per lui. Il titolo del suo articolo dedicato allo strumento, "I Thought Docker Would Restart Unhealthy Containers. I Was Missing One Tool", dice con che aspettativa partiva: pensava che Docker riavviasse da solo i container unhealthy e ha scoperto che serviva uno strumento in più. Un container unhealthy è un container il cui health check fallisce. <sup id="fnref2:gk"><a class="footnote-ref" href="#fn:gk">2</a></sup></p>
 <h2 id="come-funziona">Come funziona</h2>
-<ul>
-<li>Invoca automaticamente il riavvio dei container in base ai loro health check e ad altri problemi rilevati<sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Completa health check e restart policy di Docker: Brandon Lee lo presenta come lo strumento che mancava perché Docker non riavvia da solo i container unhealthy</li>
-</ul>
+<p>Lo strumento invoca il riavvio dei container in base ai loro health check e ad altri problemi che possono comparire. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> L'articolo non dice quali siano questi altri problemi, né come si configuri lo strumento o ogni quanto controlli: per i dettagli rimanda al write-up separato di Lee, che non è tra le fonti della wiki.</p>
+<h2 id="dove-si-inserisce-nellautomazione-del-lab">Dove si inserisce nell'automazione del lab</h2>
+<p>Lee presenta docker-autoheal in una delle nove automazioni che il suo lab esegue mentre dorme, quella sui health check, intitolata "Health checks verify services are actually working". <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Gli altri strumenti dell'articolo coprono compiti diversi, come l'aggiornamento delle immagini con <a href="../dockcheck/">Dockcheck</a> e il monitoraggio con Pulse e Uptime Kuma.</p>
+<p>Un commentatore ha osservato che il titolo dell'articolo è fuorviante, perché solo 3-4 delle nove cose girano davvero di notte. Lee risponde che la maggior parte delle sue automazioni è programmata di notte, mentre monitoraggio e certificati SSL girano a ciclo continuo. Nei commenti non si dice se docker-autoheal sia tra quelle notturne o tra quelle sempre attive.</p>
 <p>Vedi anche: <a href="../../concepts/homelab-automation-overnight/">Homelab Automation (Overnight)</a>, <a href="../../../homelab/concepts/homelab-monitoring-stack/">Homelab Monitoring Stack</a>, <a href="../dockcheck/">Dockcheck</a></p>
 <hr />
 <h2 id="fonti-e-riferimenti">Fonti e Riferimenti</h2>
@@ -6277,7 +6324,10 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://www.virtualizationhowto.com/2026/08/the-9-things-my-home-lab-automates-while-im-sleeping/" target="_blank">The 9 Things My Home Lab Automates While I'm Sleeping</a> (Brandon Lee) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://www.virtualizationhowto.com/2026/08/the-9-things-my-home-lab-automates-while-im-sleeping/" target="_blank">The 9 Things My Home Lab Automates While I'm Sleeping</a> (Brandon Lee) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:gk">
+<p><em>Dato consolidato di dominio (senza fonte primaria singola).</em>&#160;<a class="footnote-backref" href="#fnref:gk" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:gk" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

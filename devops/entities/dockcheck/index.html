@@ -2249,10 +2249,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#funzionalita" class="md-nav__link">
+  <a href="#come-funziona-il-controllo-degli-aggiornamenti" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Funzionalità
+        Come funziona il controllo degli aggiornamenti
       </span>
     </span>
   </a>
@@ -2260,10 +2260,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#strategia-duso" class="md-nav__link">
+  <a href="#aspettare-prima-di-installare-una-nuova-immagine" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Strategia d'uso
+        Aspettare prima di installare una nuova immagine
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backup-e-pulizia-delle-immagini-precedenti" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Backup e pulizia delle immagini precedenti
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quando-lasciar-aggiornare-da-soli-e-quando-no" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Quando lasciar aggiornare da soli e quando no
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#posto-nelle-altre-automazioni-del-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Posto nelle altre automazioni del lab
       </span>
     </span>
   </a>
@@ -6132,10 +6165,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#funzionalita" class="md-nav__link">
+  <a href="#come-funziona-il-controllo-degli-aggiornamenti" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Funzionalità
+        Come funziona il controllo degli aggiornamenti
       </span>
     </span>
   </a>
@@ -6143,10 +6176,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#strategia-duso" class="md-nav__link">
+  <a href="#aspettare-prima-di-installare-una-nuova-immagine" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Strategia d'uso
+        Aspettare prima di installare una nuova immagine
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backup-e-pulizia-delle-immagini-precedenti" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Backup e pulizia delle immagini precedenti
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quando-lasciar-aggiornare-da-soli-e-quando-no" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Quando lasciar aggiornare da soli e quando no
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#posto-nelle-altre-automazioni-del-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Posto nelle altre automazioni del lab
       </span>
     </span>
   </a>
@@ -6286,20 +6352,19 @@
 
 
 <h1 id="dockcheck">Dockcheck</h1>
-<p>Tool per verificare e aggiornare automaticamente le immagini dei container Docker su schedule.<sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="funzionalita">Funzionalità</h2>
-<ul>
-<li>Schedule giornaliero per check nuovi container image<sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Delay configurabile: attende N giorni prima di installare il nuovo image</li>
-<li>Backup delle immagini precedenti con auto-prune automatico</li>
-<li>Due modalità: alert-only o auto-update</li>
-</ul>
-<h2 id="strategia-duso">Strategia d'uso</h2>
-<ul>
-<li><strong>Servizi non critici</strong>: auto-update consentito<sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li><strong>Servizi critici</strong> (Traefik, DNS, DB): review manuale prima dell'update</li>
-<li>L'automazione deve andare di pari passo con il controllo, non circumvenirlo</li>
-</ul>
+<p>Dockcheck è uno strumento che controlla se esistono nuove versioni delle immagini dei container Docker in uso e, a scelta, avvisa oppure aggiorna il container. Lo descrive Brandon Lee (Virtualization Howto) in un articolo del 2026 sulle automazioni notturne del suo home lab, dove dice di averlo scoperto da poco e lo indica tra i suoi strumenti preferiti. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<h2 id="come-funziona-il-controllo-degli-aggiornamenti">Come funziona il controllo degli aggiornamenti</h2>
+<p>Dockcheck si pianifica a un'ora precisa del giorno: a quel momento controlla in blocco, su tutti i container, se ci sono immagini nuove. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Quando trova un aggiornamento, Lee può farlo comportare in due modi: soltanto avvisare, oppure aggiornare davvero l'immagine del container. Con la prima modalità la decisione resta a una persona; con la seconda l'aggiornamento avviene da solo.</p>
+<h2 id="aspettare-prima-di-installare-una-nuova-immagine">Aspettare prima di installare una nuova immagine</h2>
+<p>Lee precisa di non installare automaticamente ogni immagine nel momento in cui esce. Di Dockcheck apprezza proprio il fatto che si possa indicare un numero di giorni da lasciar passare prima di mettere in produzione la nuova immagine. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> L'articolo non spiega i motivi di questa scelta oltre a questa preferenza dell'autore.</p>
+<h2 id="backup-e-pulizia-delle-immagini-precedenti">Backup e pulizia delle immagini precedenti</h2>
+<p>Dockcheck fa anche il backup delle immagini precedenti dei container e poi le elimina in automatico (prune). <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Lee non dice per quanto tempo le conserva né come si fa a tornare a una versione precedente.</p>
+<h2 id="quando-lasciar-aggiornare-da-soli-e-quando-no">Quando lasciar aggiornare da soli e quando no</h2>
+<p>Lee applica una regola che dipende da quanto è critico il servizio. Per i servizi meno critici consente gli aggiornamenti automatici. Per i servizi di infrastruttura come Traefik, il DNS, i database o qualunque cosa sia critica nel suo lab preferisce rivedere l'aggiornamento prima di applicarlo. <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Il principio che ne ricava è che l'automazione deve andare di pari passo con il controllo che si ha sul proprio lab, senza aggirarlo.</p>
+<h2 id="posto-nelle-altre-automazioni-del-lab">Posto nelle altre automazioni del lab</h2>
+<p>Per Lee tutto questo avviene di notte e lo tiene informato su ciò che succede, e per questo Dockcheck è diventato uno dei suoi strumenti preferiti. <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> È una delle nove automazioni dell'articolo, che comprendono anche backup, rinnovo dei certificati, monitoraggio, health check, pulizia, aggiornamento dei sistemi, notifiche e GitOps. Sullo stesso problema, per il cluster Kubernetes, Lee usa invece ArgoCD con una policy di aggiornamento delle immagini: ArgoCD riscrive la versione dell'immagine nel repository Git e allinea il deployment. Il riavvio dei container non sani è affidato a un altro strumento, docker-autoheal.</p>
 <p>Vedi anche: <a href="../../concepts/homelab-automation-overnight/">Homelab Automation (Overnight)</a>, <a href="../../../homelab/entities/sencho/">Sencho</a>, <a href="../docker-autoheal/">docker-autoheal</a></p>
 <hr />
 <h2 id="fonti-e-riferimenti">Fonti e Riferimenti</h2>
@@ -6307,7 +6372,7 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://www.virtualizationhowto.com/2026/08/the-9-things-my-home-lab-automates-while-im-sleeping/" target="_blank">The 9 Things My Home Lab Automates While I'm Sleeping</a> (Brandon Lee) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://www.virtualizationhowto.com/2026/08/the-9-things-my-home-lab-automates-while-im-sleeping/" target="_blank">The 9 Things My Home Lab Automates While I'm Sleeping</a> (Brandon Lee) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

@@ -2222,10 +2222,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#funzionalita" class="md-nav__link">
+  <a href="#gitops-il-cluster-deve-assomigliare-al-repository" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Funzionalità
+        GitOps: il cluster deve assomigliare al repository
       </span>
     </span>
   </a>
@@ -2233,10 +2233,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup-homelab" class="md-nav__link">
+  <a href="#aggiornamento-notturno-delle-immagini" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Setup homelab
+        Aggiornamento notturno delle immagini
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#altri-vantaggi" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Altri vantaggi
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dove-lo-usa" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dove lo usa
       </span>
     </span>
   </a>
@@ -6132,10 +6154,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#funzionalita" class="md-nav__link">
+  <a href="#gitops-il-cluster-deve-assomigliare-al-repository" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Funzionalità
+        GitOps: il cluster deve assomigliare al repository
       </span>
     </span>
   </a>
@@ -6143,10 +6165,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup-homelab" class="md-nav__link">
+  <a href="#aggiornamento-notturno-delle-immagini" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Setup homelab
+        Aggiornamento notturno delle immagini
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#altri-vantaggi" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Altri vantaggi
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dove-lo-usa" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dove lo usa
       </span>
     </span>
   </a>
@@ -6286,17 +6330,16 @@
 
 
 <h1 id="argocd">ArgoCD</h1>
-<p>Piattaforma GitOps per Kubernetes. Git repository come source of truth per lo stato del cluster.<sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="funzionalita">Funzionalità</h2>
-<ul>
-<li>Sincronizza automaticamente il cluster Kubernetes con il repo Git<sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li><strong>Update policy</strong>: auto-rewrite della versione image nel repo, poi allinea il deployment</li>
-<li>Rollback delle deployment</li>
-<li>Visual overview delle deployment</li>
-<li>Auto-update notturno dei Pod image</li>
-</ul>
-<h2 id="setup-homelab">Setup homelab</h2>
-<p>Usato con <strong>Talos Linux</strong> Kubernetes cluster. ArgoCD gestisce gli update automaticamente di notte, allineando i Pod alle nuove versioni delle immagini definite nel repo Git.<sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>ArgoCD è una piattaforma GitOps per Kubernetes. <sup id="fnref:gk"><a class="footnote-ref" href="#fn:gk">2</a></sup> Nella wiki compare come strumento descritto da Brandon Lee, autore del blog Virtualization Howto, nel suo articolo sulle nove cose che il suo home lab automatizza di notte. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<h2 id="gitops-il-cluster-deve-assomigliare-al-repository">GitOps: il cluster deve assomigliare al repository</h2>
+<p>Secondo Lee, chi non ha esperienza di GitOps può pensarla così: la piattaforma fa in modo che tutto ciò che sta nel cluster "assomigli" esattamente a ciò che è definito nel repository Git. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Il repository Git è quindi la fonte di verità per lo stato desiderato del cluster, e ArgoCD ha il compito di allineare il cluster a quello stato.</p>
+<h2 id="aggiornamento-notturno-delle-immagini">Aggiornamento notturno delle immagini</h2>
+<p>Lee ha configurato ArgoCD con una update policy, cioè una regola che gli permette di controllare se esistono nuove versioni delle immagini usate dai Pod. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Quando ne trova una, ArgoCD riscrive la versione dell'immagine nel repository e poi allinea il deployment alla nuova versione definita.</p>
+<p>Tutto avviene di notte e senza intervento. Lee dice di non dover aggiornare a mano la maggior parte dei carichi di lavoro del suo cluster Kubernetes: si aggiornano da soli, grazie ad ArgoCD. L'articolo non dice come l'update policy sia implementata né con quale componente.</p>
+<h2 id="altri-vantaggi">Altri vantaggi</h2>
+<p>Lee cita due benefici oltre all'allineamento e all'aggiornamento automatico: poter fare il rollback dei deployment e avere una vista visuale d'insieme dei deployment. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> L'articolo li nomina in una frase sola e non spiega come funzionino.</p>
+<h2 id="dove-lo-usa">Dove lo usa</h2>
+<p>ArgoCD guida un cluster Kubernetes basato su Talos Linux, la distribuzione scelta da Lee per il suo home lab. <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Lo stesso cluster è protetto dai backup di Kasten K10 di Veeam. Per i container Docker, invece, Lee usa un altro strumento, Dockcheck, che controlla le nuove immagini e può avvisare oppure aggiornare.</p>
 <p>Vedi anche: <a href="../../concepts/homelab-automation-overnight/">Homelab Automation (Overnight)</a>, <a href="../semaphore-ui/">Semaphore UI</a>, <a href="../../../homelab/entities/sencho/">Sencho</a></p>
 <hr />
 <h2 id="fonti-e-riferimenti">Fonti e Riferimenti</h2>
@@ -6304,7 +6347,10 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://www.virtualizationhowto.com/2026/08/the-9-things-my-home-lab-automates-while-im-sleeping/" target="_blank">The 9 Things My Home Lab Automates While I'm Sleeping</a> (Brandon Lee) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://www.virtualizationhowto.com/2026/08/the-9-things-my-home-lab-automates-while-im-sleeping/" target="_blank">The 9 Things My Home Lab Automates While I'm Sleeping</a> (Brandon Lee) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:gk">
+<p><em>Dato consolidato di dominio (senza fonte primaria singola).</em>&#160;<a class="footnote-backref" href="#fnref:gk" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

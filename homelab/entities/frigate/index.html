@@ -3511,10 +3511,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#integrazione-con-coral-tpu" class="md-nav__link">
+  <a href="#perche-affiancare-a-frigate-un-coral-tpu" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Integrazione con Coral TPU
+        Perché affiancare a Frigate un Coral TPU
       </span>
     </span>
   </a>
@@ -3522,10 +3522,71 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#upgrade-a-frigate-014" class="md-nav__link">
+  <a href="#installare-il-coral-m2-nellhardware" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Upgrade a Frigate 0.14
+        Installare il Coral M.2 nell'hardware
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#driver-del-coral-su-host-proxmox-e-lxc" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Driver del Coral su host Proxmox e LXC
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Driver del Coral su host Proxmox e LXC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quando-il-driver-risulta-generico-repository-no-subscription-e-gasket" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Quando il driver risulta generico: repository no-subscription e gasket
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passare-il-coral-al-container-lxc" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Passare il Coral al container LXC
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurare-frigate-per-usare-il-coral" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Configurare Frigate per usare il Coral
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passare-da-frigate-013-a-014" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Passare da Frigate 0.13 a 0.14
       </span>
     </span>
   </a>
@@ -6143,10 +6204,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#integrazione-con-coral-tpu" class="md-nav__link">
+  <a href="#perche-affiancare-a-frigate-un-coral-tpu" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Integrazione con Coral TPU
+        Perché affiancare a Frigate un Coral TPU
       </span>
     </span>
   </a>
@@ -6154,10 +6215,71 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#upgrade-a-frigate-014" class="md-nav__link">
+  <a href="#installare-il-coral-m2-nellhardware" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Upgrade a Frigate 0.14
+        Installare il Coral M.2 nell'hardware
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#driver-del-coral-su-host-proxmox-e-lxc" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Driver del Coral su host Proxmox e LXC
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Driver del Coral su host Proxmox e LXC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quando-il-driver-risulta-generico-repository-no-subscription-e-gasket" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Quando il driver risulta generico: repository no-subscription e gasket
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passare-il-coral-al-container-lxc" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Passare il Coral al container LXC
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurare-frigate-per-usare-il-coral" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Configurare Frigate per usare il Coral
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passare-da-frigate-013-a-014" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Passare da Frigate 0.13 a 0.14
       </span>
     </span>
   </a>
@@ -6324,27 +6446,62 @@
 
 
 <h1 id="frigate">Frigate</h1>
-<p>Frigate è un NVR (Network Video Recorder) open-source che gestisce e analizza feed video da telecamere di sicurezza con rilevamento oggetti basato su machine learning. <sup id="fnref:gk"><a class="footnote-ref" href="#fn:gk">2</a></sup> Nel setup di Jack of All Gates gira come container Docker dentro un LXC su <a href="../proxmox-ve/">Proxmox VE</a>. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="integrazione-con-coral-tpu">Integrazione con Coral TPU</h2>
-<p>L'aggiunta di un <a href="../coral-tpu/">Coral TPU</a> PCIe (~$30) scarica il rilevamento oggetti dalla CPU al TPU, liberando risorse per altri servizi sul server. La configurazione richiede:</p>
+<p>Frigate è un NVR (Network Video Recorder) open source. <sup id="fnref:gk"><a class="footnote-ref" href="#fn:gk">2</a></sup> Secondo Jack of All Gates serve a gestire e analizzare i feed video delle telecamere. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Nel suo setup gira su un server <a href="../proxmox-ve/">Proxmox VE</a>, dentro un container LXC, e viene avviato con Docker Compose.</p>
+<p>Questa pagina segue la seconda puntata della sua serie su Frigate, dedicata all'aggiunta di un <a href="../coral-tpu/">Coral TPU</a>. La terza puntata, annunciata alla fine del video, mostra come vedere gli stream RTSP sul televisore con una Orange Pi One.</p>
+<h2 id="perche-affiancare-a-frigate-un-coral-tpu">Perché affiancare a Frigate un Coral TPU</h2>
+<p>Il Coral TPU è un dispositivo pensato per accelerare il machine learning e migliorare il rilevamento di oggetti. Si fa carico dei compiti di machine learning che altrimenti rallenterebbero la CPU, e questo conta soprattutto con più telecamere o quando si vuole ridurre la latenza. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>La versione PCIe da 30 dollari è per Jack of All Gates un'opzione economica, capace di gestire più feed CCTV lasciando la CPU libera per altri compiti. Dopo l'installazione la scheda System di Frigate mostra il Coral TPU come detector in uso, e la CPU resta disponibile per gli altri processi di Frigate e per gli altri container LXC di Proxmox.</p>
+<p>Il video presuppone conoscenze di base di Proxmox, della riga di comando Linux e di Frigate.</p>
+<h2 id="installare-il-coral-m2-nellhardware">Installare il Coral M.2 nell'hardware</h2>
+<p>Nel video il server è un laptop. Jack of All Gates apre la scocca, individua il modulo Wi-Fi, stacca i connettori IPEX, toglie il modulo svitando la vite dello slot M.2, inserisce al suo posto il chip Coral e rimette la vite. Poi chiude il laptop e lo riaccende. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<h2 id="driver-del-coral-su-host-proxmox-e-lxc">Driver del Coral su host Proxmox e LXC</h2>
+<p>Il driver va installato due volte, con gli stessi passaggi: sulla shell dell'host Proxmox e dentro il container LXC, per evitare problemi più avanti. Il video li segue dalla sezione 2A della guida Linux a cui rimanda, e i primi due comandi servono a controllare la compatibilità e a vedere se il driver Apex è già installato. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>I passaggi da uno a quattro sono questi.</p>
 <ol>
-<li>Installazione del driver gasket e runtime packages su PVE host e LXC container</li>
-<li>Pass-through del dispositivo PCIe nel file di config LXC</li>
-<li>Attivazione del dispositivo PCIe nel Docker Compose e aggiunta del detector nella configurazione di Frigate</li>
-<li>Rimozione di eventuali righe <code>model:</code> sotto il detector (valgono solo per OpenVINO)</li>
+<li>Si aggiunge il repository del Coral TPU e si ottiene la sua chiave.</li>
+<li>Si installano i pacchetti runtime del TPU, dopo un <code>apt update</code>.</li>
+<li>Si aggiunge l'utente root al gruppo <code>apex</code>.</li>
+<li>Si riavvia.</li>
 </ol>
-<p><sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="upgrade-a-frigate-014">Upgrade a Frigate 0.14</h2>
+<p>Nel container LXC c'è una differenza. Serve installare anche <code>gnupg</code> per poter aggiungere la chiave del repository, e l'ultimo passaggio riavvia solo il container invece dell'intero server Proxmox.</p>
+<p>Il passaggio cinque, nel container, fallisce con l'errore "lspci not found": si risolve installando <code>pciutils</code> e ripetendo il comando. Il passaggio sei dovrebbe restituire la directory del driver PCIe, ma qui non produce nulla.</p>
+<h3 id="quando-il-driver-risulta-generico-repository-no-subscription-e-gasket">Quando il driver risulta generico: repository no-subscription e gasket</h3>
+<p>Seguendo un consiglio trovato sul forum di Home Assistant, Jack of All Gates installa <code>lshw</code> nel container per controllare il dispositivo. Il dispositivo PCIe compare, ma come "generic" e "unclassified device". Ne deduce che il driver Apex installato al passaggio due non funziona. <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>La soluzione viene da una discussione sulla pagina GitHub di Google Coral ed è in due parti.</p>
+<p>La prima parte passa al repository no-subscription di Proxmox. Dopo un <code>apt update</code> sulla shell dell'host, la scheda dei repository mostra un punto esclamativo, perché il repository in uso è quello a sottoscrizione. Si modificano due file con <code>nano</code>. Nel file <code>pve-enterprise.list</code> si sostituisce la riga originale con quella no-subscription. Nel secondo file, che la trascrizione chiama "self list", si cerca la parola Quincy o Reef e la si sostituisce con la voce PVE no-subscription. Poiché il suo container è un Debian Bookworm e l'URL usa Quincy, lui usa l'URL Quincy del repository no-subscription. Con un nuovo <code>apt update</code> gli errori spariscono e resta solo un avviso sul repository del TPU, che il video giudica accettabile.</p>
+<p>La seconda parte, dal forum di Proxmox, ricompila il driver gasket.</p>
+<ol>
+<li>Sull'host Proxmox si disinstalla <code>gasket-dkms</code>.</li>
+<li>Si installano <code>git</code>, <code>devscripts</code> e <code>dh-dkms</code>.</li>
+<li>Si clona nella home il repository del driver gasket ed entrando nella sua directory si lancia <code>debuild</code>.</li>
+<li>Tornati nella home si installa con <code>dpkg</code> il nuovo pacchetto Debian.</li>
+<li>Si installano gli header, si fanno <code>apt update</code> e <code>apt upgrade</code> e si riavvia.</li>
+</ol>
+<p>Dopo il riavvio Proxmox rileva il driver Apex e il driver del TPU funziona. Resta da farlo funzionare anche nel container LXC.</p>
+<h2 id="passare-il-coral-al-container-lxc">Passare il Coral al container LXC</h2>
+<p>Il file di configurazione del container LXC di Frigate sta di solito in <code>/etc</code>. Nel passaggio descritto dalla guida GitHub di Coral per LXC, vi si copiano le righe che passano il TPU al container. Chi ha già Frigate installato, come Jack of All Gates, copia solo le righe relative al TPU, cioè quelle che non ha già, e sistema dopo gli eventuali problemi. Chi parte da un'installazione nuova copia l'intero testo e avvia il container. Se una riga non è compatibile, Proxmox indica quale. <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Le righe copiate riguardano la GPU integrata Intel e il Coral PCIe. Con una GPU AMD o Nvidia bisogna cercare per conto proprio come passare il driver al container. Jack of All Gates consiglia di provare prima con ChatGPT e poi di cercare con un motore di ricerca.</p>
+<p>Chi aveva già installato Frigate su Proxmox seguendo altre guide può incontrare l'errore "mounts failed" perché un file o una directory non esiste. In quel caso si apre di nuovo il file di configurazione dell'LXC, si individua la riga collegata all'errore, di solito riconoscibile dal nome, e la si commenta o la si rimuove. Poi si avvia il container. Nel suo caso è servito intervenire anche sulla riga relativa ad AppArmor.</p>
+<p>Con il container avviato il passaggio sei restituisce la directory cercata, quindi il driver è caricato e funzionante.</p>
+<h2 id="configurare-frigate-per-usare-il-coral">Configurare Frigate per usare il Coral</h2>
+<p>L'ultima fase ha tre passi. <sup id="fnref7:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<ol>
+<li>Nel file Docker Compose la riga del dispositivo PCIe era commentata: si toglie il cancelletto per attivarla, si salva e si avvia il container Docker.</li>
+<li>Nel file di configurazione di Frigate si aggiungono le righe del detector per il driver PCIe. Il video è stato registrato prima del passaggio a Frigate 0.14, ma la configurazione del detector è identica.</li>
+<li>Si controlla che il detector in uso sia il Coral.</li>
+</ol>
+<p>Jack of All Gates aveva dimenticato di togliere le righe <code>model:</code> sotto il detector, e Frigate dava errore. Le righe <code>model:</code> valgono solo per OpenVINO, quindi vanno eliminate. Per correggere ha modificato il file di configurazione direttamente su Proxmox, nella directory di configurazione, e ha tolto quelle righe.</p>
+<h2 id="passare-da-frigate-013-a-014">Passare da Frigate 0.13 a 0.14</h2>
+<p>Per Jack of All Gates il passaggio da 0.13 a 0.14 non ha dato problemi al driver del TPU. <sup id="fnref8:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>La versione 0.14 ha però cambiamenti non retrocompatibili, e il video consiglia di leggere prima la pagina con le modifiche principali della release.</p>
 <ul>
-<li>Cambiare l'immagine Docker e fare <code>docker compose pull &amp;&amp; docker compose up -d</code></li>
-<li>Il driver del TPU non ha dato problemi nel passaggio da 0.13 a 0.14</li>
-<li><strong>Breaking changes</strong>: gli eventi esistenti non compaiono in 0.14, maschere e zone potrebbero non funzionare</li>
-<li>Leggere le release notes prima di upgrade</li>
+<li>Gli eventi esistenti non compaiono in 0.14, perché è stato introdotto un nuovo sistema.</li>
+<li>Maschere e zone potrebbero funzionare o no, a seconda dei cambiamenti incompatibili.</li>
 </ul>
-<p><sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Per aggiornare si modifica nel file Docker Compose l'URL dell'immagine mettendo quello di Frigate 0.14, si salva e si lanciano <code>docker compose pull</code> e <code>docker compose up</code>. Jack of All Gates non ha eseguito questi due comandi perché il container era già attivo, ma dopo l'upgrade ha verificato che la sua configurazione funziona in 0.14.</p>
 <h2 id="voci-correlate">Voci correlate</h2>
 <ul>
-<li><a href="../proxmox-ve/">Proxmox VE</a> — piattaforma di virtualizzazione per Frigate</li>
+<li><a href="../proxmox-ve/">Proxmox VE</a> — piattaforma di virtualizzazione su cui gira l'LXC di Frigate</li>
 <li><a href="../coral-tpu/">Coral TPU</a> — acceleratore hardware per il rilevamento oggetti</li>
 </ul>
 <hr />
@@ -6353,7 +6510,7 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/HIvh_ZT2CFU" target="_blank">Google Coral TPU M.2 PCIe Installation in Frigate LXC on Proxmox | Driver Setup | Frigate Part 2</a> (Jack of All Gates) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/HIvh_ZT2CFU" target="_blank">Google Coral TPU M.2 PCIe Installation in Frigate LXC on Proxmox | Driver Setup | Frigate Part 2</a> (Jack of All Gates) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:gk">
 <p><em>Dato consolidato di dominio (senza fonte primaria singola).</em>&#160;<a class="footnote-backref" href="#fnref:gk" title="Jump back to footnote 2 in the text">&#8617;</a></p>

@@ -6373,7 +6373,7 @@
 <p>Metodo per costruire una knowledge base che i LLM possono consultare, <strong>senza usare RAG</strong>. Pubblicato come nota su GitHub da Andrej Karpathy (tra i fondatori di OpenAI, ha guidato lo sviluppo delle prime versioni dell'Autopilot Tesla; sul suo canale YouTube ha programmato da zero una delle prime versioni di GPT). <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
 <h2 id="il-problema-del-rag-classico">Il problema del RAG classico</h2>
 <p>Il RAG tradizionale divide i documenti in chunk, li mette in un vector database e ogni query recupera i chunk più simili. Il problema: ogni interrogazione riparte da zero — il modello non sfrutta conoscenza già elaborata in precedenza. Secondo Alessio Garau il RAG sta già scomparendo e, per alcuni, sarà superato grazie alle context window enormi dei modelli attuali: il metodo di Karpathy nasce da qui. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<p>L'idea centrale è che la wiki sia il "working knowledge layer" tra le fonti grezze e l'utente, e che l'LLM si faccia carico della parte faticosa del prendere appunti: mantenere e organizzare in modo sistematico la knowledge base. La qualità dipende dalle fonti: se ci si mette spazzatura, si ottiene una knowledge base di spazzatura. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>L'idea centrale è che la wiki sia il "working knowledge layer" tra le fonti grezze e l'utente, e che l'LLM si faccia carico della parte faticosa del prendere appunti: mantenere e organizzare in modo sistematico la knowledge base. La qualità dipende dalle fonti: se ci si mette spazzatura, si ottiene una knowledge base di spazzatura.</p>
 <h2 id="architettura">Architettura</h2>
 <ul>
 <li><strong><code>raw/</code></strong> — cartella con le fonti grezze. Il modello <strong>non può toccarle</strong></li>
@@ -6382,23 +6382,23 @@
 <li><strong><code>log.md</code></strong> — log di ogni operazione (per recuperare info via grep)</li>
 <li><strong>file di istruzioni dell'agente</strong> (<code>CLAUDE.md</code>, file di OpenCode, <code>AGENTS.md</code> per Codex) — spiega all'agente come gestire la wiki</li>
 </ul>
-<p><sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p><sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
 <h2 id="le-3-fasi-del-workflow">Le 3 fasi del workflow</h2>
 <ol>
 <li><strong>Ingest</strong> — butti una nuova fonte in <code>raw/</code>, l'agente la legge, riassume, crea/aggiorna pagine wiki cross-linkate</li>
 <li><strong>Query</strong> — fai una domanda; l'agente legge <code>index.md</code>, recupera le pagine rilevanti e risponde (la risposta può a sua volta arricchire la wiki)</li>
 <li><strong>Lint / health check</strong> — periodicamente chiedi all'agente di verificare contraddizioni, colmare lacune, creare pagine per concetti che le meritano</li>
 </ol>
-<p><sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p><sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
 <h2 id="implementazione-con-obsidian">Implementazione con Obsidian</h2>
-<p>Karpathy consiglia Obsidian, una knowledge base gratuita basata su file markdown che mostra anche il grafo dei collegamenti tra le note. L'estensione Obsidian Web Clipper (Chrome, Firefox, Safari) salva una pagina web come markdown da mettere in <code>raw/</code>. Nella demo di Garau, con OpenCode e due articoli, l'agente crea pagine come "AI and Programmer Jobs" e "AI-assisted programming", aggiorna index e log, e la vista a grafo mostra già molte connessioni. Il setup funziona con qualsiasi agente, anche con modelli locali, senza skill né server MCP: basta descrivere a parole cosa si vuole. <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Karpathy consiglia Obsidian, una knowledge base gratuita basata su file markdown che mostra anche il grafo dei collegamenti tra le note. L'estensione Obsidian Web Clipper (Chrome, Firefox, Safari) salva una pagina web come markdown da mettere in <code>raw/</code>. Nella demo di Garau, con OpenCode e due articoli, l'agente crea pagine come "AI and Programmer Jobs" e "AI-assisted programming", aggiorna index e log, e la vista a grafo mostra già molte connessioni. Il setup funziona con qualsiasi agente, anche con modelli locali, senza skill né server MCP: basta descrivere a parole cosa si vuole. <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
 <h2 id="implementazione-con-hermes-agent">Implementazione con Hermes Agent</h2>
 <p>Hermes Agent include già una skill <code>llm-wiki</code> bundled basata su questo paradigma. Vantaggio: collegato a Telegram, puoi inviargli PDF, documenti o file markdown da aggiungere alla wiki anche dal telefono. Vedi anche il video di Alessio Garau "Hermes Agent #2" per la dimostrazione pratica. <sup id="fnref:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
-<p>Nello stesso video Garau è scettico sui knowledge graph elaborati che circolano nei tutorial: navigare le note a mano con Obsidian ha senso, ma non vede un'utilità pratica nel grafo, almeno per il suo caso d'uso. <sup id="fnref2:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<p>Nello stesso video Garau è scettico sui knowledge graph elaborati che circolano nei tutorial: navigare le note a mano con Obsidian ha senso, ma non vede un'utilità pratica nel grafo, almeno per il suo caso d'uso.</p>
 <h2 id="limiti">Limiti</h2>
-<p>Per Garau il limite attuale è la scalabilità: quando la knowledge base cresce molto, il retrieval diventa difficile. Karpathy consiglia di fare vibe coding per implementare ricerca personalizzata o adottare tool di vector search su markdown, che indicizzano, recuperano e ordinano i file per il modello. <sup id="fnref7:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Per Garau il limite attuale è la scalabilità: quando la knowledge base cresce molto, il retrieval diventa difficile. Karpathy consiglia di fare vibe coding per implementare ricerca personalizzata o adottare tool di vector search su markdown, che indicizzano, recuperano e ordinano i file per il modello. <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
 <blockquote>
-<p>"La fase di progettazione dell'output che vuoi ottenere è quasi più importante del modo in cui lo dici all'LLM." — Alessio Garau <sup id="fnref8:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>"La fase di progettazione dell'output che vuoi ottenere è quasi più importante del modo in cui lo dici all'LLM." — Alessio Garau</p>
 </blockquote>
 <h2 id="relazioni">Relazioni</h2>
 <ul>
@@ -6411,10 +6411,10 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/inS73c-9XXQ" target="_blank">Ho implementato LLM Wiki di Karpathy (ed è geniale)</a> (Alessio Garau) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/inS73c-9XXQ" target="_blank">Ho implementato LLM Wiki di Karpathy (ed è geniale)</a> (Alessio Garau) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cit-2">
-<p>Fonte: <a href="https://youtu.be/6kUMl-CbzJk" target="_blank">Hermes Agent #2: LLM-Wiki, Web Search e Skills personalizzate</a> (Alessio Garau) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/6kUMl-CbzJk" target="_blank">Hermes Agent #2: LLM-Wiki, Web Search e Skills personalizzate</a> (Alessio Garau) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

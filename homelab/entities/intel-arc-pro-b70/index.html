@@ -6415,33 +6415,33 @@
 <p>BF16, FP8, INT8, INT4 — permette di eseguire diverse quantizzazioni nativamente. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
 <h2 id="software-stack">Software stack</h2>
 <ul>
-<li><strong>SYCL + Level Zero</strong> (ecosistema oneAPI) — equivalente Intel di CUDA/ROCm <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li><a href="../../concepts/llama-cpp/">llama.cpp</a>: backend SYCL e Vulkan (ma implementazione SYCL incompleta — matrix core non utilizzati) <sup id="fnref7:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li><a href="../../concepts/vllm/">vLLM</a>: fork Intel <strong>LLM Scaler</strong> con kernel ottimizzati per la B70 <sup id="fnref8:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li><strong>Llama Toolboxes Cockpit</strong> — UI creata dall'autore per gestire toolboxes e modelli <sup id="fnref9:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li><strong>AI Toolboxes</strong> — container Docker/Podman preconfigurati <sup id="fnref10:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Linux: toolbox è nativo su Fedora, su Ubuntu/Arch serve Distrobox <sup id="fnref11:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li><strong>SYCL + Level Zero</strong> (ecosistema oneAPI) — equivalente Intel di CUDA/ROCm <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li><a href="../../concepts/llama-cpp/">llama.cpp</a>: backend SYCL e Vulkan (ma implementazione SYCL incompleta — matrix core non utilizzati)</li>
+<li><a href="../../concepts/vllm/">vLLM</a>: fork Intel <strong>LLM Scaler</strong> con kernel ottimizzati per la B70</li>
+<li><strong>Llama Toolboxes Cockpit</strong> — UI creata dall'autore per gestire toolboxes e modelli</li>
+<li><strong>AI Toolboxes</strong> — container Docker/Podman preconfigurati</li>
+<li>Linux: toolbox è nativo su Fedora, su Ubuntu/Arch serve Distrobox</li>
 </ul>
 <h2 id="benchmark">Benchmark</h2>
 <h3 id="llamacpp-sycl-backend">llama.cpp (SYCL backend)</h3>
 <ul>
-<li>Qwen 3.6 27B (Q4): ~731 token/sec in prompt processing, ~20 token/sec in generazione <sup id="fnref12:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li><strong>Problema</strong>: il backend SYCL non usa i matrix core (nel codice c'è un to-do) → gap enorme vs AMD R9700: su un modello MoE l'R9700 arriva a quasi 3.000 token/sec in prompt processing, la B70 a circa un terzo <sup id="fnref13:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Il backend SYCL ha anche problemi di utilizzo della memoria: oltre i 16K di contesto la B70 dà problemi, mentre sull'R9700 si riesce a usare un contesto più ampio <sup id="fnref14:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Multi-token prediction (MTP) attiva su SYCL: più lenta che senza, probabilmente perché il backend non è ancora ottimizzato per MTP <sup id="fnref15:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Qwen 3.6 27B (Q4): ~731 token/sec in prompt processing, ~20 token/sec in generazione <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li><strong>Problema</strong>: il backend SYCL non usa i matrix core (nel codice c'è un to-do) → gap enorme vs AMD R9700: su un modello MoE l'R9700 arriva a quasi 3.000 token/sec in prompt processing, la B70 a circa un terzo</li>
+<li>Il backend SYCL ha anche problemi di utilizzo della memoria: oltre i 16K di contesto la B70 dà problemi, mentre sull'R9700 si riesce a usare un contesto più ampio</li>
+<li>Multi-token prediction (MTP) attiva su SYCL: più lenta che senza, probabilmente perché il backend non è ancora ottimizzato per MTP</li>
 </ul>
 <h3 id="vllm-llm-scaler-fork">vLLM (LLM Scaler fork)</h3>
 <ul>
-<li>Qwen 3.5 9B: <strong>2.236 token/sec</strong> — l'R9700 non ci si avvicina <sup id="fnref16:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Llama 3.1 8B: ~2.054 token/sec, parità con AMD <sup id="fnref17:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li><strong>Limitazione</strong>: vLLM non aggiornato, niente AWQ (alcune GPTQ sì), alcuni modelli non supportati (es. Gemma 4), esecuzione obbligata in eager mode <sup id="fnref18:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Secondo Capitella la scarsa resa dell'R9700 su questi modelli dipende soprattutto dal suo supporto in vLLM, non dall'hardware <sup id="fnref19:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Qwen 3.5 9B: <strong>2.236 token/sec</strong> — l'R9700 non ci si avvicina <sup id="fnref7:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Llama 3.1 8B: ~2.054 token/sec, parità con AMD</li>
+<li><strong>Limitazione</strong>: vLLM non aggiornato, niente AWQ (alcune GPTQ sì), alcuni modelli non supportati (es. Gemma 4), esecuzione obbligata in eager mode</li>
+<li>Secondo Capitella la scarsa resa dell'R9700 su questi modelli dipende soprattutto dal suo supporto in vLLM, non dall'hardware</li>
 </ul>
 <h2 id="workflow-con-llamacpp">Workflow con llama.cpp</h2>
 <p>Capitella avvia <code>llama-server</code> dentro il toolbox con flash attention, il modello, la dimensione di contesto e i template Jinja; il server ascolta sulla porta 8080 e dal laptop lo raggiunge con un port forwarding SSH, usando la web UI di llama.cpp. Il model manager del cockpit scarica da Hugging Face le quantizzazioni Unsloth nella home dell'host (fuori dal toolbox), e i toolbox vengono aggiornati automaticamente a ogni nuova release di llama.cpp. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<p>Il progetto LLM Scaler supporta anche ComfyUI per la generazione di immagini e video. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Il progetto LLM Scaler supporta anche ComfyUI per la generazione di immagini e video.</p>
 <h2 id="verdetto">Verdetto</h2>
-<p>Hardware con molto potenziale, ma il software è ancora immaturo. Il backend SYCL di <a href="../../concepts/llama-cpp/">llama.cpp</a> è l'ostacolo principale. Con un migliore supporto software, potrebbe diventare una delle migliori opzioni per <a href="../../concepts/gpu-per-ai-locale/">AI locale a 32GB</a>. <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Hardware con molto potenziale, ma il software è ancora immaturo. Il backend SYCL di <a href="../../concepts/llama-cpp/">llama.cpp</a> è l'ostacolo principale. Con un migliore supporto software, potrebbe diventare una delle migliori opzioni per <a href="../../concepts/gpu-per-ai-locale/">AI locale a 32GB</a>. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
 <h2 id="confronto-con-la-b60">Confronto con la B60</h2>
 <p>Alex Ziskind colloca la B70 a circa $1.000 per 32 GB, sopra la B60 (24 GB, circa $650), e la confronta con una e due B60 sul fork LLM Scaler: su Qwen 3 4B FP8 una B70 fa 92 token/sec e batte due B60 in tensor parallelism, su un MoE 30B INT4 fa 45 token/sec contro 44,5 della B60, mentre su Qwen 3.5 27B INT4 (28,3 token/sec) due B60 la superano. Nella generazione video con LTX2, limitata dal calcolo, la B70 impiega 167 secondi contro circa 225 delle B60. Dettagli in <a href="../../../ai-llm/entities/intel-b60/">Intel B60</a> nella wiki ai-llm. <sup id="fnref:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
 <h2 id="voci-correlate">Voci correlate</h2>
@@ -6457,7 +6457,7 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/MnGLqo5cuGQ" target="_blank">Intel Arc Pro B70 (32GB) for Local LLMs: llama.cpp (SYCL/Vulkan), vLLM (Intel LLM Scaler) Benchmarks</a> (Donato Capitella) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref18:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref19:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/MnGLqo5cuGQ" target="_blank">Intel Arc Pro B70 (32GB) for Local LLMs: llama.cpp (SYCL/Vulkan), vLLM (Intel LLM Scaler) Benchmarks</a> (Donato Capitella) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cit-2">
 <p>Fonte: <a href="https://youtu.be/c6u87wtQzTw" target="_blank">192GB of VRAM in One PC… The Cheap Way</a> (Alex Ziskind) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>

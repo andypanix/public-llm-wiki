@@ -6288,8 +6288,8 @@
 <h2 id="risoluzione-delle-allucinazioni">Risoluzione delle allucinazioni</h2>
 <ul>
 <li><a href="../../entities/laguna/">Laguna</a> a volte allucinava riferimenti inesistenti nella domanda dell'utente, di più con i quanti Q2/Q3, di meno con Q4 <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Gli stessi problemi comparivano con l'implementazione di llama.cpp e con l'API ufficiale di Laguna, anche se lì un po' ridotti <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Appena implementato min_p a 0,05 in <a href="../../entities/dwarf-star/">Dwarf Star</a>, le allucinazioni <strong>scompaiono completamente</strong> anche con Q2/Q3. Con quei quanti Sanfilippo ipotizza anche di abbassare la temperatura, per esempio a 0,7 <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Gli stessi problemi comparivano con l'implementazione di llama.cpp e con l'API ufficiale di Laguna, anche se lì un po' ridotti</li>
+<li>Appena implementato min_p a 0,05 in <a href="../../entities/dwarf-star/">Dwarf Star</a>, le allucinazioni <strong>scompaiono completamente</strong> anche con Q2/Q3. Con quei quanti Sanfilippo ipotizza anche di abbassare la temperatura, per esempio a 0,7</li>
 </ul>
 <h2 id="interpretazione-dei-logit">Interpretazione dei logit</h2>
 <p>Per Sanfilippo i logit non vanno letti come "probabilità" ma come quanto il modello ritiene <strong>corretto</strong> proseguire il discorso con un dato token. Il sampling non-greedy non serve solo per la variabilità, ma per <strong>esplorare spazi di soluzione</strong> che il modello, ripetendo lo stesso approccio, non raggiungerebbe: come quando un umano cambia approccio dopo aver sbattuto la testa contro un problema troppe volte. Il rovescio è che a volte il sampler pesca token a bassa probabilità che distruggono la qualità dell'output, ed è questo che min_p evita. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
@@ -6299,7 +6299,7 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/g_DCfGiDUuc" target="_blank">Considerazioni durante un viaggio di ritorno da Portopalo a Catania</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/g_DCfGiDUuc" target="_blank">Considerazioni durante un viaggio di ritorno da Portopalo a Catania</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

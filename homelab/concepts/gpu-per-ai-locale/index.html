@@ -6448,9 +6448,9 @@
 <h2 id="considerazioni-chiave">Considerazioni chiave</h2>
 <ol>
 <li><strong>Il software stack conta</strong>: la stessa GPU può avere performance molto diverse con <a href="../vllm/">vLLM</a> vs <a href="../llama-cpp/">llama.cpp</a> a seconda del supporto backend. La B70 e l'AMD Radeon AI Pro R9700 hanno hardware simile (32 GB, circa 600 GB/s), ma su llama.cpp l'AMD è molto avanti mentre sul vLLM di Intel (LLM Scaler) la B70 supera l'R9700 su alcuni modelli: secondo Capitella le due schede potrebbero dare prestazioni molto simili, la differenza è il supporto software <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li><strong>32 GB è il minimo su GPU discreta</strong>: Qwen 3.6 27B in quantizzazione Q4 K XL entra nei 32 GB della B70 <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li><strong>32 GB è il minimo su GPU discreta</strong>: Qwen 3.6 27B in quantizzazione Q4 K XL entra nei 32 GB della B70</li>
 <li><strong>Memoria unificata</strong>: alternativa per modelli più grandi (ASUS GX10, 128 GB per unità); la dimensione del modello in memoria è spesso il vero vincolo, e la dimensione dei file del modello non basta a stimarla: serve spazio anche per la KV cache del contesto (MiniMax M2.7 non partiva su 256 GB finché non è stato usato in AWQ 4-bit) <sup id="fnref3:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></li>
-<li><strong>Cluster multi-nodo</strong>: possibile via NCCL/Ray, ma GPU-Direct RDMA non è supportato sui sistemi GB10 <sup id="fnref4:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></li>
+<li><strong>Cluster multi-nodo</strong>: possibile via NCCL/Ray, ma GPU-Direct RDMA non è supportato sui sistemi GB10</li>
 </ol>
 <h2 id="voci-correlate">Voci correlate</h2>
 <ul>
@@ -6467,10 +6467,10 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/MnGLqo5cuGQ" target="_blank">Intel Arc Pro B70 (32GB) for Local LLMs: llama.cpp (SYCL/Vulkan), vLLM (Intel LLM Scaler) Benchmarks</a> (Donato Capitella) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/MnGLqo5cuGQ" target="_blank">Intel Arc Pro B70 (32GB) for Local LLMs: llama.cpp (SYCL/Vulkan), vLLM (Intel LLM Scaler) Benchmarks</a> (Donato Capitella) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cit-2">
-<p>Fonte: <a href="https://youtu.be/K2IGHj7KQoM" target="_blank">Are Local Models Finally Good Enough?</a> (Techno Tim) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/K2IGHj7KQoM" target="_blank">Are Local Models Finally Good Enough?</a> (Techno Tim) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cit-3">
 <p>Fonte: <a href="https://youtu.be/c6u87wtQzTw" target="_blank">192GB of VRAM in One PC… The Cheap Way</a> (Alex Ziskind) ↗&#160;<a class="footnote-backref" href="#fnref:cit-3" title="Jump back to footnote 3 in the text">&#8617;</a></p>

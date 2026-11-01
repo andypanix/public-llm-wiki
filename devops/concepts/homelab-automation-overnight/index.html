@@ -6447,52 +6447,52 @@
 <h3 id="1-backup-programmati">1. Backup programmati</h3>
 <ul>
 <li><a href="../../../homelab/entities/proxmox-backup-server/">Proxmox Backup Server</a> (PBS) 4.2, installato bare metal su un NAS Beelink ME Pro, per snapshot notturni incrementali e versionati del cluster <a href="../../../homelab/entities/proxmox-ve/">Proxmox VE</a> <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Veeam Backup &amp; Replication 13.x come seconda copia, oltre alla ridondanza dello storage Ceph HCI <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Duplicati/Portabase per container Docker, Kasten K10 per Kubernetes <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Backup staggerati per non saturare la rete <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Veeam Backup &amp; Replication 13.x come seconda copia, oltre alla ridondanza dello storage Ceph HCI</li>
+<li>Duplicati/Portabase per container Docker, Kasten K10 per Kubernetes</li>
+<li>Backup staggerati per non saturare la rete</li>
 </ul>
 <h3 id="2-aggiornamento-container-automatico">2. Aggiornamento container automatico</h3>
 <ul>
-<li><a href="../../entities/dockcheck/">Dockcheck</a> per verificare e aggiornare container image su schedule <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Delay configurabile prima di installare, backup immagini precedenti <sup id="fnref7:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Servizi critici (Traefik, DNS, DB): review manuale; non critici: auto-update <sup id="fnref8:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li><a href="../../entities/dockcheck/">Dockcheck</a> per verificare e aggiornare container image su schedule <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Delay configurabile prima di installare, backup immagini precedenti</li>
+<li>Servizi critici (Traefik, DNS, DB): review manuale; non critici: auto-update</li>
 </ul>
 <h3 id="3-rinnovo-ssl-automatico">3. Rinnovo SSL automatico</h3>
 <ul>
-<li>Traefik + Let's Encrypt + DNS validation (Cloudflare) <sup id="fnref9:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Certbot per Kubernetes, zero intervento manuale <sup id="fnref10:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Traefik + Let's Encrypt + DNS validation (Cloudflare) <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Certbot per Kubernetes, zero intervento manuale</li>
 </ul>
 <h3 id="4-monitoring-continuo">4. Monitoring continuo</h3>
 <ul>
-<li><a href="../../../homelab/entities/pulse/">Pulse</a> per Proxmox + Docker (con AI agent per triage proattivo) <sup id="fnref11:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li><a href="../../../homelab/entities/uptime-kuma/">Uptime Kuma</a> per uptime a livello applicazione: scraping di pagine web, query DNS, record restituiti da un database SQL <sup id="fnref12:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li><a href="../../../homelab/entities/pulse/">Pulse</a> per Proxmox + Docker (con AI agent per triage proattivo) <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li><a href="../../../homelab/entities/uptime-kuma/">Uptime Kuma</a> per uptime a livello applicazione: scraping di pagine web, query DNS, record restituiti da un database SQL</li>
 </ul>
 <h3 id="5-health-check-e-auto-heal">5. Health check e auto-heal</h3>
 <ul>
-<li><a href="../../entities/docker-autoheal/">docker-autoheal</a> riavvia container unhealthy automaticamente <sup id="fnref13:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li><a href="../../entities/docker-autoheal/">docker-autoheal</a> riavvia container unhealthy automaticamente <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
 </ul>
 <h3 id="6-cleanup-programmato">6. Cleanup programmato</h3>
 <ul>
-<li>CI/CD pipeline notturna per prune vecchie immagini, container stale, reti orfane <sup id="fnref14:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>CI/CD pipeline notturna per prune vecchie immagini, container stale, reti orfane <sup id="fnref7:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
 </ul>
 <h3 id="7-system-updates">7. System updates</h3>
 <ul>
-<li>Flatcar Linux + Nebraska Server per visibilità sugli update della flotta <sup id="fnref15:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Update schedulati di notte <sup id="fnref16:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Flatcar Linux + Nebraska Server per visibilità sugli update della flotta <sup id="fnref8:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Update schedulati di notte</li>
 </ul>
 <h3 id="8-notifiche-mirate">8. Notifiche mirate</h3>
 <ul>
-<li>Mailrise + Pushover, solo alert significativi (backup fail, storage pieno, cert fail, outage, hardware) <sup id="fnref17:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Evitare alert fatigue: meno alert = più attenzione <sup id="fnref18:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Mailrise + Pushover, solo alert significativi (backup fail, storage pieno, cert fail, outage, hardware) <sup id="fnref9:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Evitare alert fatigue: meno alert = più attenzione</li>
 </ul>
 <h3 id="9-gitops-kubernetes">9. GitOps Kubernetes</h3>
 <ul>
-<li>Talos Linux + <a href="../../entities/argocd/">ArgoCD</a> per GitOps: Git come source of truth <sup id="fnref19:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Auto-update notturno delle image dei Pod, rollback, visual overview <sup id="fnref20:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Talos Linux + <a href="../../entities/argocd/">ArgoCD</a> per GitOps: Git come source of truth <sup id="fnref10:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Auto-update notturno delle image dei Pod, rollback, visual overview</li>
 </ul>
 <h2 id="principio-guida">Principio guida</h2>
 <blockquote>
-<p>"You want it to be boring." L'automazione non è per impressionare, ma per rendere l'homelab affidabile e autosufficiente. <sup id="fnref21:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>"You want it to be boring." L'automazione non è per impressionare, ma per rendere l'homelab affidabile e autosufficiente. <sup id="fnref11:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
 </blockquote>
 <p>Vedi anche: <a href="../../../homelab/concepts/homelab-monitoring-stack/">Homelab Monitoring Stack</a>, <a href="../../../homelab/entities/proxmox-ve/">Proxmox VE</a>, <a href="../../../homelab/entities/cockpit/">Cockpit</a>, <a href="../../entities/semaphore-ui/">Semaphore UI</a></p>
 <hr />
@@ -6501,7 +6501,7 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://www.virtualizationhowto.com/2026/08/the-9-things-my-home-lab-automates-while-im-sleeping/" target="_blank">The 9 Things My Home Lab Automates While I'm Sleeping</a> (Brandon Lee) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref18:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref19:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref20:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref21:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://www.virtualizationhowto.com/2026/08/the-9-things-my-home-lab-automates-while-im-sleeping/" target="_blank">The 9 Things My Home Lab Automates While I'm Sleeping</a> (Brandon Lee) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

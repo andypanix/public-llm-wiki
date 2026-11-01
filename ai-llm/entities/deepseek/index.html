@@ -6282,9 +6282,9 @@
 <h2 id="modello-principale-deepseek-v4-flash">Modello principale: DeepSeek V4 Flash</h2>
 <ul>
 <li>284 miliardi di parametri, 140 GB non compresso. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Mixture of Experts: 256 esperti per layer, se ne attivano 6 per ogni token, più un esperto condiviso sempre attivo in tutti i 43 layer. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Mixture of Experts: 256 esperti per layer, se ne attivano 6 per ogni token, più un esperto condiviso sempre attivo in tutti i 43 layer.</li>
 <li>Ha fatto quantization-aware training ed è profondamente resistente alla quantizzazione. <sup id="fnref3:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></li>
-<li>In <a href="../dwarf-star/">Dwarf Star</a> con quantizzazione asimmetrica: 80 GB di RAM, 32-35 token/s in generazione e 400-500 token/s in lettura su un Mac M5 Max. <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>In <a href="../dwarf-star/">Dwarf Star</a> con quantizzazione asimmetrica: 80 GB di RAM, 32-35 token/s in generazione e 400-500 token/s in lettura su un Mac M5 Max. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
 <li>Con tensor parallelism su 2 M5 Max: 50 token/s, prefill 600 token/s. <sup id="fnref4:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></li>
 <li>Su DGX Spark, quantizzato a 2 bit, la generazione era ferma a 15 token/s; con Fable si è arrivati a circa 17,5. <sup id="fnref:cit-3"><a class="footnote-ref" href="#fn:cit-3">3</a></sup></li>
 </ul>
@@ -6305,7 +6305,7 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/8jwOFfXhvQE" target="_blank">Le Nuove Avventure di Salvatore Sanfilippo | Live con @antirez PARTE 1</a> (Mr. RIP) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/8jwOFfXhvQE" target="_blank">Le Nuove Avventure di Salvatore Sanfilippo | Live con @antirez PARTE 1</a> (Mr. RIP) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cit-2">
 <p>Fonte: <a href="https://youtu.be/mRRV8BbvNVM" target="_blank">GPT 5.6, Fable e i moscerini della frutta | Zip episodio 01</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>

@@ -6290,8 +6290,8 @@
 <h2 id="lesperimento-del-modulo-rtc">L'esperimento del modulo RTC</h2>
 <ul>
 <li>Collegato un modulo real-time clock DS1307 (I2C, via cavo Grove), il robot risponde di non rilevarlo: "l'AI non è magia", bisogna mettere mano al codice. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>In un paio d'ore Bianco ha scritto un driver, adattato l'HAL e aggiunto il contesto verbale nel livello MCP. Dopo il flash il robot vede il modulo ma riporta valori assurdi (il 33 marzo, 68 minuti): probabilmente il driver interroga il bus I2C interno, dove l'IMU a sei assi ha lo stesso indirizzo. Un "successo parziale": l'AI ha il contesto giusto ma dati senza senso. <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Il sensore NFC e il lettore microSD integrati oggi non sono esposti all'AI, perché i loro dati sono difficili da tradurre in un semplice contesto verbale. <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>In un paio d'ore Bianco ha scritto un driver, adattato l'HAL e aggiunto il contesto verbale nel livello MCP. Dopo il flash il robot vede il modulo ma riporta valori assurdi (il 33 marzo, 68 minuti): probabilmente il driver interroga il bus I2C interno, dove l'IMU a sei assi ha lo stesso indirizzo. Un "successo parziale": l'AI ha il contesto giusto ma dati senza senso.</li>
+<li>Il sensore NFC e il lettore microSD integrati oggi non sono esposti all'AI, perché i loro dati sono difficili da tradurre in un semplice contesto verbale.</li>
 </ul>
 <h2 id="giudizio">Giudizio</h2>
 <p>Come robot da scrivania collegato a un LLM funziona bene appena tolto dalla scatola. Modificare l'AI è un'altra storia: il firmware è in ESP-IDF, più avanzato di Arduino e UI Flow 2 (per cui M5Stack promette tutorial), quindi difficilmente ci sarà una guida dedicata. Per Bianco la curva di apprendimento è ripida e non è adatto ai principianti, ma ne vale la pena. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
@@ -6302,7 +6302,7 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/8BqnYfYyugQ" target="_blank">StackChan Isn’t Plug-and-Play for Makers (Here’s Why)</a> (Tommy Bianco) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/8BqnYfYyugQ" target="_blank">StackChan Isn’t Plug-and-Play for Makers (Here’s Why)</a> (Tommy Bianco) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

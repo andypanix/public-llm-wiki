@@ -6335,20 +6335,20 @@
 <p>L'ASUS Ascent GX10 è un compact AI workstation basato sulla piattaforma NVIDIA GB10 Grace Blackwell: ARM CPU + Blackwell GPU + <strong>128 GB di memoria unificata</strong> in un box desktop piccolo e pesante. Secondo Techno Tim in questo tipo di AI locale la domanda non è tanto "posso farlo girare?" quanto "quanto è grande il modello e ci sta in memoria?". Prezzo (una delle versioni più economiche della piattaforma GB10): ~$3.500 per unità (più ~$100 per il cavo di collegamento se se ne usano due). <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
 <h2 id="specifiche">Specifiche</h2>
 <ul>
-<li><strong>GPU:</strong> NVIDIA Blackwell (GB10 Grace Blackwell) <sup id="fnref7:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li><strong>RAM:</strong> 128 GB memoria unificata (CPU/GPU condivisa) <sup id="fnref8:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li><strong>Networking:</strong> 10GbE + NVIDIA ConnectX-7 (QSFP112) per clustering <sup id="fnref9:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li><strong>Magneti integrati</strong> per stacking magnetico tra unità <sup id="fnref10:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li><strong>GPU:</strong> NVIDIA Blackwell (GB10 Grace Blackwell) <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li><strong>RAM:</strong> 128 GB memoria unificata (CPU/GPU condivisa)</li>
+<li><strong>Networking:</strong> 10GbE + NVIDIA ConnectX-7 (QSFP112) per clustering</li>
+<li><strong>Magneti integrati</strong> per stacking magnetico tra unità</li>
 </ul>
 <h2 id="setup-di-techno-tim">Setup di Techno Tim</h2>
 <ul>
-<li><strong>Uso remoto</strong>: il GX10 fa da macchina di sviluppo AI in background; NVIDIA Sync semplifica SSH e VS Code remoto (il server VS Code gira sul GX10, l'editor resta sul computer principale e il terminale è una shell sul GX10) <sup id="fnref11:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li><strong>Storage</strong>: i modelli (40-60 GB, alcuni oltre 200 GB) stanno su una share NFS del NAS e vengono caricati in memoria attraverso la porta 10GbE <sup id="fnref12:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li><strong>Serving</strong>: tra le opzioni citate (Ollama come punto di partenza più facile, <a href="../../concepts/llama-cpp/">llama.cpp</a> leggero e adatto a molto hardware, Docker Model Runner) sceglie <a href="../../concepts/vllm/">vLLM</a>, avviato da un playbook Ansible che genera il file compose <sup id="fnref13:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li><strong>Agente</strong>: OpenCode, scelto perché open source, usabile da terminale, compatibile con modelli diversi ed eseguibile anche come web app servita dal GX10 <sup id="fnref14:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li><strong>Osservabilità</strong>: temperature, utilizzo e salute in Grafana e Prometheus, consumo tramite smart plug in Home Assistant <sup id="fnref15:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li><strong>Uso remoto</strong>: il GX10 fa da macchina di sviluppo AI in background; NVIDIA Sync semplifica SSH e VS Code remoto (il server VS Code gira sul GX10, l'editor resta sul computer principale e il terminale è una shell sul GX10) <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li><strong>Storage</strong>: i modelli (40-60 GB, alcuni oltre 200 GB) stanno su una share NFS del NAS e vengono caricati in memoria attraverso la porta 10GbE</li>
+<li><strong>Serving</strong>: tra le opzioni citate (Ollama come punto di partenza più facile, <a href="../../concepts/llama-cpp/">llama.cpp</a> leggero e adatto a molto hardware, Docker Model Runner) sceglie <a href="../../concepts/vllm/">vLLM</a>, avviato da un playbook Ansible che genera il file compose</li>
+<li><strong>Agente</strong>: OpenCode, scelto perché open source, usabile da terminale, compatibile con modelli diversi ed eseguibile anche come web app servita dal GX10</li>
+<li><strong>Osservabilità</strong>: temperature, utilizzo e salute in Grafana e Prometheus, consumo tramite smart plug in Home Assistant</li>
 </ul>
-<p>Il compito di test è un "Homelab service tracker" (web app per censire servizi come Proxmox, TrueNAS, Grafana, Plex, Pi-hole), con un prompt dettagliato su stack, scope, data model, test e definition of done, e la richiesta di procedere una feature alla volta. Tim precisa che non è un benchmark scientifico ma un test pratico, e che i due run confrontano workflow più che modelli. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Il compito di test è un "Homelab service tracker" (web app per censire servizi come Proxmox, TrueNAS, Grafana, Plex, Pi-hole), con un prompt dettagliato su stack, scope, data model, test e definition of done, e la richiesta di procedere una feature alla volta. Tim precisa che non è un benchmark scientifico ma un test pratico, e che i due run confrontano workflow più che modelli.</p>
 <h2 id="test-1-gx10-128-gb">Test: 1 GX10 (128 GB)</h2>
 <ul>
 <li>Modello: Qwen3.6-35B-A3B-FP8</li>
@@ -6356,7 +6356,7 @@
 <li>Risultato: ha costruito un'app funzionante ma <strong>non autonomo</strong> — loop di tool calls, steering necessario; filtro e salvataggio (errore 405) non funzionavano finché Tim non gli ha chiesto di consultare la documentazione sul web invece della propria memoria. Ha anche interrotto il workflow remoto uccidendo il processo node sbagliato. Tim non attribuisce tutti i problemi al modello: parte può dipendere da OpenCode o dall'interazione tra i componenti</li>
 <li>Consumo: ~50W idle con il modello caricato (circa $4-5 al mese se lasciato acceso 24/7), fino a ~125W sotto carico</li>
 </ul>
-<p><sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p><sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
 <h2 id="test-2-gx10-cluster-256-gb">Test: 2 GX10 cluster (256 GB)</h2>
 <ul>
 <li>Connessione: ConnectX-7 QSFP diretto, NCCL ~130 Gbps invece dei ~200 attesi (GPU-Direct RDMA non supportato su GB10)</li>
@@ -6365,8 +6365,8 @@
 <li>Risultato: molto più capace — ha usato un CLI generator (<code>create-next-app</code>), filtro/delete funzionavano subito; in seguito ha anche ridisegnato la UI come Windows XP</li>
 <li>Consumo: ~330W totali sotto carico; a circa 300W costanti sarebbero circa $20 al mese</li>
 </ul>
-<p><sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<p>Durante la compilazione di NCCL una macchina ha smesso di rispondere via SSH con tutti i core al 100%, tornando raggiungibile a compilazione finita; Tim ha riprodotto il problema, ASUS no. <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p><sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Durante la compilazione di NCCL una macchina ha smesso di rispondere via SSH con tutti i core al 100%, tornando raggiungibile a compilazione finita; Tim ha riprodotto il problema, ASUS no.</p>
 <h2 id="conclusioni">Conclusioni</h2>
 <ul>
 <li>1 GX10 rende l'AI locale <strong>pratica</strong> per coding agent</li>
@@ -6378,7 +6378,7 @@
 <li>Target: developer, ricercatori, appassionati AI che vogliono l'ecosistema NVIDIA e poter spostare il lavoro su infrastrutture NVIDIA più grandi; non adatto a chi non vuole passare tempo su terminale, log, Docker e tuning di vLLM</li>
 <li>Per molti 1 GX10 è il punto di equilibrio; 2 hanno senso solo per spingersi su modelli più grandi</li>
 </ul>
-<p><sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p><sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
 <h2 id="voci-correlate">Voci correlate</h2>
 <ul>
 <li><a href="../../concepts/vllm/">vLLM</a> — serving layer usato per servire i modelli sul GX10</li>
@@ -6394,7 +6394,7 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/K2IGHj7KQoM" target="_blank">Are Local Models Finally Good Enough?</a> (Techno Tim) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/K2IGHj7KQoM" target="_blank">Are Local Models Finally Good Enough?</a> (Techno Tim) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

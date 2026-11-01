@@ -6279,7 +6279,7 @@
 
 <h1 id="coral-tpu">Coral TPU</h1>
 <p>Il Google Coral TPU è un acceleratore hardware per machine learning, usato per velocizzare il rilevamento oggetti. La versione PCIe M.2 costa circa $30 ed è un'opzione economica per gestire più feed CCTV in <a href="../frigate/">Frigate</a>, liberando la CPU per altri task. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<p>Nel video il Coral M.2 viene montato in un laptop usato come server, al posto del modulo Wi-Fi (scollegati i connettori IPEX, svitato il modulo dallo slot M.2). <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Nel video il Coral M.2 viene montato in un laptop usato come server, al posto del modulo Wi-Fi (scollegati i connettori IPEX, svitato il modulo dallo slot M.2).</p>
 <h2 id="installazione-su-proxmox-lxc">Installazione su Proxmox LXC</h2>
 <p>L'installazione segue 6 step: i primi quattro vanno eseguiti sia sull'host PVE sia nel container LXC, gli ultimi due nel container:</p>
 <ol>
@@ -6290,14 +6290,14 @@
 <li>Verifica del driver PCIe con <code>lspci</code> (richiede <code>apt install pciutils</code>)</li>
 <li>Verifica del caricamento del driver Apex</li>
 </ol>
-<p><sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p><sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
 <h3 id="problema-comune-driver-non-riconosciuto">Problema comune: driver non riconosciuto</h3>
 <p>Il driver Apex potrebbe non caricarsi correttamente: con <code>lshw</code> nel container il dispositivo appare come generico e non classificato. La soluzione seguita nel video, ricavata da discussioni su forum Home Assistant, GitHub di Google Coral e forum Proxmox:
 - Cambiare i repository <a href="../proxmox-ve/">Proxmox VE</a> da enterprise a no-subscription (sia il file della lista PVE enterprise sia quello di Ceph, scegliendo la variante Quincy o Reef in uso)
 - Aggiungere al file di config LXC le righe di pass-through del TPU (nel video anche quelle per la GPU integrata Intel); con GPU AMD o NVIDIA il pass-through va ricercato a parte
 - Rimuovere <code>gasket-dkms</code>, clonare il repo <code>gasket-driver</code> da GitHub e compilare con <code>debuild</code> + <code>dpkg -i</code>
 - Se l'avvio del container dà errori di mount, commentare o rimuovere le righe del config LXC che li causano, inclusa quella relativa ad AppArmor</p>
-<p><sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p><sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
 <h2 id="voci-correlate">Voci correlate</h2>
 <ul>
 <li><a href="../frigate/">Frigate</a> — NVR che usa il Coral TPU per il rilevamento oggetti</li>
@@ -6309,7 +6309,7 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/HIvh_ZT2CFU" target="_blank">Google Coral TPU M.2 PCIe Installation in Frigate LXC on Proxmox | Driver Setup | Frigate Part 2</a> (Jack of All Gates) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/HIvh_ZT2CFU" target="_blank">Google Coral TPU M.2 PCIe Installation in Frigate LXC on Proxmox | Driver Setup | Frigate Part 2</a> (Jack of All Gates) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

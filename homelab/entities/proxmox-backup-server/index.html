@@ -6270,16 +6270,16 @@
 <h2 id="setup-homelab-brandon-lee">Setup homelab (Brandon Lee)</h2>
 <ul>
 <li>Installato su bare metal di Beelink ME Pro 2-bay NAS (power efficient)<sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Snapshot incrementale e versionato del cluster Proxmox ogni notte<sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Primo layer di difesa, complementato da Veeam Backup &amp; Replication 13.x come seconda copia<sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Brandon Lee vuole almeno due copie dei dati oltre alla ridondanza già offerta dallo storage Ceph HCI del cluster; i job di backup sono sfalsati nella notte per non sovrapporsi e passano quasi inosservati sulla sua rete a 10 Gbit<sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Snapshot incrementale e versionato del cluster Proxmox ogni notte</li>
+<li>Primo layer di difesa, complementato da Veeam Backup &amp; Replication 13.x come seconda copia</li>
+<li>Brandon Lee vuole almeno due copie dei dati oltre alla ridondanza già offerta dallo storage Ceph HCI del cluster; i job di backup sono sfalsati nella notte per non sovrapporsi e passano quasi inosservati sulla sua rete a 10 Gbit</li>
 </ul>
 <h2 id="alternativa-nfs-sul-nas-wundertech">Alternativa: NFS sul NAS (WunderTech)</h2>
 <p>Nel passaggio da un cluster a 2 nodi a un <a href="../../concepts/mini-itx-single-node/">singolo server mini-ITX</a>, WunderTech ha rinunciato a PBS come perdita principale della migrazione: per ora fa i backup di VM e LXC su una share NFS del NAS, che ha spazio in abbondanza, e prevede di installare PBS come VM sul NAS se diventerà necessario.<sup id="fnref:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
 <h2 id="caratteristiche">Caratteristiche</h2>
 <ul>
-<li>Snapshot incrementali e versionati<sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Protezione del cluster Proxmox VE a livello di VM e LXC<sup id="fnref7:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Snapshot incrementali e versionati<sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Protezione del cluster Proxmox VE a livello di VM e LXC</li>
 </ul>
 <p>Vedi anche: <a href="../../../devops/concepts/homelab-automation-overnight/">Homelab Automation (Overnight)</a>, <a href="../proxmox-ve/">Proxmox VE</a>, <a href="../frigate/">Frigate</a></p>
 <hr />
@@ -6288,7 +6288,7 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://www.virtualizationhowto.com/2026/08/the-9-things-my-home-lab-automates-while-im-sleeping/" target="_blank">The 9 Things My Home Lab Automates While I'm Sleeping</a> (Brandon Lee) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://www.virtualizationhowto.com/2026/08/the-9-things-my-home-lab-automates-while-im-sleeping/" target="_blank">The 9 Things My Home Lab Automates While I'm Sleeping</a> (Brandon Lee) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cit-2">
 <p>Fonte: <a href="https://youtu.be/oizzW7RAFPQ" target="_blank">You Probably Don't Need a Proxmox Cluster</a> (WunderTech) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>

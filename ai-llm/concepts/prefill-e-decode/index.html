@@ -6308,13 +6308,13 @@
 <h2 id="prefill-conta-il-calcolo-e-il-driver">Prefill: conta il calcolo (e il driver)</h2>
 <ul>
 <li>Il prefill di prompt lunghi è il carico tipico di RAG, agenti e assistenti di coding: è come incollare un intero repository e chiedere al modello di valutarlo. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Sul GEEKOM A9 Max (AMD Ryzen AI 9 HX 470, iGPU Radeon 890M, NPU da 50 TOPS) Alex Ziskind ha misurato con un modello da 14B un prefill di prompt lunghi circa <strong>3 volte più veloce</strong> su Linux bare metal con il driver open source RADV che su Windows: un driver open source che batte quello proprietario di AMD sul suo stesso hardware. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Su Windows il Lemonade Server di AMD ha ricette ibride che usano la NPU per il prefill e la GPU per il decode; nel decode è alla pari con llama.cpp Vulkan. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Sul GEEKOM A9 Max (AMD Ryzen AI 9 HX 470, iGPU Radeon 890M, NPU da 50 TOPS) Alex Ziskind ha misurato con un modello da 14B un prefill di prompt lunghi circa <strong>3 volte più veloce</strong> su Linux bare metal con il driver open source RADV che su Windows: un driver open source che batte quello proprietario di AMD sul suo stesso hardware.</li>
+<li>Su Windows il Lemonade Server di AMD ha ricette ibride che usano la NPU per il prefill e la GPU per il decode; nel decode è alla pari con llama.cpp Vulkan.</li>
 </ul>
 <h2 id="decode-conta-la-banda-di-memoria">Decode: conta la banda di memoria</h2>
 <ul>
-<li>Sul GEEKOM ogni backend su ogni sistema operativo si fermava allo stesso muro: la macchina aveva un solo banco di RAM, quindi lavorava in single channel con circa metà della banda prevista. Con due banchi (dual channel) ogni carico di decode è circa raddoppiato (Vulkan su Windows 2,13×, RADV su Linux oltre 2×, Ollama con ROCm 1,86×), arrivando a circa 9 tok/s su 14B, 17 su 7B e 37 su 3B. "Non puoi aggirare con il calcolo un collo di bottiglia di banda di memoria." <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Consiglio pratico di Ziskind: se un mini PC AMD è venduto in single channel (1× SODIMM), mettere in conto l'acquisto di una coppia di banchi uguali. <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Sul GEEKOM ogni backend su ogni sistema operativo si fermava allo stesso muro: la macchina aveva un solo banco di RAM, quindi lavorava in single channel con circa metà della banda prevista. Con due banchi (dual channel) ogni carico di decode è circa raddoppiato (Vulkan su Windows 2,13×, RADV su Linux oltre 2×, Ollama con ROCm 1,86×), arrivando a circa 9 tok/s su 14B, 17 su 7B e 37 su 3B. "Non puoi aggirare con il calcolo un collo di bottiglia di banda di memoria." <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Consiglio pratico di Ziskind: se un mini PC AMD è venduto in single channel (1× SODIMM), mettere in conto l'acquisto di una coppia di banchi uguali.</li>
 <li>Manolo Remiddi indica lo stesso limite sulla sua macchina con l'hardware del <a href="../../entities/dgx-spark/">DGX Spark</a>: molto stabile, ma la RAM non è abbastanza veloce e i token al secondo possono scendere a livelli frustranti. <sup id="fnref:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></li>
 <li>Le GPU NVIDIA hanno memoria GDDR7 e una banda molto superiore a quella delle Intel B60, quindi sono più veloci nella generazione dei token; vedi <a href="../../entities/intel-b60/">Intel B60</a>. <sup id="fnref2:cit-3"><a class="footnote-ref" href="#fn:cit-3">3</a></sup></li>
 </ul>
@@ -6322,9 +6322,9 @@
 <p>La generazione video è compute-bound, non memory-bound: con LTX2 in ComfyUI una B70 (più potenza di calcolo) genera in 167 secondi contro circa 225 di una B60, e la VRAM in più non aiuta. <sup id="fnref:cit-3"><a class="footnote-ref" href="#fn:cit-3">3</a></sup> Vedi anche <a href="../generazione-video-ai/">Generazione Video AI</a>.</p>
 <h2 id="sistema-operativo-e-backend">Sistema operativo e backend</h2>
 <ul>
-<li>Su Windows Ollama ignora l'iGPU AMD e gira su CPU anche con Vulkan attivo; llama.cpp con Vulkan usa la GPU, con un guadagno dal 14% (1,5B) al 10% (14B). <sup id="fnref7:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>In WSL l'iGPU è invisibile finché non si installa il driver Mesa Dozen (repository kisak-mesa); dopo, llama.cpp Vulkan funziona ma cede circa un sesto del throughput rispetto a Windows nativo. <sup id="fnref8:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Su Linux bare metal Ollama, llama.cpp Vulkan (RADV) e llama.cpp ROCm usano tutti la GPU e nel decode stanno entro pochi punti percentuali. <sup id="fnref9:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Su Windows Ollama ignora l'iGPU AMD e gira su CPU anche con Vulkan attivo; llama.cpp con Vulkan usa la GPU, con un guadagno dal 14% (1,5B) al 10% (14B). <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>In WSL l'iGPU è invisibile finché non si installa il driver Mesa Dozen (repository kisak-mesa); dopo, llama.cpp Vulkan funziona ma cede circa un sesto del throughput rispetto a Windows nativo.</li>
+<li>Su Linux bare metal Ollama, llama.cpp Vulkan (RADV) e llama.cpp ROCm usano tutti la GPU e nel decode stanno entro pochi punti percentuali.</li>
 </ul>
 <p>Vedi anche: <a href="../inferenza-locale/">Inferenza Locale</a>, <a href="../speculative-decoding/">Speculative Decoding</a>, <a href="../../entities/dgx-spark/">DGX Spark</a></p>
 <hr />
@@ -6333,7 +6333,7 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/QeAHC1jGxck" target="_blank">Your OS Changes Everything for Local AI</a> (Alex Ziskind) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/QeAHC1jGxck" target="_blank">Your OS Changes Everything for Local AI</a> (Alex Ziskind) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cit-2">
 <p>Fonte: <a href="https://youtu.be/xGmxf90feSc" target="_blank">The Local AI Hardware Mistake Everyone Makes</a> (Manolo Remiddi) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>

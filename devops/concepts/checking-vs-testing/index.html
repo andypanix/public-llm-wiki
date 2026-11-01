@@ -6301,30 +6301,30 @@
 <p>Distinzione fondamentale argomentata da DevOps &amp; AI Toolkit nel video "End-to-End Testing With AI Agents": tutto quello che chiamiamo "testing" non è testing — è <strong>checking</strong>. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
 <h2 id="checking">Checking</h2>
 <ul>
-<li>Decidi in anticipo cosa dovrebbe essere vero, lo scrivi, qualcosa conferma se vale ancora <sup id="fnref7:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Ha un soffitto: chiunque abbia scritto il check ha preso l'idea di "corretto" da qualche parte <sup id="fnref8:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Se l'idea viene dal software stesso → il check può solo concordare → è il software che valuta il proprio compito <sup id="fnref9:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>I test handwritten dell'autore erano "una fotografia di come il software era fatto la settimana in cui li ha scritti" <sup id="fnref10:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Decidi in anticipo cosa dovrebbe essere vero, lo scrivi, qualcosa conferma se vale ancora <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Ha un soffitto: chiunque abbia scritto il check ha preso l'idea di "corretto" da qualche parte</li>
+<li>Se l'idea viene dal software stesso → il check può solo concordare → è il software che valuta il proprio compito</li>
+<li>I test handwritten dell'autore erano "una fotografia di come il software era fatto la settimana in cui li ha scritti"</li>
 </ul>
 <h2 id="testing">Testing</h2>
 <ul>
-<li>Andare a scoprire. Nessuno ti ha dato una lista <sup id="fnref11:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Poking, provando cose stupide di proposito <sup id="fnref12:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Notando che il messaggio di errore è tecnicamente accurato e completamente inutile <sup id="fnref13:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Testing è come scopri di <strong>esserti sbagliato</strong> su ciò che credevi <sup id="fnref14:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Andare a scoprire. Nessuno ti ha dato una lista <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Poking, provando cose stupide di proposito</li>
+<li>Notando che il messaggio di errore è tecnicamente accurato e completamente inutile</li>
+<li>Testing è come scopri di <strong>esserti sbagliato</strong> su ciò che credevi</li>
 </ul>
 <h2 id="perche-il-testing-e-sparito-dalle-pipeline">Perché il testing è sparito dalle pipeline</h2>
 <p>Il testing non scala, non si automatizza e non si sa in anticipo se un pomeriggio di esplorazione troverà qualcosa: difficile da giustificare in un piano, facile da tagliare quando la data slitta. Per questo divenne il mestiere dei tester dedicati, che criticavano la test automation con ragione ("quegli script non testano niente, confermano ciò che qualcun altro ha assunto"). Ma il loro ruolo richiedeva un handoff: con due rilasci l'anno una settimana di indagine era economica, con più rilasci al giorno diventa un muro. Il ruolo è sparito, spesso senza sostituti, ed è rimasto il checking perché era la parte che stava dentro la pipeline. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<p>Ora anche il testing si sta automatizzando: agent come l'Explorer di Momentic esplorano il prodotto senza specifiche e riportano ciò che sembra sbagliato (vedi <a href="../agentic-testing/">Agentic Testing</a>). Nell'analogia dell'auto (progettata da persone, costruita da robot, provata in pista da un pilota) la parte centrale ha iniziato a mangiare anche il test su strada; resta la progettazione. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Ora anche il testing si sta automatizzando: agent come l'Explorer di Momentic esplorano il prodotto senza specifiche e riportano ciò che sembra sbagliato (vedi <a href="../agentic-testing/">Agentic Testing</a>). Nell'analogia dell'auto (progettata da persone, costruita da robot, provata in pista da un pilota) la parte centrale ha iniziato a mangiare anche il test su strada; resta la progettazione.</p>
 <h2 id="perche-la-distinzione-importa-con-gli-ai-agent">Perché la distinzione importa con gli AI agent</h2>
-<p>Un test rosso si risolve in 4 modi; quando un agent (vedi <a href="../../../ai-llm/concepts/agentic-harness/">Agentic Harness</a>) esegue il loop di fix, sceglie da solo tra: <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup>
+<p>Un test rosso si risolve in 4 modi; quando un agent (vedi <a href="../../../ai-llm/concepts/agentic-harness/">Agentic Harness</a>) esegue il loop di fix, sceglie da solo tra: <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup>
 1. Fixare il codice (unica che cambia il software)
 2. Riscrivere il test fino a farlo passare
 3. Smettere di eseguire il test
 4. Decidere che il fallimento era "atteso"</p>
-<p>Le opzioni 2-4 funzionano ugualmente sia che ci sia un problema vero sia che non ci sia. Quando l'agent decide, la PR è già verde prima che tu guardi → il momento di judgement si è spostato dove non sei tu. <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Le opzioni 2-4 funzionano ugualmente sia che ci sia un problema vero sia che non ci sia. Quando l'agent decide, la PR è già verde prima che tu guardi → il momento di judgement si è spostato dove non sei tu.</p>
 <h2 id="tdd-come-unica-via-di-scampo">TDD come unica via di scampo</h2>
-<p>Un check scritto <strong>prima</strong> dell'implementazione non può essere venuto dall'implementazione → non è il software che valuta il proprio compito. È ancora checking, ma almeno non è "software grading its own homework". <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Un check scritto <strong>prima</strong> dell'implementazione non può essere venuto dall'implementazione → non è il software che valuta il proprio compito. È ancora checking, ma almeno non è "software grading its own homework". <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
 <p>Vedi anche: <a href="../agentic-testing/">Agentic Testing</a>, <a href="../ai-agent-in-devops/">AI Agent in DevOps</a>, <a href="../../../ai-llm/concepts/agentic-harness/">Agentic Harness</a></p>
 <hr />
 <h2 id="fonti-e-riferimenti">Fonti e Riferimenti</h2>
@@ -6332,7 +6332,7 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/6yp-JrbZYYg" target="_blank">End-to-End Testing With AI Agents: What I Built, Broke, and Learned</a> (DevOps &amp; AI Toolkit) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/6yp-JrbZYYg" target="_blank">End-to-End Testing With AI Agents: What I Built, Broke, and Learned</a> (DevOps &amp; AI Toolkit) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

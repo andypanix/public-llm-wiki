@@ -6308,7 +6308,7 @@
 <h2 id="grounding-fragile">Grounding fragile</h2>
 <ul>
 <li>Rimuovendo l'immagine da cui fare la diagnosi, i modelli scelgono comunque la risposta corretta tra le opzioni invece di dire "non so" (la plausibilità rimpiazza l'informazione mancante) — Nature Medicine</li>
-<li>"Epistemia" (Loru et al., con Quattrociocchi): LLM e umani danno giudizi finali simili sull'affidabilità delle testate, ma con processi e scale di valori diversi. Rimuovendo l'articolo e lasciando solo l'URL, gli LLM giudicano comunque → grounding fragile<sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>"Epistemia" (Loru et al., con Quattrociocchi): LLM e umani danno giudizi finali simili sull'affidabilità delle testate, ma con processi e scale di valori diversi. Rimuovendo l'articolo e lasciando solo l'URL, gli LLM giudicano comunque → grounding fragile<sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
 </ul>
 <h2 id="world-model-evidenze-pro-e-contro">World model: evidenze pro e contro</h2>
 <p><strong>Pro</strong>:
@@ -6316,9 +6316,9 @@
 - J-Space (lug 2026): concetti strumentali interni (es. "ragno" per rispondere "8"); per Enkk però troppo limitati per parlare davvero di world model</p>
 <p><strong>Contro</strong>:
 - Ragionamento spaziale su labirinti generati (lavoro recente, solo comportamentale): evidenze contro world model persistenti e indipendenti dal formato<sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<p>Per Enkk la letteratura su questo è ancora limitata: gli studi meccanistici sui grandi modelli li possono fare solo le aziende che li producono, perché hanno l'hardware e i pesi; gli altri ricercatori non possono guardare gli stati interni di Gemini, e bisogna fidarsi dei lavori dei laboratori di frontiera. Quando manca l'informazione, il modello "non può che andare di plausibilità" (vedi <a href="../plausibilita-vs-validita/">Plausibilità vs Validità Logica</a>). <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Per Enkk la letteratura su questo è ancora limitata: gli studi meccanistici sui grandi modelli li possono fare solo le aziende che li producono, perché hanno l'hardware e i pesi; gli altri ricercatori non possono guardare gli stati interni di Gemini, e bisogna fidarsi dei lavori dei laboratori di frontiera. Quando manca l'informazione, il modello "non può che andare di plausibilità" (vedi <a href="../plausibilita-vs-validita/">Plausibilità vs Validità Logica</a>).</p>
 <h2 id="llms-cant-jump-zahavigoogle-deepmind">LLMs can't jump (Zahavi/Google DeepMind)</h2>
-<p>Position paper (senza esperimenti). Manca <strong>abduzione</strong>: proporre ipotesi che spiegano risultati inattesi. Induzione ✅, deduzione ↗ (anche grazie ai verifier), abduzione ❌. Causa secondo Zahavi: assenza di esperienza diretta del mondo; soluzione proposta: modelli multimodali (video e foto insieme al testo).<sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Position paper (senza esperimenti). Manca <strong>abduzione</strong>: proporre ipotesi che spiegano risultati inattesi. Induzione ✅, deduzione ↗ (anche grazie ai verifier), abduzione ❌. Causa secondo Zahavi: assenza di esperienza diretta del mondo; soluzione proposta: modelli multimodali (video e foto insieme al testo).<sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
 <h2 id="il-world-model-testuale-secondo-sanfilippo">Il world model testuale secondo Sanfilippo</h2>
 <p><a href="../../entities/salvatore-sanfilippo/">Salvatore Sanfilippo (antirez)</a> dubita che servano gli approcci alternativi di LeCun (JEPA e simili), visti i progressi degli LLM autoregressivi. <sup id="fnref:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
 <ul>
@@ -6327,7 +6327,6 @@
 <li>Più che fare pretraining su architetture diverse, per Sanfilippo è più promettente il reinforcement learning su simulazioni accurate del mondo fisico (corpi sotto forze, collisioni, sistemi caotici, ray tracing). Il massimo sarà addestrare nativamente il Transformer su token e immagini insieme, con rappresentazioni condivise</li>
 <li>Prevede che i sostenitori degli approcci alternativi non ammetteranno mai di aver avuto torto: quando gli LLM addestrati anche su input sensoriali diventeranno più potenti, diranno di averlo sempre detto</li>
 </ul>
-<p><sup id="fnref2:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
 <p>Nella prima puntata di ZIP Sanfilippo ed <a href="../../entities/enk/">Enkk</a> concordano che, per scrivere un buon testo, nel pretraining il modello deve estrapolare dal testo un modello del mondo, parzialmente diverso da quello umano, che nasce prima di tutto dall'esperienza fisica. Le rappresentazioni delle emozioni trovate da <a href="../../entities/anthropic/">Anthropic</a> somigliano ai modelli psicologici umani: per Enkk i modelli rappresentano la nozione di emozione senza provarla, e la costruiscono perché è utile alla predizione; Anthropic lo verifica con test di ablazione, aumentando e riducendo la magnitudo di queste rappresentazioni. <sup id="fnref:cit-3"><a class="footnote-ref" href="#fn:cit-3">3</a></sup></p>
 <p>Vedi anche: <a href="../pappagallo-stocastico/">Pappagallo Stocastico (Stochastic Parrot)</a>, <a href="../../entities/salvatore-sanfilippo/">Salvatore Sanfilippo (antirez)</a>, <a href="../../entities/enk/">Enkk</a>, <a href="../../entities/anthropic/">Anthropic</a></p>
 <hr />
@@ -6336,10 +6335,10 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/8ohhq9Im7Lg" target="_blank">Autopsia di un pappagallo: le reali capacità dell'AI</a> (Enkk) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/8ohhq9Im7Lg" target="_blank">Autopsia di un pappagallo: le reali capacità dell'AI</a> (Enkk) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cit-2">
-<p>Fonte: <a href="https://youtu.be/g_DCfGiDUuc" target="_blank">Considerazioni durante un viaggio di ritorno da Portopalo a Catania</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/g_DCfGiDUuc" target="_blank">Considerazioni durante un viaggio di ritorno da Portopalo a Catania</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cit-3">
 <p>Fonte: <a href="https://youtu.be/mRRV8BbvNVM" target="_blank">GPT 5.6, Fable e i moscerini della frutta | Zip episodio 01</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-3" title="Jump back to footnote 3 in the text">&#8617;</a></p>

@@ -6361,7 +6361,7 @@
 
 <h1 id="agentic-harness">Agentic Harness</h1>
 <p>Il wrapping attorno a un AI model che lo trasforma da "brain in a jar" a un agente capace di agire nel mondo: un agente AI è modello + agentic harness.<sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Il termine "agent harness" è stato coniato da Ryan Lopopolo (oggi in Google), autore dell'essay "leveraging Codex in an agent-first world" (febbraio 2026); la pratica di curarlo è <a href="../../../software-engineering/concepts/harness-engineering/">Harness Engineering</a>.<sup id="fnref:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
-<p>Nella definizione di Google Cloud Tech l'harness è tutto ciò che nell'agente non è l'LLM: Gemini Flash è il modello, Antigravity è l'harness. Esempio: alla domanda "devo mettere l'impermeabile?" il modello non ha la risposta e produce testo che equivale a "scopri che tempo fa"; l'harness recupera il meteo, lo aggiunge alla domanda originale e lo ripassa al modello, che risponde. Quasi ogni volta che interagiamo con l'AI, interagiamo in realtà con un agente.<sup id="fnref2:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<p>Nella definizione di Google Cloud Tech l'harness è tutto ciò che nell'agente non è l'LLM: Gemini Flash è il modello, Antigravity è l'harness. Esempio: alla domanda "devo mettere l'impermeabile?" il modello non ha la risposta e produce testo che equivale a "scopri che tempo fa"; l'harness recupera il meteo, lo aggiunge alla domanda originale e lo ripassa al modello, che risponde. Quasi ogni volta che interagiamo con l'AI, interagiamo in realtà con un agente.</p>
 <p><a href="../../entities/enk/">Enkk</a> dà la stessa lettura: un agente è sempre un predittore di testo che, invece di produrre solo risposte, produce anche richieste di usare un tool esterno (eseguire codice, chiamare l'API del meteo). Dato che il tool risponde in modo deterministico, il problema delle allucinazioni e del non determinismo si attenua, senza risolversi. Con gli agenti cambia però la responsabilità: prima l'utente rispondeva di ciò che usciva dalla "finestrella di testo", ora l'agente impatta il mondo, magari con i tuoi soldi. Questo mette sotto stress infrastrutture pensate per la scala umana, e restano problemi di allineamento, la tendenza a completare il compito a discapito di chi sta intorno, prompt injection e bug.<sup id="fnref:cit-3"><a class="footnote-ref" href="#fn:cit-3">3</a></sup> Nell'autopsia del <a href="../pappagallo-stocastico/">Pappagallo Stocastico (Stochastic Parrot)</a> Enkk indica gli harness, insieme a <a href="../rlvr/">RLVR</a>, come una delle due ragioni dei progressi dal 2025: è l'harness ad aver reso possibili i modelli agentici.<sup id="fnref:cit-4"><a class="footnote-ref" href="#fn:cit-4">4</a></sup></p>
 <h2 id="perche-esiste">Perché esiste</h2>
 <p>I modelli AI da soli non possono aprire file, eseguire codice, o browse web. Due prodotti con lo stesso modello possono comportarsi in modo completamente diverso perché l'harness è diverso. Il gap nei benchmark tra i top lab si è ridotto a pochi punti, quindi quando un prodotto AI ne supera nettamente un altro la spiegazione di solito è l'harness. La maggior parte dei gain di capability recenti viene dall'harness (tool, memoria, loop con verification), anche se anche i modelli migliorano a ogni versione.<sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
@@ -6373,13 +6373,13 @@
 <li><strong>Web</strong>: browse internet</li>
 <li><strong>Computer use</strong>: muovere cursore, operare software come un umano</li>
 <li><strong>Command line</strong>: accesso a software installato sulla macchina</li>
-<li><strong>MCP</strong> (Model Context Protocol): standard per collegare servizi esterni (DB, app terze) — un tool MCP si pluga in qualsiasi harness che lo supporta<sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup>. Lo stesso livello MCP espone all'LLM i sensori e gli attuatori del robot <a href="../../entities/stackchan/">StackChan</a><sup id="fnref:cit-5"><a class="footnote-ref" href="#fn:cit-5">5</a></sup></li>
+<li><strong>MCP</strong> (Model Context Protocol): standard per collegare servizi esterni (DB, app terze) — un tool MCP si pluga in qualsiasi harness che lo supporta<sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup>. Lo stesso livello MCP espone all'LLM i sensori e gli attuatori del robot <a href="../../entities/stackchan/">StackChan</a><sup id="fnref:cit-5"><a class="footnote-ref" href="#fn:cit-5">5</a></sup></li>
 </ul>
 <h3 id="2-memory">2. Memory</h3>
 <ul>
 <li><strong>File di istruzioni</strong> (es. <code>agents.md</code>): caricati all'inizio di ogni sessione, contengono convenzioni del codebase</li>
 <li><strong>Compaction</strong>: quando il context window si riempie, l'harness riassume cosa è successo, pota output ridondanti. Vedi <a href="../context-rot/">Context Rot</a></li>
-<li><strong>Search</strong>: grep-like, semantic search, code indexes → il modello cerca nel codebase invece di riceverlo tutto<sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li><strong>Search</strong>: grep-like, semantic search, code indexes → il modello cerca nel codebase invece di riceverlo tutto<sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
 </ul>
 <h3 id="3-agentic-loop">3. Agentic Loop</h3>
 <ul>
@@ -6387,14 +6387,14 @@
 <li><strong>Action</strong>: l'harness esegue l'azione</li>
 <li><strong>Observe</strong>: il modello osserva i risultati</li>
 <li><strong>Verification continua</strong>: test, screenshot, model reviewer separato per double-check</li>
-<li>Il loop può durare secondi o ore; un modello che si auto-verifica può lavorare più a lungo senza deragliare — vedi <a href="../coding-agent/">Coding Agent</a><sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Il loop può durare secondi o ore; un modello che si auto-verifica può lavorare più a lungo senza deragliare — vedi <a href="../coding-agent/">Coding Agent</a><sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
 </ul>
 <h2 id="linea-fluida-modelloharness">Linea fluida modello/harness</h2>
 <ul>
 <li>Capability che prima stavano nell'harness (long-horizon planning, self-verification) stanno cominciando a essere <strong>trained direttamente nei modelli</strong></li>
-<li>Comportamenti del modello (consistenza su task lunghi) vengono <strong>shapeati dall'harness</strong> (convenzioni dell'harness e file di progetto)<sup id="fnref7:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Comportamenti del modello (consistenza su task lunghi) vengono <strong>shapeati dall'harness</strong> (convenzioni dell'harness e file di progetto)<sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
 </ul>
-<p>Per questo IBM propone di riformulare domande come "l'AI è brava a scrivere codice?": bisogna chiedersi quale modello e, se si tratta di un agente, con quale harness, perché lo stesso modello può essere brillante in un harness e bloccarsi in un altro.<sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Per questo IBM propone di riformulare domande come "l'AI è brava a scrivere codice?": bisogna chiedersi quale modello e, se si tratta di un agente, con quale harness, perché lo stesso modello può essere brillante in un harness e bloccarsi in un altro.</p>
 <p>Vedi anche: <a href="../coding-agent/">Coding Agent</a>, <a href="../rlvr/">RLVR (Reinforcement Learning from Verifiable Rewards)</a>, <a href="../context-rot/">Context Rot</a>, <a href="../../entities/hermes-agent/">Hermes Agent</a>, <a href="../pappagallo-stocastico/">Pappagallo Stocastico (Stochastic Parrot)</a>. Nella wiki software-engineering: <a href="../../../software-engineering/concepts/harness-engineering/">Harness Engineering</a>, <a href="../../../software-engineering/concepts/shift-left-security/">Shift Left Security</a>. Nella wiki devops: <a href="../../../devops/concepts/ai-agent-in-devops/">AI Agent in DevOps</a>, <a href="../../../devops/concepts/agentic-testing/">Agentic Testing</a>, <a href="../../../devops/concepts/checking-vs-testing/">Checking vs Testing</a></p>
 <hr />
 <h2 id="fonti-e-riferimenti">Fonti e Riferimenti</h2>
@@ -6402,10 +6402,10 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/ZELPNFXJ4_o" target="_blank">AI Model vs Agentic Harness: What Actually Drives AI</a> (IBM Technology) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/ZELPNFXJ4_o" target="_blank">AI Model vs Agentic Harness: What Actually Drives AI</a> (IBM Technology) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cit-2">
-<p>Fonte: <a href="https://youtu.be/F8EZJAm9iO8" target="_blank">Harness Engineering Explained: Inside the Stack Behind Antigravity, Claude Code &amp; Cursor</a> (Google Cloud Tech) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/F8EZJAm9iO8" target="_blank">Harness Engineering Explained: Inside the Stack Behind Antigravity, Claude Code &amp; Cursor</a> (Google Cloud Tech) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cit-3">
 <p>Fonte: <a href="https://youtu.be/ibN61zIdkp4" target="_blank">Questione di genuinità | Live con @enkk  PARTE 2</a> (Mr. RIP) ↗&#160;<a class="footnote-backref" href="#fnref:cit-3" title="Jump back to footnote 3 in the text">&#8617;</a></p>

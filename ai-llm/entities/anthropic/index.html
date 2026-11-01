@@ -6322,7 +6322,7 @@
 
 
 <h1 id="anthropic">Anthropic</h1>
-<p>Fondata da Dario Amodei, Daniela Amodei e altri ex ricercatori di OpenAI. <sup id="fnref:gk-1"><a class="footnote-ref" href="#fn:gk-1">8</a></sup></p>
+<p>Fondata da Dario Amodei, Daniela Amodei e altri ex ricercatori di OpenAI. <sup id="fnref:gk"><a class="footnote-ref" href="#fn:gk">8</a></sup></p>
 <p>Azienda AI di cui <a href="../dario-amodei/">Dario Amodei</a> è il volto pubblico: è lui a presentare come potenzialmente pericoloso il modello Mythos, che Anthropic ha distribuito solo ai principali produttori di software con il progetto Glasswing (vedi <a href="../../concepts/sicurezza-modelli-frontiera/">Sicurezza dei Modelli di Frontiera</a>). Sviluppa i modelli Claude (<a href="../claude-fable/">Claude Fable</a>, <a href="../opus-5/">Opus 5</a>) e fa ricerca di mechanistic interpretability (J-Space, Persona Vectors). <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> <sup id="fnref:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
 <h2 id="modelli">Modelli</h2>
 <ul>
@@ -6335,8 +6335,8 @@
 <li><strong>Bench maxing</strong>: Sanfilippo sostiene che Anthropic abbia "un problema di bench maxing" e che il salto di Opus 5 su ARC-AGI-3 (dall'8 al 30%) non sia significativo, perché il benchmark è mal costruito. <sup id="fnref2:cit-4"><a class="footnote-ref" href="#fn:cit-4">4</a></sup></li>
 <li><strong>Anti-distillazione attiva</strong>: nella system card di Fable Anthropic scrive che, se si accorge di un tentativo di distillazione, fa prompting e steering per rendere il modello inutile alla distillazione; nella puntata di ZIP la cosa viene definita un "precedente gravissimo", soprattutto per la parte di steering. <sup id="fnref3:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></li>
 <li><strong>Fallback forzato</strong>: chi paga Fable può essere spostato su Opus 4.8 dopo qualche turno, o subito se la richiesta non piace al classificatore. <sup id="fnref3:cit-3"><a class="footnote-ref" href="#fn:cit-3">3</a></sup> <sup id="fnref4:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></li>
-<li><strong>Rischi dello steering</strong>: nella puntata di ZIP si osserva che l'anti-distillazione basata sullo steering delle rappresentazioni interne rende l'interazione diversa per ogni utente in modo incontrollabile: un ricercatore scambiato per un distillatore riceve informazioni sbagliate, e la stessa tecnica, attivabile al volo e non scritta nei pesi, potrebbe servire per pubblicità occulta o per orientare il voto. Un modello "white box" solo per chi lo produce, senza trasparenza, è peggio di una black box. Come precedente viene citato Grok, il cui system prompt era stato addolcito sulle risposte riguardanti <a href="../../../tech-economy/entities/elon-musk/">Elon Musk</a>. <sup id="fnref5:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></li>
-<li><strong>Doppio standard</strong>: nella puntata di ZIP si nota che Anthropic si lamenta della distillazione ma, come OpenAI, ha usato "internet come fosse il vostro porcile" per produrre i propri modelli. <sup id="fnref6:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></li>
+<li><strong>Rischi dello steering</strong>: nella puntata di ZIP si osserva che l'anti-distillazione basata sullo steering delle rappresentazioni interne rende l'interazione diversa per ogni utente in modo incontrollabile: un ricercatore scambiato per un distillatore riceve informazioni sbagliate, e la stessa tecnica, attivabile al volo e non scritta nei pesi, potrebbe servire per pubblicità occulta o per orientare il voto. Un modello "white box" solo per chi lo produce, senza trasparenza, è peggio di una black box. Come precedente viene citato Grok, il cui system prompt era stato addolcito sulle risposte riguardanti <a href="../../../tech-economy/entities/elon-musk/">Elon Musk</a>.</li>
+<li><strong>Doppio standard</strong>: nella puntata di ZIP si nota che Anthropic si lamenta della distillazione ma, come OpenAI, ha usato "internet come fosse il vostro porcile" per produrre i propri modelli.</li>
 </ul>
 <h2 id="sicurezza-mythos-e-glasswing">Sicurezza: Mythos e Glasswing</h2>
 <p>Tra le organizzazioni che hanno accesso a Mythos tramite Glasswing c'è Cisco, che secondo il responsabile del team security di Splunk lo usa per trovare e correggere le vulnerabilità nei propri prodotti prima degli attaccanti. Vedi <a href="../../../devops/concepts/agentic-soc/">Agentic SOC</a> nella wiki devops. <sup id="fnref:cit-5"><a class="footnote-ref" href="#fn:cit-5">5</a></sup></p>
@@ -6348,8 +6348,8 @@
 <p>Il dibattito sulla sostenibilità di questi numeri è in <a href="../../../tech-economy/concepts/ai-bubble/">AI Bubble</a> e <a href="../../../tech-economy/concepts/mega-cap-ipo-wave-2026/">Mega-Cap IPO Wave 2026</a> nella wiki tech-economy.</p>
 <h2 id="ricerca">Ricerca</h2>
 <ul>
-<li><strong>J-Space</strong>: tecnica di interpretability che usa i Jacobiani per proiettare i layer intermedi verso il layer di output e osservare i "pensieri non espressi" del modello. Sanfilippo ed <a href="../enk/">Enkk</a> ritengono che Anthropic ne parli "in maniera propagandistica" come di una coscienza e che ci si sia letto più del necessario. <sup id="fnref7:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></li>
-<li><strong>Persona Vectors</strong>: alla base del <a href="../../concepts/persona-selection-model/">Persona Selection Model</a>, in cui il modello recita una parte: per ottenerne i risultati migliori conviene pensarlo come qualcuno che imita una persona, senza antropomorfizzarlo. <sup id="fnref8:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></li>
+<li><strong>J-Space</strong>: tecnica di interpretability che usa i Jacobiani per proiettare i layer intermedi verso il layer di output e osservare i "pensieri non espressi" del modello. Sanfilippo ed <a href="../enk/">Enkk</a> ritengono che Anthropic ne parli "in maniera propagandistica" come di una coscienza e che ci si sia letto più del necessario. <sup id="fnref5:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></li>
+<li><strong>Persona Vectors</strong>: alla base del <a href="../../concepts/persona-selection-model/">Persona Selection Model</a>, in cui il modello recita una parte: per ottenerne i risultati migliori conviene pensarlo come qualcuno che imita una persona, senza antropomorfizzarlo.</li>
 </ul>
 <hr />
 <h2 id="fonti-e-riferimenti">Fonti e Riferimenti</h2>
@@ -6360,7 +6360,7 @@
 <p>Fonte: <a href="https://youtu.be/8jwOFfXhvQE" target="_blank">Le Nuove Avventure di Salvatore Sanfilippo | Live con @antirez PARTE 1</a> (Mr. RIP) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cit-2">
-<p>Fonte: <a href="https://youtu.be/mRRV8BbvNVM" target="_blank">GPT 5.6, Fable e i moscerini della frutta | Zip episodio 01</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/mRRV8BbvNVM" target="_blank">GPT 5.6, Fable e i moscerini della frutta | Zip episodio 01</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cit-3">
 <p>Fonte: <a href="https://youtu.be/x9uFLpwq9PE" target="_blank">Se gli LLM fossero esoscheletri</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
@@ -6377,8 +6377,8 @@
 <li id="fn:cit-7">
 <p>Fonte: <a href="https://youtu.be/uGVHasmFTXM" target="_blank">S&amp;P contro tutti: non inserirà SpaceX nei suoi indici.</a> (Mr. RIP) ↗&#160;<a class="footnote-backref" href="#fnref:cit-7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
 </li>
-<li id="fn:gk-1">
-<p><em>Dato consolidato di dominio (senza fonte primaria singola).</em>&#160;<a class="footnote-backref" href="#fnref:gk-1" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+<li id="fn:gk">
+<p><em>Dato consolidato di dominio (senza fonte primaria singola).</em>&#160;<a class="footnote-backref" href="#fnref:gk" title="Jump back to footnote 8 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

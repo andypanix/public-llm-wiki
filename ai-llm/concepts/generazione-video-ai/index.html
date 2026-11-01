@@ -743,10 +743,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#come-differisce-dalla-generazione-immagini" class="md-nav__link">
+  <a href="#come-si-genera-un-video-denoising-simultaneo-su-tutti-i-frame" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Come differisce dalla generazione immagini
+        Come si genera un video: denoising simultaneo su tutti i frame
       </span>
     </span>
   </a>
@@ -754,10 +754,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dense-vs-sparse-attention" class="md-nav__link">
+  <a href="#dense-e-sparse-attention" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Dense vs Sparse Attention
+        Dense e sparse attention
       </span>
     </span>
   </a>
@@ -765,10 +765,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gpu-bound-vs-memory-bound" class="md-nav__link">
+  <a href="#perche-la-generazione-video-e-gpu-bound-e-non-memory-bound" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        GPU-bound vs Memory-bound
+        Perché la generazione video è GPU-bound e non memory-bound
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dove-far-girare-un-modello-video-in-locale" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dove far girare un modello video in locale
       </span>
     </span>
   </a>
@@ -780,6 +791,17 @@
     <span class="md-ellipsis">
       <span class="md-typeset">
         Input multi-modali
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rischi-modello-non-censurato-e-deepfake" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Rischi: modello non censurato e deepfake
       </span>
     </span>
   </a>
@@ -6154,10 +6176,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#come-differisce-dalla-generazione-immagini" class="md-nav__link">
+  <a href="#come-si-genera-un-video-denoising-simultaneo-su-tutti-i-frame" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Come differisce dalla generazione immagini
+        Come si genera un video: denoising simultaneo su tutti i frame
       </span>
     </span>
   </a>
@@ -6165,10 +6187,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dense-vs-sparse-attention" class="md-nav__link">
+  <a href="#dense-e-sparse-attention" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Dense vs Sparse Attention
+        Dense e sparse attention
       </span>
     </span>
   </a>
@@ -6176,10 +6198,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gpu-bound-vs-memory-bound" class="md-nav__link">
+  <a href="#perche-la-generazione-video-e-gpu-bound-e-non-memory-bound" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        GPU-bound vs Memory-bound
+        Perché la generazione video è GPU-bound e non memory-bound
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dove-far-girare-un-modello-video-in-locale" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dove far girare un modello video in locale
       </span>
     </span>
   </a>
@@ -6191,6 +6224,17 @@
     <span class="md-ellipsis">
       <span class="md-typeset">
         Input multi-modali
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rischi-modello-non-censurato-e-deepfake" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Rischi: modello non censurato e deepfake
       </span>
     </span>
   </a>
@@ -6364,38 +6408,48 @@
 
 
 <h1 id="generazione-video-ai">Generazione Video AI</h1>
-<p>Come funzionano i modelli open di generazione video, secondo quanto racconta <a href="../../entities/salvatore-sanfilippo/">Salvatore Sanfilippo (antirez)</a> dopo aver implementato <a href="../../entities/h3-minimax/">H3 (MiniMax)</a>. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="come-differisce-dalla-generazione-immagini">Come differisce dalla generazione immagini</h2>
-<p>Nei modelli di sintesi immagini il denoising avviene in più step secondo uno scheduler. Nei modelli video come H3:</p>
+<p>Questa pagina spiega come lavora un modello open di generazione video, che cosa costa farlo girare in locale e quali problemi pone. Le fonti sono il vlog di <a href="../../entities/salvatore-sanfilippo/">Salvatore Sanfilippo (antirez)</a>, che ha implementato <a href="../../entities/h3-minimax/">H3 (MiniMax)</a>, e un test di Alex Ziskind con LTX2 sulle GPU Intel. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Sanfilippo descrive H3 come il modello di generazione video più potente tra quelli open che conosce, capace di generare sia video sia audio. <sup id="fnref:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<h2 id="come-si-genera-un-video-denoising-simultaneo-su-tutti-i-frame">Come si genera un video: denoising simultaneo su tutti i frame</h2>
+<p>Il denoising è la pulizia progressiva di un'immagine di rumore. <sup id="fnref:gk"><a class="footnote-ref" href="#fn:gk">3</a></sup> Nei modelli di sintesi delle immagini procede in più step secondo uno scheduler. Un modello video come H3 non produce un frame dopo l'altro: il denoising avviene simultaneamente su tutti i frame, e ogni step viene applicato a tutti. Tra i frame c'è cross-attention, quindi durante la generazione i frame si influenzano a vicenda. <sup id="fnref2:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<p>Secondo Sanfilippo questo dà ai modelli una grandissima coerenza tra i diversi frame di un video e anche con l'audio che lo accompagna.</p>
+<h2 id="dense-e-sparse-attention">Dense e sparse attention</h2>
+<p>Nell'attenzione densa ogni frame può guardare tutti gli altri. <sup id="fnref2:gk"><a class="footnote-ref" href="#fn:gk">3</a></sup> L'implementazione di riferimento di H3 usa attenzione densa. Sanfilippo racconta che in un AMA su Reddit un ricercatore di MiniMax ha detto che il gruppo sta provando la sparse attention. Secondo il ricercatore, per ottenere coerenza potrebbe bastare ancorarsi ai frame un po' prima e un po' dopo quello corrente. Sanfilippo la paragona a una indexed attention senza indexing: nel modello non esiste una parte che assegna un punteggio agli indici su cui fare attention, ma si può stabilire a priori che contano i frame vicini. <sup id="fnref3:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<p>Nella propria implementazione Sanfilippo resta sull'attenzione densa, perché per quella ha un kernel molto efficace e in pratica va più veloce.</p>
+<h2 id="perche-la-generazione-video-e-gpu-bound-e-non-memory-bound">Perché la generazione video è GPU-bound e non memory-bound</h2>
+<p>Sanfilippo osserva che questi modelli sono GPU-bound: il collo di bottiglia è la potenza di calcolo. Con un LLM in fase di generazione il problema è invece spostare molti dati dalla memoria, cioè è memory-bound. Dal punto di vista implementativo la generazione video somiglia al prefill degli LLM, la fase in cui il modello elabora in blocco il prompt prima di produrre il primo token. <sup id="fnref4:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup> <sup id="fnref3:gk"><a class="footnote-ref" href="#fn:gk">3</a></sup></p>
+<p>Ziskind arriva alla stessa conclusione con una misura. Fa girare LTX2, un modello di generazione video in ComfyUI con pipeline text-to-video, su GPU Intel, e spiega che la generazione video è compute-bound e non memory-bound, cioè dipende dalla potenza grezza. Il modello gira su una sola GPU e non si divide tra due, quindi la VRAM aggiuntiva di una configurazione a due schede non serve. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>I tempi riportati da Ziskind mostrano l'effetto:</p>
 <ul>
-<li>Il denoising non procede frame per frame: avviene <strong>simultaneamente su tutti i frame</strong>, e ogni step si applica a tutti</li>
-<li><strong>Cross-attention tra frame</strong>: i frame si influenzano a vicenda durante la generazione</li>
-<li>Ne risulta una grandissima <strong>coerenza</strong> tra i diversi frame e anche con l'audio del video</li>
+<li>Una B60 impiega 226,7 secondi per generare il video e una sola GPU della scheda dual Maxsun, che monta due B60, ne impiega 224,6.</li>
+<li>La B70, che ha più potenza di calcolo della B60, impiega 167 secondi.</li>
+<li>È l'opposto di quanto accade con i test di LLM della stessa fonte, dove due B60 in tensor parallelism a volte battono la B70. Qui la B70 vince contro due B60 e contro la scheda dual.</li>
 </ul>
-<p><sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="dense-vs-sparse-attention">Dense vs Sparse Attention</h2>
-<ul>
-<li><strong>Dense</strong>: è quella dell'implementazione di riferimento di H3</li>
-<li><strong>Sparse</strong>: un ricercatore di MiniMax ha detto in un AMA su Reddit che stanno provando la sparse attention; per la coerenza potrebbe bastare ancorarsi ai frame un po' prima e un po' dopo, come una indexed attention senza la parte del modello che assegna lo scoring degli indici</li>
-<li>Sanfilippo usa la dense perché, avendo un kernel molto efficace, va più veloce</li>
-</ul>
-<p><sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="gpu-bound-vs-memory-bound">GPU-bound vs Memory-bound</h2>
-<p>A differenza dei LLM durante la generazione, dove il problema è spostare tanti dati, il modello video è <strong>GPU-bound</strong> e non memory-bound: dal punto di vista implementativo somiglia al prefill dei LLM. Per questo è un caso d'uso in cui la <a href="../../entities/dgx-spark/">DGX Spark</a> dovrebbe funzionare bene, anche se con l'implementazione pubblica, non abbastanza ottimizzata, funziona male. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<p>Lo conferma un test di Alex Ziskind con LTX2 (text-to-video in ComfyUI) sulle GPU Intel: la B70, con più potenza di calcolo, genera in 167 secondi contro circa 225 di una B60, e la VRAM in più non aiuta. Vedi <a href="../../entities/intel-b60/">Intel B60</a> e <a href="../prefill-e-decode/">Prefill e Decode</a>. <sup id="fnref:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<p>Ziskind aggiunge che LTX2 gira anche su hardware più piccolo, ma la differenza si vede nel tempo di generazione. Sulla stessa prova la scheda dual consuma un po' meno di due B60 separate, circa 129 watt contro 134.</p>
+<p>Vedi <a href="../../entities/intel-b60/">Intel B60</a> e <a href="../prefill-e-decode/">Prefill e Decode</a> per il confronto con il comportamento dei LLM.</p>
+<h2 id="dove-far-girare-un-modello-video-in-locale">Dove far girare un modello video in locale</h2>
+<p>Per Sanfilippo il fatto che H3 sia GPU-bound lo rende un caso d'uso in cui la <a href="../../entities/dgx-spark/">DGX Spark</a> dovrebbe funzionare bene. Con l'implementazione pubblica però funziona male, perché la sua implementazione per Metal è molto più veloce. Sanfilippo precisa che la causa non è un limite della Spark, ma il fatto che il codice pubblico non è ottimizzato abbastanza. <sup id="fnref5:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<p>La sua implementazione per Metal richiede molta RAM: con 96 riesce a farla girare, senza che il video precisi l'unità. Sanfilippo vuole aggiungere lo streaming dei pesi da SSD, perché un modello GPU-bound, in cui i dati non sono il collo di bottiglia, potrebbe funzionare bene con questa tecnica. Con un Mac con M5 Max, dice, un video si genera in circa 10 minuti.</p>
+<p>Il confronto di Ziskind porta a una regola pratica per chi compra hardware: per la generazione video conta la potenza di calcolo di una singola GPU, non la VRAM totale. La stessa fonte mostra che per gli LLM grandi vale il contrario, perché servono 27 miliardi di parametri o più, contesto lungo o molti utenti. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Vedi <a href="../inferenza-locale/">Inferenza Locale</a>.</p>
 <h2 id="input-multi-modali">Input multi-modali</h2>
-<p>H3 ha tre encoder (video, audio e immagini), quindi gli si possono dare primo e ultimo frame oppure un video di esempio. Un workflow possibile: si fa un video con Blender e gli si dà come primo frame una versione fotorealistica del primo frame renderizzato, chiedendogli di riprodurre il movimento del video in quello stile. <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<p>Vedi anche: <a href="../../entities/h3-minimax/">H3 (MiniMax)</a>, <a href="../speculative-decoding/">Speculative Decoding</a>, <a href="../inferenza-locale/">Inferenza Locale</a>, <a href="../../entities/salvatore-sanfilippo/">Salvatore Sanfilippo (antirez)</a></p>
+<p>H3 ha tre encoder, per video, audio e immagini. Gli si possono quindi dare il primo e l'ultimo frame oppure un video di esempio. Sanfilippo descrive un workflow: si crea un video con Blender, si genera con un modello di sintesi delle immagini una versione fotorealistica del primo frame renderizzato e la si dà a H3 come primo frame. Si chiede poi al modello di riprodurre il movimento del video di Blender in quello stile. <sup id="fnref6:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<h2 id="rischi-modello-non-censurato-e-deepfake">Rischi: modello non censurato e deepfake</h2>
+<p>Sanfilippo sostiene che H3 è un modello pesantemente non censurato, utilizzabile anche per video di tipo OnlyFans, e lo definisce molto problematico. Il motivo è che accetta più immagini di riferimento, che nel prompt si richiamano come "picture one", "picture two": con queste si possono fare deepfake molto convincenti, voce compresa. <sup id="fnref7:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<p>Secondo lui il modello non ha avuto training specifico su materiale pornografico, quindi non conosce i dettagli anatomici più espliciti. Un certo grado di pornografia, simile ai video che si trovano su OnlyFans, si ottiene comunque.</p>
+<p>Le previsioni di Sanfilippo sono che vedremo molti più cortometraggi e pubblicità fatti con l'AI, molti problemi di deepfake e molte modelle false su Instagram. Il modello è open e tutti possono usarlo, quindi, dice, non c'è modo di rimettere il gatto nel sacco. Sostiene che la difesa sia di tipo culturale: davanti a un video compromettente di una persona che si conosce si può sospettare che sia falso, ma il punto d'arrivo è smettere di trattare la distinzione tra vero e falso come discriminante. Cita in proposito il ragionamento di Valentina Nabbi, secondo cui togliere lo stigma fa sparire il problema. Sanfilippo ricorda anche che la democratizzazione dell'AI ha effetti sia negativi sia positivi.</p>
+<p>Vedi anche: <a href="../../entities/h3-minimax/">H3 (MiniMax)</a>, <a href="../speculative-decoding/">Speculative Decoding</a>, <a href="../../entities/salvatore-sanfilippo/">Salvatore Sanfilippo (antirez)</a></p>
 <hr />
 <h2 id="fonti-e-riferimenti">Fonti e Riferimenti</h2>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/s2N1p703uQ0" target="_blank">Vlog: H3, DeepFake, OnlyFans e, ovviamente, protettori di pappagalli</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/c6u87wtQzTw" target="_blank">192GB of VRAM in One PC… The Cheap Way</a> (Alex Ziskind) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cit-2">
-<p>Fonte: <a href="https://youtu.be/c6u87wtQzTw" target="_blank">192GB of VRAM in One PC… The Cheap Way</a> (Alex Ziskind) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/s2N1p703uQ0" target="_blank">Vlog: H3, DeepFake, OnlyFans e, ovviamente, protettori di pappagalli</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:gk">
+<p><em>Dato consolidato di dominio (senza fonte primaria singola).</em>&#160;<a class="footnote-backref" href="#fnref:gk" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:gk" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:gk" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

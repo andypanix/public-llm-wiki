@@ -1769,6 +1769,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#come-fatto-lhardware-e-dove-si-puo-intervenire" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Com'è fatto l'hardware e dove si può intervenire
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#come-lhardware-arriva-allllm" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -1780,10 +1791,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lesperimento-del-modulo-rtc" class="md-nav__link">
+  <a href="#esperimento-aggiungere-un-modulo-rtc" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        L'esperimento del modulo RTC
+        Esperimento: aggiungere un modulo RTC
       </span>
     </span>
   </a>
@@ -1791,10 +1802,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#giudizio" class="md-nav__link">
+  <a href="#cosa-il-robot-non-espone-allai" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Giudizio
+        Cosa il robot non espone all'AI
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#che-supporto-ce-per-chi-vuole-modificarlo" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Che supporto c'è per chi vuole modificarlo
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#giudizio-di-bianco-conviene-comprarlo" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Giudizio di Bianco: conviene comprarlo?
       </span>
     </span>
   </a>
@@ -6143,6 +6176,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#come-fatto-lhardware-e-dove-si-puo-intervenire" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Com'è fatto l'hardware e dove si può intervenire
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#come-lhardware-arriva-allllm" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -6154,10 +6198,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lesperimento-del-modulo-rtc" class="md-nav__link">
+  <a href="#esperimento-aggiungere-un-modulo-rtc" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        L'esperimento del modulo RTC
+        Esperimento: aggiungere un modulo RTC
       </span>
     </span>
   </a>
@@ -6165,10 +6209,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#giudizio" class="md-nav__link">
+  <a href="#cosa-il-robot-non-espone-allai" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Giudizio
+        Cosa il robot non espone all'AI
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#che-supporto-ce-per-chi-vuole-modificarlo" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Che supporto c'è per chi vuole modificarlo
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#giudizio-di-bianco-conviene-comprarlo" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Giudizio di Bianco: conviene comprarlo?
       </span>
     </span>
   </a>
@@ -6338,23 +6404,32 @@
 
 
 <h1 id="stackchan">StackChan</h1>
-<p>Robot da scrivania di M5Stack collegato a un LLM: parla, balla, ha luci RGB. È costruito attorno al modulo CoreS3, ha servomotori, batteria, un sensore NFC e un lettore microSD. Il firmware è open source su GitHub. Il maker Tommy Bianco l'ha provato su un sample di ingegneria per capire cosa si può fare oltre la pagina prodotto. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>StackChan è un robot da scrivania di M5Stack collegato direttamente a un LLM: parla, balla e ha luci RGB. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Il maker Tommy Bianco, nel video "StackChan Isn't Plug-and-Play for Makers", l'ha provato su un sample di ingegneria per rispondere a una domanda: cosa si può fare con StackChan oltre quello che dice la pagina prodotto? Per farlo l'ha smontato, ha collegato un modulo esterno con un cavo e ha modificato il firmware.</p>
+<h2 id="come-fatto-lhardware-e-dove-si-puo-intervenire">Com'è fatto l'hardware e dove si può intervenire</h2>
+<p>Il robot è costruito attorno a un modulo CoreS3, tenuto in sede da due viti (nei prototipi precedenti era diverso). Oltre al normale connettore a pin, un cavo collega il core alla expansion board del corpo. Secondo Bianco questa interfaccia è il posto migliore per aggiungere una PCB personalizzata. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>La expansion board è fissata con un paio di viti e sotto ha altri connettori verso i servomotori, la batteria e i moduli sulla testa. Si può smontare ancora, ma più si va avanti più è difficile rimontare il robot, quindi Bianco si ferma lì e rimanda al video di Hobby Supporter per uno smontaggio completo. Al suo modulo mancava uno dei magneti di fissaggio: lo considera un dettaglio accettabile per un engineering sample e si aspetta che M5Stack lo risolva sui moduli di produzione.</p>
+<p>Per aggiungere hardware senza smontare niente c'è la porta "expand" rossa, che accetta cavi Grove. Il robot ha inoltre un sensore NFC e un lettore microSD integrati.</p>
 <h2 id="come-lhardware-arriva-allllm">Come l'hardware arriva all'LLM</h2>
-<p>Il firmware espone l'hardware all'AI attraverso tre livelli, che Bianco descrive con una metafora biologica:</p>
-<ol>
-<li><strong>Driver</strong>: le istruzioni per usare un modulo specifico, come un organo di senso che converte una lettura in dati utili.</li>
-<li><strong>HAL</strong>: il sistema nervoso, che decide quando attivare i driver per leggere i sensi o compiere azioni (per esempio muovere i servomotori).</li>
-<li><strong>MCP</strong>: il cervello, che mette i dati ricevuti dall'HAL in un contesto verbale e li passa all'LLM che gira su un server, così che possa decidere in base alle condizioni rilevanti.</li>
-</ol>
-<p><sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Per il ruolo di MCP nei tool degli agenti vedi <a href="../../concepts/agentic-harness/">Agentic Harness</a>.</p>
-<h2 id="lesperimento-del-modulo-rtc">L'esperimento del modulo RTC</h2>
+<p>Il firmware è open source su GitHub. Il repository è grande ma segue una logica standard: l'hardware è esposto all'AI da tre livelli principali, che Bianco spiega con una metafora biologica. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
 <ul>
-<li>Collegato un modulo real-time clock DS1307 (I2C, via cavo Grove), il robot risponde di non rilevarlo: "l'AI non è magia", bisogna mettere mano al codice. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>In un paio d'ore Bianco ha scritto un driver, adattato l'HAL e aggiunto il contesto verbale nel livello MCP. Dopo il flash il robot vede il modulo ma riporta valori assurdi (il 33 marzo, 68 minuti): probabilmente il driver interroga il bus I2C interno, dove l'IMU a sei assi ha lo stesso indirizzo. Un "successo parziale": l'AI ha il contesto giusto ma dati senza senso.</li>
-<li>Il sensore NFC e il lettore microSD integrati oggi non sono esposti all'AI, perché i loro dati sono difficili da tradurre in un semplice contesto verbale.</li>
+<li>I <strong>driver</strong> sono le istruzioni per usare un modulo specifico: come l'organo di senso di un corpo, un driver per un naso direbbe come trasformare le letture dell'odore in dati utili.</li>
+<li>L'<strong>HAL</strong> è il sistema nervoso: decide quando attivare i driver, per leggere i sensi oppure per compiere azioni, come muovere i servomotori in una piccola danza.</li>
+<li>L'<strong>MCP</strong> è il cervello: mette in un contesto verbale i dati ricevuti dall'HAL e li passa all'LLM, che vive su un server, così che possa decidere in base alle condizioni rilevanti.</li>
 </ul>
-<h2 id="giudizio">Giudizio</h2>
-<p>Come robot da scrivania collegato a un LLM funziona bene appena tolto dalla scatola. Modificare l'AI è un'altra storia: il firmware è in ESP-IDF, più avanzato di Arduino e UI Flow 2 (per cui M5Stack promette tutorial), quindi difficilmente ci sarà una guida dedicata. Per Bianco la curva di apprendimento è ripida e non è adatto ai principianti, ma ne vale la pena. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Per il ruolo di MCP nei tool degli agenti vedi <a href="../../concepts/agentic-harness/">Agentic Harness</a>.</p>
+<p>Il firmware del robot è scritto in ESP-IDF, il framework di sviluppo ufficiale di Espressif per i chip ESP32. <sup id="fnref:gk"><a class="footnote-ref" href="#fn:gk">2</a></sup> Bianco lo descrive come molto più avanzato di Arduino e UI Flow 2, gli ambienti per cui M5Stack sta preparando i tutorial.</p>
+<h2 id="esperimento-aggiungere-un-modulo-rtc">Esperimento: aggiungere un modulo RTC</h2>
+<p>Bianco ha scelto un modulo DS1307, un real-time clock che usa il protocollo I2C, definito "roba da starter kit Arduino" e quindi facile da collegare: basta un cavo Grove nella porta expand. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Alla domanda se vedesse il modulo, il robot ha risposto di non rilevare nessun DS1307 esterno. Per Bianco questo mostra che l'AI non è magia: bisogna scavare nel codice.</p>
+<p>In un paio d'ore ha scritto un nuovo driver per il DS1307, adattato l'HAL e aggiunto il contesto verbale nel livello MCP. Dopo il flash il robot ha riconosciuto il modulo, ma ha riportato valori non validi, come il 33 marzo e 68 minuti. Bianco lo chiama un successo parziale. Il modulo funziona con uno sketch Arduino, quindi attribuisce il problema al bus I2C sbagliato: il CoreS3 ha pin separati per i moduli I2C esterni e interni, e il suo driver probabilmente interroga l'IMU interno a sei assi, che ha lo stesso indirizzo I2C dell'RTC. L'AI ottiene così il contesto giusto ma dati privi di senso. Bianco presenta questa spiegazione come una sua ipotesi e non l'ha verificata nel video.</p>
+<p>Bianco si ferma lì, anche perché un RTC su un dispositivo sempre online non è un'idea molto utile, e propone una guida più approfondita sulla modifica del firmware, con un modulo più utile, se il video avrà abbastanza like.</p>
+<h2 id="cosa-il-robot-non-espone-allai">Cosa il robot non espone all'AI</h2>
+<p>Il sensore NFC e il lettore microSD integrati oggi non sono esposti all'AI. Interrogato su di loro, il robot risponde di non avere un sensore NFC né uno slot microSD e di affidarsi a storage integrato e real-time clock. Secondo Bianco ha senso, perché questi dati sono difficili da convertire in un semplice contesto verbale, e lo stesso vale per qualunque sensore M5Stack aggiunto dalla porta expand. Non è nemmeno chiaro se le versioni future di StackChan supporteranno hardware nuovo. <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<h2 id="che-supporto-ce-per-chi-vuole-modificarlo">Che supporto c'è per chi vuole modificarlo</h2>
+<p>La pagina prodotto è buona per capire l'hardware e include un tutorial per ricaricare il firmware di fabbrica con M5Burner in caso di errori. La scheda software è vuota: M5Stack ha detto a Bianco che aggiungerà tutorial per Arduino e UI Flow 2 prima della spedizione ad aprile, come per il CoreS3. Poiché il firmware è in ESP-IDF, secondo Bianco è probabile che non ci sarà un tutorial dedicato a chi vuole intervenire sull'AI. <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Chi vuole modificare l'AI deve quindi seguire la strada difficile, oppure sperare che qualcuno contribuisca al repository open source proprio ciò che serve, cosa che Bianco giudica improbabile.</p>
+<h2 id="giudizio-di-bianco-conviene-comprarlo">Giudizio di Bianco: conviene comprarlo?</h2>
+<p>Chi vuole un robot da scrivania carino, collegato a un LLM e funzionante appena tolto dalla scatola, con StackChan è servito bene. Chi è pronto a tuffarsi nel repository GitHub troverà il progetto, ma per Bianco non sarà facile: non è adatto ai principianti e la curva di apprendimento è ripida, anche se il risultato ripaga. La campagna Kickstarter early bird era già conclusa all'uscita del video, quindi il robot non si poteva ordinare. Bianco si aspetta un'altra occasione quando la scheda andrà in produzione. <sup id="fnref7:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
 <p>Vedi anche: <a href="../../concepts/agentic-harness/">Agentic Harness</a>, <a href="../hermes-agent/">Hermes Agent</a></p>
 <hr />
 <h2 id="fonti-e-riferimenti">Fonti e Riferimenti</h2>
@@ -6362,7 +6437,10 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/8BqnYfYyugQ" target="_blank">StackChan Isn’t Plug-and-Play for Makers (Here’s Why)</a> (Tommy Bianco) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/8BqnYfYyugQ" target="_blank">StackChan Isn’t Plug-and-Play for Makers (Here’s Why)</a> (Tommy Bianco) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:gk">
+<p><em>Dato consolidato di dominio (senza fonte primaria singola).</em>&#160;<a class="footnote-backref" href="#fnref:gk" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

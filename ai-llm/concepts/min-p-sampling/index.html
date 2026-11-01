@@ -932,10 +932,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#come-funziona" class="md-nav__link">
+  <a href="#cosa-sono-i-logit-e-cosa-vuol-dire-campionarli" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Come funziona
+        Cosa sono i logit e cosa vuol dire campionarli
       </span>
     </span>
   </a>
@@ -943,10 +943,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#risoluzione-delle-allucinazioni" class="md-nav__link">
+  <a href="#perche-non-si-sceglie-sempre-il-token-migliore" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Risoluzione delle allucinazioni
+        Perché non si sceglie sempre il token migliore
       </span>
     </span>
   </a>
@@ -954,10 +954,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#interpretazione-dei-logit" class="md-nav__link">
+  <a href="#leffetto-collaterale-che-min_p-evita" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Interpretazione dei logit
+        L'effetto collaterale che min_p evita
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#il-caso-laguna-allucinazioni-sui-quanti-bassi" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Il caso Laguna: allucinazioni sui quanti bassi
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#min_p-e-temperatura-insieme" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Min_p e temperatura insieme
       </span>
     </span>
   </a>
@@ -6143,10 +6165,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#come-funziona" class="md-nav__link">
+  <a href="#cosa-sono-i-logit-e-cosa-vuol-dire-campionarli" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Come funziona
+        Cosa sono i logit e cosa vuol dire campionarli
       </span>
     </span>
   </a>
@@ -6154,10 +6176,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#risoluzione-delle-allucinazioni" class="md-nav__link">
+  <a href="#perche-non-si-sceglie-sempre-il-token-migliore" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Risoluzione delle allucinazioni
+        Perché non si sceglie sempre il token migliore
       </span>
     </span>
   </a>
@@ -6165,10 +6187,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#interpretazione-dei-logit" class="md-nav__link">
+  <a href="#leffetto-collaterale-che-min_p-evita" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Interpretazione dei logit
+        L'effetto collaterale che min_p evita
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#il-caso-laguna-allucinazioni-sui-quanti-bassi" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Il caso Laguna: allucinazioni sui quanti bassi
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#min_p-e-temperatura-insieme" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Min_p e temperatura insieme
       </span>
     </span>
   </a>
@@ -6342,24 +6386,37 @@
 
 
 <h1 id="min_p-sampling">min_p Sampling</h1>
-<p>Tecnica di sampling per LLM che impedisce al modello di scegliere token con score inferiore a una soglia percentuale rispetto al token più probabile. <a href="../../entities/salvatore-sanfilippo/">Salvatore Sanfilippo (antirez)</a> l'ha riscoperta per conto suo e ne ha scritto sul blog (lui l'aveva chiamata "cutling"), poi ha scoperto che l'aveva già inventata un'altra persona su Reddit e che era già implementata in llama.cpp. Dwarf Star la usava già per <a href="../../entities/deepseek/">DeepSeek</a> V4 Flash. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="come-funziona">Come funziona</h2>
-<p>Con min_p a 0,05 il modello non sceglie mai token con score inferiore al 5% del token più forte. Questo fornisce un minimo di appiglio di qualità. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="risoluzione-delle-allucinazioni">Risoluzione delle allucinazioni</h2>
-<ul>
-<li><a href="../../entities/laguna/">Laguna</a> a volte allucinava riferimenti inesistenti nella domanda dell'utente, di più con i quanti Q2/Q3, di meno con Q4 <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Gli stessi problemi comparivano con l'implementazione di llama.cpp e con l'API ufficiale di Laguna, anche se lì un po' ridotti</li>
-<li>Appena implementato min_p a 0,05 in <a href="../../entities/dwarf-star/">Dwarf Star</a>, le allucinazioni <strong>scompaiono completamente</strong> anche con Q2/Q3. Con quei quanti Sanfilippo ipotizza anche di abbassare la temperatura, per esempio a 0,7</li>
-</ul>
-<h2 id="interpretazione-dei-logit">Interpretazione dei logit</h2>
-<p>Per Sanfilippo i logit non vanno letti come "probabilità" ma come quanto il modello ritiene <strong>corretto</strong> proseguire il discorso con un dato token. Il sampling non-greedy non serve solo per la variabilità, ma per <strong>esplorare spazi di soluzione</strong> che il modello, ripetendo lo stesso approccio, non raggiungerebbe: come quando un umano cambia approccio dopo aver sbattuto la testa contro un problema troppe volte. Il rovescio è che a volte il sampler pesca token a bassa probabilità che distruggono la qualità dell'output, ed è questo che min_p evita. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Il <strong>min_p sampling</strong> è una tecnica con cui, quando un LLM sceglie il token successivo, si escludono tutti i token il cui score è inferiore a una percentuale fissa dello score del token più forte. Con min_p a 0,05 il modello non sceglie mai un token che valga meno del 5% del migliore. Serve a dare al sampling un minimo di appiglio di qualità: si mantiene un po' di variabilità, ma si evita di pescare token scadenti. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>La tecnica non nasce con <a href="../../entities/salvatore-sanfilippo/">Salvatore Sanfilippo (antirez)</a>. Lui l'ha riscoperta per conto suo, l'ha chiamata "cutling" e ne ha scritto sul blog, poi ha scoperto che l'aveva già inventata un'altra persona su Reddit e che era già implementata in llama.cpp. In <a href="../../entities/dwarf-star/">Dwarf Star</a> era già presente per <a href="../../entities/deepseek/">DeepSeek</a> versione 4 Flash.</p>
+<h2 id="cosa-sono-i-logit-e-cosa-vuol-dire-campionarli">Cosa sono i logit e cosa vuol dire campionarli</h2>
+<p>A ogni token che produce, il modello non indica un solo token con cui continuare. Per ogni token del vocabolario, che può arrivare a 200.000 voci, fornisce un valore (un logit) che esprime quanto il modello vorrebbe proseguire con quel token. Una funzione matematica, la softmax, schiaccia questi valori in modo che sommino a uno, e per questo si fa finta che siano la probabilità del token successivo. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Sanfilippo giudica fuorviante la lettura in termini di probabilità. In training il modello viene addestrato su un solo token, quello che continua davvero il testo, e non su una distribuzione di probabilità. Secondo lui il modo più opportuno di pensare ai logit è quanto il modello ritiene corretto proseguire il discorso con ciascun token.</p>
+<h2 id="perche-non-si-sceglie-sempre-il-token-migliore">Perché non si sceglie sempre il token migliore</h2>
+<p>Il sampling greedy prende sempre il token a maggiore probabilità. Con lo stesso prompt il modello darebbe allora sempre la stessa risposta. Sanfilippo osserva che la variabilità non è l'unico motivo per evitarlo, e che questo valeva soprattutto per i primi modelli, molto limitati. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Oggi i modelli ragionano a lungo e gli agenti ripetono più volte lo stesso tentativo. In questo contesto un sampling non greedy permette di esplorare, iterazione dopo iterazione, più possibilità di quante ne contengano le rappresentazioni del modello se segue sempre il percorso più probabile. Un modello che riscrive una funzione può continuare a ripetere lo stesso approccio, perché i token immediatamente prima di un pezzo di codice pesano molto nell'attention e hanno uno score molto più alto degli altri. Pescare ogni tanto un token diverso da quello preferito amplia lo spazio di soluzioni esplorato.</p>
+<p>Sanfilippo lo paragona a un umano che, dopo aver sbattuto la testa contro un problema troppe volte, decide di provare un approccio completamente diverso. Anche ripartire da capo con la stessa sessione produce un po' di variabilità utile.</p>
+<h2 id="leffetto-collaterale-che-min_p-evita">L'effetto collaterale che min_p evita</h2>
+<p>Il rovescio della variabilità è che a volte il sampler pesca token a bassa probabilità che distruggono la qualità dell'output. Min_p taglia proprio questi token, senza togliere la variabilità tra le scelte sensate. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Sanfilippo propone un'ipotesi sul meccanismo. A volte i token candidati sono molto concentrati sul migliore, e subito dopo ce ne sono altri con uno score nettamente inferiore. Il sampler, ogni tanto, ne pesca uno e rovina l'output. Con min_p quei token restano sotto la soglia e non vengono scelti.</p>
+<p>Sanfilippo non pretende di aver spiegato i processi interni del modello: indagando si trova che con quella combinazione di temperatura e probabilità il token sbagliato veniva scelto con una certa probabilità, ma questo non dice nulla sui meccanismi interni che hanno prodotto il risultato. Secondo lui tanto vale cercare, per i quanti in uso, un assetto di temperatura e min_p che risulti stabile.</p>
+<h2 id="il-caso-laguna-allucinazioni-sui-quanti-bassi">Il caso Laguna: allucinazioni sui quanti bassi</h2>
+<p>Il caso che ha portato Sanfilippo a implementare min_p in Dwarf Star è quello di <a href="../../entities/laguna/">Laguna</a>, un modello che a volte allucinava nella domanda dell'utente riferimenti che non c'erano. Sanfilippo lo definisce instabilità del modello. L'effetto era più forte con i quanti Q2 e Q3 e più debole con Q4, ma presente. <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>La quantizzazione riduce la precisione numerica dei pesi di un modello per farlo stare in meno memoria. <sup id="fnref:gk"><a class="footnote-ref" href="#fn:gk">2</a></sup></p>
+<p>Per escludere un bug, Sanfilippo ha provato il modello con altri ambienti. Gli stessi problemi comparivano con llama.cpp, con un'implementazione scritta a parte e con l'API ufficiale di Laguna, anche se con l'API ufficiale i problemi erano un po' ridotti.</p>
+<p>Appena ha implementato min_p a 0,05 in Dwarf Star, il problema è scomparso completamente, anche con Q2 e Q3.</p>
+<h2 id="min_p-e-temperatura-insieme">Min_p e temperatura insieme</h2>
+<p>Sanfilippo ricorda che con temperatura 1 un token a bassa probabilità viene comunque pescato con la sua probabilità. Con i quanti Q2 e Q3 ipotizza quindi di abbassare un po' la temperatura, per esempio a 0,7, in aggiunta a min_p. La temperatura è il parametro che regola quanto il sampler si allontana dal token preferito dal modello. <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> <sup id="fnref2:gk"><a class="footnote-ref" href="#fn:gk">2</a></sup></p>
+<p>Sanfilippo precisa che questa verifica non è ancora fatta: era una cosa da completare, perché stava controllando altri aspetti.</p>
 <hr />
 <h2 id="fonti-e-riferimenti">Fonti e Riferimenti</h2>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/g_DCfGiDUuc" target="_blank">Considerazioni durante un viaggio di ritorno da Portopalo a Catania</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/g_DCfGiDUuc" target="_blank">Considerazioni durante un viaggio di ritorno da Portopalo a Catania</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:gk">
+<p><em>Dato consolidato di dominio (senza fonte primaria singola).</em>&#160;<a class="footnote-backref" href="#fnref:gk" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:gk" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

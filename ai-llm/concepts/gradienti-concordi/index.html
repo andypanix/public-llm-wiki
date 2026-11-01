@@ -797,10 +797,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#come-funziona" class="md-nav__link">
+  <a href="#perche-una-rete-enorme-dovrebbe-memorizzare-e-invece-generalizza" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Come funziona
+        Perché una rete enorme dovrebbe memorizzare e invece generalizza
       </span>
     </span>
   </a>
@@ -808,10 +808,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quando-funziona" class="md-nav__link">
+  <a href="#come-funzionano-i-gradienti-concordi" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Quando funziona
+        Come funzionano i gradienti concordi
       </span>
     </span>
   </a>
@@ -819,10 +819,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#perche-e-importante" class="md-nav__link">
+  <a href="#quando-i-gradienti-sono-concordi-e-quando-no" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Perché è importante
+        Quando i gradienti sono concordi e quando no
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#che-cosa-resta-aperto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Che cosa resta aperto
       </span>
     </span>
   </a>
@@ -6143,10 +6154,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#come-funziona" class="md-nav__link">
+  <a href="#perche-una-rete-enorme-dovrebbe-memorizzare-e-invece-generalizza" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Come funziona
+        Perché una rete enorme dovrebbe memorizzare e invece generalizza
       </span>
     </span>
   </a>
@@ -6154,10 +6165,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quando-funziona" class="md-nav__link">
+  <a href="#come-funzionano-i-gradienti-concordi" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Quando funziona
+        Come funzionano i gradienti concordi
       </span>
     </span>
   </a>
@@ -6165,10 +6176,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#perche-e-importante" class="md-nav__link">
+  <a href="#quando-i-gradienti-sono-concordi-e-quando-no" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Perché è importante
+        Quando i gradienti sono concordi e quando no
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#che-cosa-resta-aperto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Che cosa resta aperto
       </span>
     </span>
   </a>
@@ -6342,22 +6364,20 @@
 
 
 <h1 id="gradienti-concordi">Gradienti Concordi</h1>
-<p>Una delle teorie in competizione per spiegare perché le reti neurali molto overparametrizzate generalizzano invece di memorizzare gli esempi, anche vedendo un numero esiguo di esempi per parametro. Per <a href="../../entities/salvatore-sanfilippo/">Salvatore Sanfilippo (antirez)</a> è la più interessante; la rimanda a un paper approfondito in un suo video precedente. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="come-funziona">Come funziona</h2>
-<ul>
-<li>Quando abbastanza esempi di training sono concordi nella direzione dei gradienti, tirano tutti i pesi nella stessa direzione</li>
-<li>Man mano che la rete impara, la derivata dell'errore cambia → la rete apprende dettagli più sottili della funzione a diversi livelli di complessità</li>
-<li>Facendo la media nei microbatch, i gradienti concordi indicano la direzione per generalizzare, invece di far vincere direzioni che creerebbero overfitting</li>
-</ul>
-<p><sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="quando-funziona">Quando funziona</h2>
-<ul>
-<li>Il <strong>linguaggio umano</strong> e le idee espresse nei testi del pretraining formano un corpus sensato e logico, con idee fondamentali alla base → gradienti concordi che spingono nelle direzioni corrette</li>
-<li>Quando i dati <strong>non hanno una struttura</strong> rappresentabile da una generalizzazione → non ci sono gradienti concordi</li>
-</ul>
-<p><sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="perche-e-importante">Perché è importante</h2>
-<p>Spiega perché i grandi LLM, molto overparametrizzati e con pochi esempi per parametro, riescono comunque a generalizzare: secondo Sanfilippo ne sono una prova che non può essere negata. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>I <strong>gradienti concordi</strong> sono una delle teorie in competizione per spiegare perché una rete neurale molto più grande del necessario impara a generalizzare invece di limitarsi a memorizzare gli esempi di training. Per <a href="../../entities/salvatore-sanfilippo/">Salvatore Sanfilippo (antirez)</a> è la più interessante tra quelle che conosce. La presenta nel video in cui contesta l'idea che i modelli siano solo <a href="../pappagallo-stocastico/">pappagalli stocastici</a>. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<h2 id="perche-una-rete-enorme-dovrebbe-memorizzare-e-invece-generalizza">Perché una rete enorme dovrebbe memorizzare e invece generalizza</h2>
+<p>Sanfilippo parte da un fatto che trova sorprendente: reti con moltissimi parametri generalizzano anche se vedono pochi esempi per parametro. Con tanti parametri a disposizione, la rete potrebbe semplicemente memorizzare gli esempi. I grandi LLM sono, dice, una prova che non si può negare: sono molto overparametrizzati, eppure generalizzano. Per spiegare questa osservazione ci sono più teorie che competono tra loro. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>La domanda ha peso perché la teoria da sola non dice cosa il training trovi. Il teorema di approssimazione universale garantisce che esista una rete capace di approssimare qualsiasi funzione matematica, ma è un teorema di esistenza: non dice che il training con il gradient descent trovi le configurazioni migliori. Sanfilippo ammette di non avere un fondamento teorico abbastanza avanzato sul gradient descent per dire quali funzioni una rete addestrata riesca ad approssimare.</p>
+<p>L'overfitting è l'adattarsi ai singoli esempi di training invece di cogliere la regolarità che li accomuna. <sup id="fnref:gk"><a class="footnote-ref" href="#fn:gk">2</a></sup></p>
+<h2 id="come-funzionano-i-gradienti-concordi">Come funzionano i gradienti concordi</h2>
+<p>Il meccanismo, nella versione di Sanfilippo, parte da una condizione: ci sono abbastanza esempi i cui gradienti puntano nella stessa direzione. Quando succede, tutti questi esempi tirano i pesi della rete in quella direzione. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Il training non è un singolo passo. Man mano che la rete impara, la derivata dell'errore cambia, e la rete può quindi imparare dettagli più sottili della funzione che sta approssimando, a diversi livelli di complessità. Finché a un certo livello di complessità esistono gradienti concordi, questi aiutano la rete a capire quale direzione prendere.</p>
+<p>Il passaggio decisivo avviene quando si fa la media dei gradienti nei microbatch. In quella media le direzioni su cui molti esempi concordano si rafforzano e indicano come generalizzare, mentre non prevalgono le direzioni che non farebbero altro che creare overfitting.</p>
+<h2 id="quando-i-gradienti-sono-concordi-e-quando-no">Quando i gradienti sono concordi e quando no</h2>
+<p>Quando i dati non hanno una struttura rappresentabile da una generalizzazione, dice Sanfilippo, non ci sono gradienti concordi. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Il linguaggio umano è il caso opposto. Le idee espresse nei testi usati per il pretraining di un LLM fanno parte di un corpus sensato e logico, che ha idee fondamentali alla base. Per questo ci sono gradienti concordi che riescono a spingere la rete nelle direzioni corrette.</p>
+<h2 id="che-cosa-resta-aperto">Che cosa resta aperto</h2>
+<p>Sanfilippo presenta questa come una spiegazione qualitativa e una tra le possibili: non dice che sia dimostrata. Per i dettagli rimanda a un paper che aveva approfondito in un suo video precedente sul canale, che considera una delle spiegazioni più affascinanti e sensate dei processi osservati. Il video analizzato qui non entra nella dimostrazione. <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
 <p>Vedi anche: <a href="../pappagallo-stocastico/">Pappagallo Stocastico (Stochastic Parrot)</a>, <a href="../reti-neurali-vs-algoritmi/">Reti Neurali vs Algoritmi</a>, <a href="../rlvr/">RLVR (Reinforcement Learning from Verifiable Rewards)</a></p>
 <hr />
 <h2 id="fonti-e-riferimenti">Fonti e Riferimenti</h2>
@@ -6365,7 +6385,10 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/HUh7zFiTi-I" target="_blank">Se anche voi siete stanchi di chi vi dice che gli LLM sono pappagalli stocastici e algoritmi</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/HUh7zFiTi-I" target="_blank">Se anche voi siete stanchi di chi vi dice che gli LLM sono pappagalli stocastici e algoritmi</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:gk">
+<p><em>Dato consolidato di dominio (senza fonte primaria singola).</em>&#160;<a class="footnote-backref" href="#fnref:gk" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

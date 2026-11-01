@@ -1634,10 +1634,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#laguna-s21" class="md-nav__link">
+  <a href="#come-laguna-diventa-veloce-dflash-e-decoding-speculativo" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Laguna S2.1
+        Come Laguna diventa veloce: DFlash e decoding speculativo
       </span>
     </span>
   </a>
@@ -1645,10 +1645,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#stabilita-e-min_p" class="md-nav__link">
+  <a href="#a-chi-serve-laguna-e-quanto-e-maturo" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Stabilità e min_p
+        A chi serve Laguna e quanto è maturo
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allucinazioni-e-instabilita-la-soluzione-con-min_p" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Allucinazioni e instabilità: la soluzione con min_p
       </span>
     </span>
   </a>
@@ -1660,6 +1671,17 @@
     <span class="md-ellipsis">
       <span class="md-typeset">
         Early stop adattivo del thinking
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laguna-su-strix-halo-opus-5-contro-gpt-56-sol" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Laguna su Strix Halo: Opus 5 contro GPT 5.6 Sol
       </span>
     </span>
   </a>
@@ -6143,10 +6165,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#laguna-s21" class="md-nav__link">
+  <a href="#come-laguna-diventa-veloce-dflash-e-decoding-speculativo" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Laguna S2.1
+        Come Laguna diventa veloce: DFlash e decoding speculativo
       </span>
     </span>
   </a>
@@ -6154,10 +6176,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#stabilita-e-min_p" class="md-nav__link">
+  <a href="#a-chi-serve-laguna-e-quanto-e-maturo" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Stabilità e min_p
+        A chi serve Laguna e quanto è maturo
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allucinazioni-e-instabilita-la-soluzione-con-min_p" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Allucinazioni e instabilità: la soluzione con min_p
       </span>
     </span>
   </a>
@@ -6169,6 +6202,17 @@
     <span class="md-ellipsis">
       <span class="md-typeset">
         Early stop adattivo del thinking
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laguna-su-strix-halo-opus-5-contro-gpt-56-sol" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Laguna su Strix Halo: Opus 5 contro GPT 5.6 Sol
       </span>
     </span>
   </a>
@@ -6338,33 +6382,37 @@
 
 
 <h1 id="laguna">Laguna</h1>
-<p>Modello implementato in <a href="../dwarf-star/">Dwarf Star</a> da <a href="../salvatore-sanfilippo/">Salvatore Sanfilippo (antirez)</a>. La branch Laguna S 2.1 continua a crescere ma non è ancora stata mergiata. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="laguna-s21">Laguna S2.1</h2>
-<ul>
-<li>Implementata con <a href="../../concepts/speculative-decoding/">Speculative Decoding</a> (DFlash): drafting di token verificati col modello reale</li>
-<li><strong>Performance su M5 Max</strong>: 70 token/s (generazione), 550 token/s (prefill) in 4-bit</li>
-<li>Promettente ma <strong>non ancora matura</strong>: con il thinking abilitato produce troppo testo, quindi secondo Sanfilippo ha spazio di utilizzo soprattutto con il thinking disabilitato</li>
-<li>Sanfilippo ipotizza che una futura Laguna 2.2 possa risolvere gran parte dei problemi di stabilità; chi vuole usarla già oggi ha la branch disponibile</li>
-<li>Casi d'uso: chi ha 64 GB di RAM e vuole <a href="../../concepts/inferenza-locale/">Inferenza Locale</a>; aziende che vogliono un manuale esplorabile via chatbot senza pagare molto per l'inferenza</li>
-</ul>
-<p><sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="stabilita-e-min_p">Stabilità e min_p</h2>
-<ul>
-<li>Laguna aveva allucinazioni (riferimenti inesistenti nella domanda dell'utente), più con Q2/Q3, meno con Q4</li>
-<li>Stesso problema con l'implementazione di llama.cpp e con l'API di Laguna</li>
-<li>Soluzione: <a href="../../concepts/min-p-sampling/">min_p Sampling</a> a 0.05 — le allucinazioni spariscono completamente anche con Q2/Q3</li>
-<li>Ipotesi di Sanfilippo: a volte i token migliori sono molto concentrati e subito dopo ce ne sono altri con score molto minore, che il sampler pesca ogni tanto rovinando l'output. Più che indagare il singolo caso, conviene trovare un assetto stabile di temperatura, min_p e quanti (con Q2/Q3 forse temperatura 0,7 invece di 1)</li>
-</ul>
-<p><sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Laguna è un modello linguistico che <a href="../salvatore-sanfilippo/">Salvatore Sanfilippo (antirez)</a> ha implementato in <a href="../dwarf-star/">Dwarf Star</a>, il suo motore di inferenza. La versione di cui parla è Laguna S2.1. Nel video registrato in macchina, durante il ritorno da Portopalo a Catania, racconta che l'aveva già implementata in modo completamente automatico, con gli agenti, e che le ottimizzazioni successive l'hanno resa molto più veloce. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>La branch Laguna S2.1 di Dwarf Star continua a crescere, ma Sanfilippo non ha ancora fatto il merge. Chi vuole usare il modello già oggi, con buone prestazioni, può prendere la branch. Sanfilippo aggiunge che un'eventuale Laguna 2.2 potrebbe uscire da un giorno all'altro e risolvere gran parte dei problemi di stabilità descritti più sotto.</p>
+<h2 id="come-laguna-diventa-veloce-dflash-e-decoding-speculativo">Come Laguna diventa veloce: DFlash e decoding speculativo</h2>
+<p>L'accelerazione viene dal <a href="../../concepts/speculative-decoding/">decoding speculativo</a>, che per Laguna si fa con DFlash. Il meccanismo è questo: si fa il drafting di token che sono con buona probabilità la continuazione del testo, poi li si verifica con il modello reale. Se la verifica riesce abbastanza spesso e costa abbastanza poco, si va molto più veloci che generando un token alla volta. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Con questa ottimizzazione Laguna S2.1 in 4 bit gira su un M5 Max a 70 token al secondo in generazione e 550 token al secondo di prefill. Sanfilippo li definisce numeri molto significativi. Il prefill è la fase in cui il modello elabora il prompt prima di generare (<a href="../../concepts/prefill-e-decode/">prefill e decode</a>). <sup id="fnref:gk"><a class="footnote-ref" href="#fn:gk">2</a></sup></p>
+<h2 id="a-chi-serve-laguna-e-quanto-e-maturo">A chi serve Laguna e quanto è maturo</h2>
+<p>Secondo Sanfilippo Laguna è molto promettente ma non è ancora dove dovrebbe essere. Con il thinking abilitato scrive una quantità enorme di testo, per cui a suo giudizio ha spazio di utilizzo soprattutto con il thinking disabilitato. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Non è potente come i modelli di frontiera, ma per chi ha 64 GB di RAM e vuole fare <a href="../../concepts/inferenza-locale/">inferenza locale</a> è un primo ingresso interessante: è abbastanza veloce e abbastanza piccolo da essere utile per fare cose concrete. Sanfilippo cita anche un'azienda che vuole offrire un manuale esplorabile tramite chatbot senza spendere molto in inferenza, e dice che il modello si presta a diversi usi specialistici.</p>
+<h2 id="allucinazioni-e-instabilita-la-soluzione-con-min_p">Allucinazioni e instabilità: la soluzione con min_p</h2>
+<p>Sanfilippo ha osservato derive strane del modello: a volte Laguna allucina che nella domanda dell'utente ci siano riferimenti che non ci sono. Ha prima sospettato un bug, ma il problema compare sia con l'implementazione di llama.cpp sia con quella scritta da lui in Dwarf Star, sia con l'API di Laguna, dove è un po' ridotto. Si presenta di più con i quanti Q2 e Q3 e di meno con Q4, ma non sparisce. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Q2, Q3 e Q4 sono livelli di quantizzazione, cioè versioni del modello con pesi a precisione ridotta. <sup id="fnref2:gk"><a class="footnote-ref" href="#fn:gk">2</a></sup></p>
+<p>La soluzione è stata il <a href="../../concepts/min-p-sampling/">min_p sampling</a>, che Sanfilippo aveva già adottato in Dwarf Star e con <a href="../deepseek/">DeepSeek</a> V4 Flash. Lo aveva riscoperto e raccontato in un post sul blog, per poi scoprire che era stato inventato da un'altra persona su Reddit e implementato in llama.cpp.</p>
+<p>Per capire perché serve, bisogna partire da cosa produce il modello. A ogni token il modello dà un punteggio (i logit) a ogni token del vocabolario, che può arrivare a 200.000 token. Di solito questi punteggi si chiamano probabilità, ma solo perché si applica una funzione matematica, la softmax, che li schiaccia in modo che sommino a uno: a quel punto si fa finta che siano la probabilità del token successivo. In realtà il modello non si allena su delle probabilità, ma su un token che è la reale continuazione del testo, per cui i punteggi si possono interpretare in più modi. Sanfilippo preferisce leggerli non come una probabilità ma come quanto il modello ritiene corretto proseguire il discorso con quel token.</p>
+<p>Scegliere sempre il token migliore (greedy sampling) darebbe la stessa risposta a parità di prompt, e non per la sola variabilità. Con i modelli che fanno molto thinking e con gli agenti che ritentano lo stesso compito, un sampling che ogni tanto pesca token diversi permette di esplorare più possibilità di quelle che il modello seguirebbe. I token appena prima di un pezzo di codice hanno infatti un punteggio fortissimo nell'attention, e il modello tenderebbe a riscrivere la stessa funzione allo stesso modo. Sanfilippo lo paragona a quando ci si accorge di aver sbattuto la testa contro un problema troppe volte e si prova un approccio completamente diverso.</p>
+<p>L'effetto collaterale è che il sampler a volte pesca token a bassa probabilità che distruggono la qualità dell'output. Con min_p a 0,05 il modello non sceglie mai token con un punteggio inferiore al 5% di quello del token più forte, per avere un minimo di appiglio di qualità. Con questa soglia le allucinazioni di Laguna sono scomparse completamente, anche con Q2 e Q3.</p>
+<p>Sanfilippo ipotizza che a volte i token migliori siano molto concentrati e che subito dopo ce ne siano altri con un punteggio molto minore, che il sampler pesca ogni tanto rovinando l'output. Non crede che valga la pena indagare il singolo caso, perché la causa trovata (una certa combinazione di temperatura e probabilità di quel token) non dice nulla sui meccanismi interni del modello. Gli sembra più utile trovare un assetto stabile di temperatura, min_p e quanto: con Q2 e Q3 potrebbe avere più senso una temperatura di 0,7 invece di 1. Dice di dover ancora completare questa verifica.</p>
 <h2 id="early-stop-adattivo-del-thinking">Early stop adattivo del thinking</h2>
-<p>Sanfilippo vuole reimplementare l'early stop adattivo del thinking (già fatto su una branch Qwen rimasta sul suo computer): man mano che il pensiero si allunga, chiude il blocco <code>think</code> se il token di chiusura compare tra il secondo e il quinto candidato nei logit di uscita. "Con questa roba qui è la svolta." <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Per il problema del thinking troppo lungo Sanfilippo vuole reimplementare in Laguna l'early stop adattivo del thinking, che aveva già fatto in Dwarf Star su una branch per Qwen, nata e morta sul suo computer. Man mano che viene prodotto più pensiero, il meccanismo seleziona la chiusura del blocco <code>think</code> se il token di chiusura compare tra il secondo e il quinto token nei logit di uscita del modello. La fonte non dice come la soglia cambi con la lunghezza del pensiero. <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Sanfilippo dice che con questo meccanismo "è la svolta", e vuole rifarlo perché lo ritiene decisivo.</p>
+<h2 id="laguna-su-strix-halo-opus-5-contro-gpt-56-sol">Laguna su Strix Halo: Opus 5 contro GPT 5.6 Sol</h2>
+<p>Sanfilippo ha usato Laguna anche come banco di prova per due modelli. Voleva velocizzare l'implementazione di Laguna per Strix Halo, nata in una prima versione più lenta, e ha lanciato due task distinti, uno con <a href="../opus-5/">Opus 5</a> e uno con <a href="../gpt-5.6/">GPT 5.6</a> Sol. I risultati sono stati molto diversi: secondo lui GPT 5.6 Sol scrive kernel molto meglio. <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Sanfilippo giudica il risultato significativo, perché far girare più veloce un modello su hardware poco battuto è difficile. È un'esperienza personale su un singolo task.</p>
 <hr />
 <h2 id="fonti-e-riferimenti">Fonti e Riferimenti</h2>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/g_DCfGiDUuc" target="_blank">Considerazioni durante un viaggio di ritorno da Portopalo a Catania</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/g_DCfGiDUuc" target="_blank">Considerazioni durante un viaggio di ritorno da Portopalo a Catania</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:gk">
+<p><em>Dato consolidato di dominio (senza fonte primaria singola).</em>&#160;<a class="footnote-backref" href="#fnref:gk" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:gk" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

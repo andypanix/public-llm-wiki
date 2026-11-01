@@ -1148,10 +1148,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#implementazione-in-dwarf-star" class="md-nav__link">
+  <a href="#quando-il-decoding-speculativo-conviene" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Implementazione in Dwarf Star
+        Quando il decoding speculativo conviene
       </span>
     </span>
   </a>
@@ -1159,10 +1159,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#vantaggi-e-limiti" class="md-nav__link">
+  <a href="#il-problema-di-partenza-la-generazione-lenta-sulla-dgx-spark" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Vantaggi e limiti
+        Il problema di partenza: la generazione lenta sulla DGX Spark
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dflash-e-dspark-il-decoding-speculativo-in-dwarf-star" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        DFlash e DSpark: il decoding speculativo in Dwarf Star
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ottimizzare-le-implementazioni-con-i-modelli-di-frontiera" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ottimizzare le implementazioni con i modelli di frontiera
       </span>
     </span>
   </a>
@@ -6132,10 +6154,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#implementazione-in-dwarf-star" class="md-nav__link">
+  <a href="#quando-il-decoding-speculativo-conviene" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Implementazione in Dwarf Star
+        Quando il decoding speculativo conviene
       </span>
     </span>
   </a>
@@ -6143,10 +6165,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#vantaggi-e-limiti" class="md-nav__link">
+  <a href="#il-problema-di-partenza-la-generazione-lenta-sulla-dgx-spark" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Vantaggi e limiti
+        Il problema di partenza: la generazione lenta sulla DGX Spark
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dflash-e-dspark-il-decoding-speculativo-in-dwarf-star" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        DFlash e DSpark: il decoding speculativo in Dwarf Star
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ottimizzare-le-implementazioni-con-i-modelli-di-frontiera" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ottimizzare le implementazioni con i modelli di frontiera
       </span>
     </span>
   </a>
@@ -6320,28 +6364,37 @@
 
 
 <h1 id="speculative-decoding">Speculative Decoding</h1>
-<p>Tecnica di ottimizzazione per l'inferenza LLM in cui si fa drafting di token candidati che probabilmente sono la continuazione, poi li si verifica con il modello reale. Se la verifica riesce abbastanza spesso ed è abbastanza poco costosa, la generazione va molto più veloce. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="implementazione-in-dwarf-star">Implementazione in Dwarf Star</h2>
-<ul>
-<li><a href="../../entities/salvatore-sanfilippo/">Salvatore Sanfilippo (antirez)</a> ha implementato il decoding speculativo in <a href="../../entities/dwarf-star/">Dwarf Star</a> per <a href="../../entities/laguna/">Laguna</a> S2.1, con DFlash, che per Laguna è l'equivalente di DSpark <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Performance su M5 Max: Laguna S2.1 a 4 bit genera 70 token/s con 550 token/s di prefill</li>
-<li>Sul lavoro di ottimizzazione dei kernel CUDA fatto con Fable (tensor parallelism e speculative decoding con DSpark, la novità di <a href="../../entities/deepseek/">DeepSeek</a>), <a href="../../entities/gpt-5.6/">GPT 5.6</a> ha trovato in pochi minuti soluzioni migliori, con uno speed-up del 10% <sup id="fnref:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></li>
-</ul>
-<h2 id="vantaggi-e-limiti">Vantaggi e limiti</h2>
-<p>Il guadagno dipende dal rapporto tra costo della verifica e percentuale di token accettati. Per migliorare la generazione sul <a href="../../entities/dgx-spark/">DGX Spark</a> Sanfilippo cerca un modo di verificare i token abbastanza economico rispetto alla percentuale di accettazione, prima ancora di MTP. <sup id="fnref:cit-3"><a class="footnote-ref" href="#fn:cit-3">3</a></sup> È una delle tecniche usate per rendere più veloce l'<a href="../inferenza-locale/">Inferenza Locale</a>.</p>
+<p>Il <strong>decoding speculativo</strong> (speculative decoding) è una tecnica per rendere più veloce la generazione di un LLM. Si fa il <em>drafting</em> di token che con buona probabilità sono la continuazione del testo, e poi li si verifica con il modello reale. Se la verifica riesce abbastanza spesso e costa abbastanza poco, la generazione va molto più veloce. Questa è la spiegazione che ne dà <a href="../../entities/salvatore-sanfilippo/">Salvatore Sanfilippo</a> parlando di <a href="../../entities/laguna/">Laguna</a>. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Le fonti usano il termine come strumento di lavoro su <a href="../../entities/dwarf-star/">Dwarf Star</a>, l'engine di inferenza locale di Sanfilippo, e non spiegano come il drafting produca i token candidati né come funzioni il controllo del modello reale. Questa pagina riporta quindi solo ciò che dicono sul perché la tecnica conviene e su come è stata usata.</p>
+<h2 id="quando-il-decoding-speculativo-conviene">Quando il decoding speculativo conviene</h2>
+<p>Il guadagno dipende da due condizioni, che Sanfilippo enuncia nel video su Laguna: i token candidati devono superare la verifica col modello reale abbastanza di frequente, e la verifica deve essere poco costosa. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Nel video sulle risorse AI e su Dwarf Star formula la stessa idea con altre parole: bisogna trovare un modo di fare la verifica dei token che sia abbastanza economico rispetto alla percentuale di accettazione, cioè rispetto alla quota di token candidati che il modello reale accetta. <sup id="fnref:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup> Nessuna delle tre fonti dà una soglia numerica oltre la quale la tecnica smette di convenire.</p>
+<h2 id="il-problema-di-partenza-la-generazione-lenta-sulla-dgx-spark">Il problema di partenza: la generazione lenta sulla DGX Spark</h2>
+<p>Sanfilippo racconta che la generazione di Dwarf Star sulla <a href="../../entities/dgx-spark/">DGX Spark</a> era ferma a 15 token al secondo. In teoria la generazione è limitata soprattutto dalla banda di memoria disponibile, quindi dovrebbe andare molto più veloce. Non pensa che sia solo una questione di banda, perché c'è anche una parte di compute non banale, ma confrontando il totale dei pesi di DeepSeek V4 Flash quantizzato a 2 bit con la velocità osservata conclude che c'è qualcosa che non va e che si poteva fare di più. <sup id="fnref2:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup> Per il rapporto tra fase di prefill e fase di decode vedi <a href="../prefill-e-decode/">Prefill e Decode</a>.</p>
+<p>Già con <a href="../../entities/claude-fable/">Fable</a> la velocità era salita a circa 17,5 token al secondo. Per andare oltre Sanfilippo indica due strade da provare. La prima è la verifica economica dei token descritta sopra, che mette ancora prima di MTP (multi-token prediction, la previsione di più token alla volta <sup id="fnref:gk"><a class="footnote-ref" href="#fn:gk">4</a></sup>), sigla che il video non spiega. La seconda è usare il grafo di inferenza di CUDA: in quel momento non c'era un grafo e i kernel venivano chiamati uno per uno. Il video presenta entrambe come possibilità da verificare e non ne riporta l'esito.</p>
+<h2 id="dflash-e-dspark-il-decoding-speculativo-in-dwarf-star">DFlash e DSpark: il decoding speculativo in Dwarf Star</h2>
+<p>Sanfilippo aveva implementato Laguna S2.1 in Dwarf Star in modo completamente automatico, con gli agenti; le ottimizzazioni successive hanno incluso il decoding speculativo con DFlash, che per Laguna è l'equivalente di DSpark. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Nella prima puntata di ZIP chiama DSpark la novità di <a href="../../entities/deepseek/">DeepSeek</a> sul decoding speculativo. <sup id="fnref:cit-3"><a class="footnote-ref" href="#fn:cit-3">3</a></sup></p>
+<p>Dopo queste ottimizzazioni Laguna S2.1 a 4 bit gira sull'M5 Max a 70 token al secondo, con 550 di prefill, numeri che Sanfilippo definisce assai significativi. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Il video non separa il contributo del decoding speculativo da quello delle altre ottimizzazioni.</p>
+<p>La branch di Dwarf Star con Laguna S2.1 e DFlash è pubblica ma non ancora integrata nel ramo principale, e Sanfilippo dice di non volerla ancora unire. Secondo lui il modello potrebbe essere interessante per chi ha 64 GB di RAM ed entra nell'<a href="../inferenza-locale/">inferenza locale</a>: non è potente come i modelli di frontiera, ma è abbastanza veloce e abbastanza piccolo. I problemi di stabilità di Laguna li affronta con il <a href="../min-p-sampling/">min_p sampling</a>.</p>
+<h2 id="ottimizzare-le-implementazioni-con-i-modelli-di-frontiera">Ottimizzare le implementazioni con i modelli di frontiera</h2>
+<p>Sanfilippo spiega che non può essere insieme esperto di kernel Metal, CUDA e ROCm e dell'inferenza di ogni nuovo modello: servirebbe un team di 50 persone, quindi questa parte la delega ai modelli. <sup id="fnref3:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup> Racconta che nelle ottimizzazioni più difficili usa Fable per i blocchi progettuali su cui non riusciva a migliorare, perché le ottimizzazioni che GPT 5.5 sapeva fare erano già state fatte.</p>
+<p>Nella prima puntata di ZIP descrive un caso concreto. Aveva passato due giorni con Fable su un lavoro di ottimizzazione dei kernel CUDA, che comprendeva il tensor parallelism su Dwarf Star e il decoding speculativo con DSpark. Quando ha lanciato <a href="../../entities/gpt-5.6/">GPT 5.6</a> sullo stesso problema, dopo 5 minuti questo aveva trovato soluzioni migliori, con uno speed-up del 10% che Sanfilippo non considera trascurabile. <sup id="fnref2:cit-3"><a class="footnote-ref" href="#fn:cit-3">3</a></sup> Il video non dice se il 10% riguardi il solo decoding speculativo o l'intero lavoro sui kernel.</p>
 <hr />
 <h2 id="fonti-e-riferimenti">Fonti e Riferimenti</h2>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/g_DCfGiDUuc" target="_blank">Considerazioni durante un viaggio di ritorno da Portopalo a Catania</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/g_DCfGiDUuc" target="_blank">Considerazioni durante un viaggio di ritorno da Portopalo a Catania</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cit-2">
-<p>Fonte: <a href="https://youtu.be/mRRV8BbvNVM" target="_blank">GPT 5.6, Fable e i moscerini della frutta | Zip episodio 01</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/x9uFLpwq9PE" target="_blank">Se gli LLM fossero esoscheletri</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cit-3">
-<p>Fonte: <a href="https://youtu.be/x9uFLpwq9PE" target="_blank">Se gli LLM fossero esoscheletri</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/mRRV8BbvNVM" target="_blank">GPT 5.6, Fable e i moscerini della frutta | Zip episodio 01</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:gk">
+<p><em>Dato consolidato di dominio (senza fonte primaria singola).</em>&#160;<a class="footnote-backref" href="#fnref:gk" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

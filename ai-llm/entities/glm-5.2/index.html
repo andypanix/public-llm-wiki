@@ -1499,10 +1499,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#caratteristiche" class="md-nav__link">
+  <a href="#perche-sanfilippo-lo-ha-aggiunto-a-dwarf-star" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Caratteristiche
+        Perché Sanfilippo lo ha aggiunto a Dwarf Star
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perche-supportare-un-modello-nuovo-richiede-lavoro" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Perché supportare un modello nuovo richiede lavoro
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quanto-e-affidabile-nei-problemi-di-programmazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Quanto è affidabile nei problemi di programmazione
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#velocita-in-locale-e-tensor-parallelism" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Velocità in locale e tensor parallelism
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perche-usare-un-modello-locale-come-glm-52" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Perché usare un modello locale come GLM 5.2
       </span>
     </span>
   </a>
@@ -6132,10 +6176,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#caratteristiche" class="md-nav__link">
+  <a href="#perche-sanfilippo-lo-ha-aggiunto-a-dwarf-star" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Caratteristiche
+        Perché Sanfilippo lo ha aggiunto a Dwarf Star
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perche-supportare-un-modello-nuovo-richiede-lavoro" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Perché supportare un modello nuovo richiede lavoro
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quanto-e-affidabile-nei-problemi-di-programmazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Quanto è affidabile nei problemi di programmazione
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#velocita-in-locale-e-tensor-parallelism" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Velocità in locale e tensor parallelism
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perche-usare-un-modello-locale-come-glm-52" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Perché usare un modello locale come GLM 5.2
       </span>
     </span>
   </a>
@@ -6316,16 +6404,29 @@
 
 
 <h1 id="glm-52">GLM 5.2</h1>
-<p>Sviluppato da Zhipu AI (Z.ai). <sup id="fnref:gk"><a class="footnote-ref" href="#fn:gk">3</a></sup></p>
-<p>Modello cinese open weight. <a href="../salvatore-sanfilippo/">Salvatore Sanfilippo (antirez)</a> lo considera più forte in locale su <a href="../dwarf-star/">Dwarf Star</a> sia di <a href="../deepseek/">DeepSeek</a> Flash sia della versione Pro. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="caratteristiche">Caratteristiche</h2>
-<ul>
-<li><strong>Resistenza alla quantizzazione</strong>: come DeepSeek è profondamente resistente alla quantizzazione, anche se i suoi autori dichiarano di non aver fatto quantization-aware training. A 2 bit "continua a funzionare benone con dei degradi accettabilissimi". <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li><strong>Performance in locale</strong>: in una branch di Dwarf Star gira in tensor parallelism tra 2 M5 Max da 128 GB a 20 token/s, con prefill accettabili.</li>
-<li><strong>Affidabilità</strong>: in run di più giorni con GPT 5.5 come giudice su problemi di programmazione, GLM è il modello che anche nei casi difficili porta a termine un progetto che compila, senza bug e senza crash.</li>
-</ul>
+<p>GLM 5.2 è un modello sviluppato da Zhipu AI (Z.ai). <sup id="fnref:gk"><a class="footnote-ref" href="#fn:gk">3</a></sup> È un modello cinese open weight: i pesi si possono scaricare, quindi chi compra le macchine e le GPU può installarlo e avere un'AI locale che non spedisce i dati a nessuno. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Enk, il co-conduttore dello Zip, lo definisce "un signor modello", bello sia per essere open sia in assoluto, quando chiede a <a href="../salvatore-sanfilippo/">Salvatore Sanfilippo (antirez)</a> come procede lo sviluppo del supporto su <a href="../dwarf-star/">Dwarf Star</a>, il motore di inferenza di Sanfilippo. Nell'uso locale su Dwarf Star, Sanfilippo lo giudica più forte sia di <a href="../deepseek/">DeepSeek</a> Flash sia della versione Pro. <sup id="fnref:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<h2 id="perche-sanfilippo-lo-ha-aggiunto-a-dwarf-star">Perché Sanfilippo lo ha aggiunto a Dwarf Star</h2>
+<p>Sanfilippo dice di essere molto restio ad aggiungere modelli a Dwarf Star. La linea GLM lo ha convinto perché, come DeepSeek, è profondamente resistente alla quantizzazione. <sup id="fnref2:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<p>La quantizzazione è la riduzione di qualità di alcuni pezzi del modello per stringerli e farlo stare in meno memoria. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Sanfilippo la contrappone al caso di Kimi, che pure si diceva fosse un ottimo modello e che non ha mai aggiunto: Kimi è grande un trilione di parametri e, appena lo si quantizza, smette di funzionare bene. <sup id="fnref3:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<p>Con DeepSeek la resistenza è attesa, perché ha fatto quantization-aware training. Il quantization-aware training è un addestramento che tiene conto della quantizzazione già durante il training. <sup id="fnref2:gk"><a class="footnote-ref" href="#fn:gk">3</a></sup> I suoi autori dichiarano invece di non averlo fatto per GLM, eppure Sanfilippo lo trova "resistentissimo": a 2 bit "continua a funzionare benone con dei degradi accettabilissimi".</p>
+<p>Il primo passo è stato farlo funzionare in SSD streaming su M3 Ultra da 512 GB, che Sanfilippo definisce hardware che non si può comprare.</p>
+<h2 id="perche-supportare-un-modello-nuovo-richiede-lavoro">Perché supportare un modello nuovo richiede lavoro</h2>
+<p>Quando esce un modello open weight, i pesi arrivano con un'implementazione di riferimento, per esempio in Python, che è lenta e poco efficiente sull'hardware consumer. I modelli non hanno la stessa implementazione del Transformer: cambiano, tra le altre cose, il meccanismo di attenzione e il modo in cui raggruppano i token. Se chi scrive il motore non cura ogni dettaglio, restano errori piccoli e subdoli, per cui non si raggiungono mai le prestazioni dichiarate dal produttore e, quando il contesto cresce, il modello rallenta moltissimo. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Nella live Sanfilippo cita GLM 5.2 come esempio di un modello che ne sostituisce un altro: oggi c'è GLM 5.2, domani può esserci MiMo 3.0. La sua regola era puntare su un modello alla volta, al massimo due o tre, e togliere quello vecchio se ne esce uno migliore in modo monotono. Nell'episodio di Zip con Enk spiega perché per GLM ha fatto un'eccezione. <sup id="fnref4:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<h2 id="quanto-e-affidabile-nei-problemi-di-programmazione">Quanto è affidabile nei problemi di programmazione</h2>
+<p>Sanfilippo ha lanciato run che durano anche diversi giorni, in cui GPT 5.5 fa da giudice su problemi di programmazione. Ogni problema è risolto più volte da ciascun modello, per avere un campionamento ampio. In questi test GLM è il modello che, anche nei casi difficili, porta a termine un progetto che compila, senza bug e senza crash. <sup id="fnref5:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<h2 id="velocita-in-locale-e-tensor-parallelism">Velocità in locale e tensor parallelism</h2>
+<p>Il supporto a GLM 5.2 è in una branch di Dwarf Star: ne esiste una versione pubblica, ma Sanfilippo l'ha aggiornata e la versione nuova è ancora privata. <sup id="fnref6:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<p>Il modello gira in tensor parallelism tra 2 M5 Max da 128 GB. Il modello viene caricato metà su una macchina e metà sull'altra; le matrici si dividono per riga, ogni macchina fa la sua parte delle moltiplicazioni e i risultati si accumulano da un lato.</p>
+<p>Sulla stessa configurazione DeepSeek "vola" a 50 token al secondo con un prefill di 600. GLM gira a 20 token al secondo, che per Sanfilippo è utilizzabile, con prefill accettabili. Il prefill è la fase in cui il modello legge il prompt prima di generare la risposta. <sup id="fnref3:gk"><a class="footnote-ref" href="#fn:gk">3</a></sup></p>
+<h2 id="perche-usare-un-modello-locale-come-glm-52">Perché usare un modello locale come GLM 5.2</h2>
+<p>Secondo Sanfilippo, con l'inferenza locale si comprano libertà e privacy, e non si compete con il costo delle API. <sup id="fnref7:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<p>Enk, il co-conduttore, aggiunge la stabilità nel tempo, usando GLM 5.2 come esempio. Un task aziendale non evolve di continuo: quando si ha un setup che funziona, con un prompt pulito e una knowledge base raggiungibile tramite RAG, non si vuole spendere di continuo né vedersi togliere il modello. Chi dipende da modelli di altri se li può vedere togliere da un giorno all'altro, come è successo ad app costruite su vecchi modelli di Google economici come Flash 2.0, e deve passare a un modello più caro o che non funziona altrettanto bene con il setup già costruito.</p>
 <h2 id="contesto-geopolitico">Contesto geopolitico</h2>
-<p>Secondo Sanfilippo, il leader del progetto parla su X in termini politici: l'AI "appartiene all'umanità, non può essere chiusa nei confini di un'azienda". Sanfilippo lo cita come esempio della scelta cinese di fare i "paladini della libertà" della ricerca e degli LLM open weight. <sup id="fnref:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<p>Sanfilippo spiega la scelta cinese dell'open weight con un ragionamento economico. A suo parere i cinesi hanno capito prima degli altri che nell'AI generativa i soldi alla lunga non ci saranno, perché i modelli diventano una commodity con margini bassi, e al momento i margini sono negativi. Invece di imitare Anthropic e OpenAI hanno scelto di fare i "paladini della libertà", sia della ricerca sia degli LLM open weight. Sanfilippo presenta questo come il probabile processo mentale dei cinesi, non come un fatto accertato. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Come esempio cita la nuova versione di GLM, uscita il giorno prima, come Kimi 2.7 Coder: il leader del progetto parla su X in termini politici e dice che l'AI "appartiene all'umanità, non può essere chiusa nei confini di un'azienda", e che bisogna lottare per l'AI. Sanfilippo non aveva il link al tweet in diretta e ha chiesto alla community di cercarlo, quindi la citazione resta di seconda mano.</p>
+<p>Nello Zip, Enk pone il problema opposto: la validità di tutto il discorso sui modelli locali dipende dal fatto che la Cina continui a rilasciare modelli open weight. Reuters riporta indiscrezioni, da prendere con cautela, secondo cui il governo cinese suggerirebbe ai produttori di non rilasciare al resto del mondo i prossimi modelli di livello Mythos. I due conduttori ritengono però che sia una postura più che una posizione sostenibile: la Cina ha bisogno dell'open weight per creare competizione interna e dare ai cinesi un modello da far girare sul proprio hardware, e smettere di competere con gli Stati Uniti con questa tecnica non è sostenibile per loro. <sup id="fnref8:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
 <p>Vedi anche: <a href="../anthropic/">Anthropic</a>, <a href="../dario-amodei/">Dario Amodei</a>.</p>
 <hr />
 <h2 id="fonti-e-riferimenti">Fonti e Riferimenti</h2>
@@ -6333,13 +6434,13 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/mRRV8BbvNVM" target="_blank">GPT 5.6, Fable e i moscerini della frutta | Zip episodio 01</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/8jwOFfXhvQE" target="_blank">Le Nuove Avventure di Salvatore Sanfilippo | Live con @antirez PARTE 1</a> (Mr. RIP) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cit-2">
-<p>Fonte: <a href="https://youtu.be/8jwOFfXhvQE" target="_blank">Le Nuove Avventure di Salvatore Sanfilippo | Live con @antirez PARTE 1</a> (Mr. RIP) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/mRRV8BbvNVM" target="_blank">GPT 5.6, Fable e i moscerini della frutta | Zip episodio 01</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:gk">
-<p><em>Dato consolidato di dominio (senza fonte primaria singola).</em>&#160;<a class="footnote-backref" href="#fnref:gk" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p><em>Dato consolidato di dominio (senza fonte primaria singola).</em>&#160;<a class="footnote-backref" href="#fnref:gk" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:gk" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:gk" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -6359,6 +6460,20 @@
       
       
         <span class="md-tag">open-source</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">quantization</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">local-ai</span>
       
     
   </nav>

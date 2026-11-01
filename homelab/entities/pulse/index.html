@@ -3673,10 +3673,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#funzionamento" class="md-nav__link">
+  <a href="#perche-una-sola-piattaforma-per-virtualizzazione-e-container" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Funzionamento
+        Perché una sola piattaforma per virtualizzazione e container
       </span>
     </span>
   </a>
@@ -3684,10 +3684,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ruolo-nello-stack" class="md-nav__link">
+  <a href="#installazione-e-metriche-raccolte" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Ruolo nello stack
+        Installazione e metriche raccolte
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alerting-e-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Alerting e AI agent
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pulse-uptime-kuma-e-beszel" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Pulse, Uptime Kuma e Beszel
       </span>
     </span>
   </a>
@@ -6143,10 +6165,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#funzionamento" class="md-nav__link">
+  <a href="#perche-una-sola-piattaforma-per-virtualizzazione-e-container" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Funzionamento
+        Perché una sola piattaforma per virtualizzazione e container
       </span>
     </span>
   </a>
@@ -6154,10 +6176,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ruolo-nello-stack" class="md-nav__link">
+  <a href="#installazione-e-metriche-raccolte" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Ruolo nello stack
+        Installazione e metriche raccolte
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alerting-e-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Alerting e AI agent
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pulse-uptime-kuma-e-beszel" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Pulse, Uptime Kuma e Beszel
       </span>
     </span>
   </a>
@@ -6324,16 +6368,20 @@
 
 
 <h1 id="pulse">Pulse</h1>
-<p>Piattaforma di monitoring che unifica in un'unica dashboard host <a href="../proxmox-ve/">Proxmox VE</a>, lo storage di Proxmox (incluso Ceph) e gli host Docker. Brandon Lee (VirtualizationHowto) la descrive come una delle piattaforme di monitoring centrali del suo homelab da quando ha spostato i carichi di produzione su Proxmox, perché evita di usare una piattaforma per la virtualizzazione e un'altra per i container. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="funzionamento">Funzionamento</h2>
-<ul>
-<li>Server Pulse facile da installare, con agent leggeri sugli host Proxmox e Docker che Pulse mantiene aggiornati automaticamente <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Raccoglie subito le metriche che contano, senza sommergere di dashboard e schermate di configurazione</li>
-<li>Alerting funzionante out-of-the-box: Brandon Lee ha ritoccato di poco le soglie predefinite, che giudica sensate</li>
-<li>Include funzionalità di AI agent che controllano in modo proattivo la salute dell'ambiente, riportano i risultati e possono anche provare a fare triage e correggere i problemi trovati <sup id="fnref2:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></li>
-</ul>
-<h2 id="ruolo-nello-stack">Ruolo nello stack</h2>
-<p>Nel suo homelab Brandon Lee affianca Pulse (monitoring di Proxmox e Docker) a <a href="../uptime-kuma/">Uptime Kuma</a> (uptime a livello applicativo): sono le due soluzioni di monitoring di cui dice di non poter più fare a meno. Per un monitoring più generico, non legato a Proxmox o Docker, indica Beszel come alternativa. <sup id="fnref:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup> <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Pulse è una piattaforma di monitoring che mostra in un'unica dashboard gli host <a href="../proxmox-ve/">Proxmox VE</a>, lo storage collegato a Proxmox (Ceph compreso) e gli host Docker. Brandon Lee (VirtualizationHowto) la usa nel suo homelab e la indica come una delle due soluzioni di monitoring di cui non farebbe più a meno, insieme a <a href="../uptime-kuma/">Uptime Kuma</a>. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> <sup id="fnref:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<p>Ceph è un sistema di storage distribuito open source. <sup id="fnref:gk"><a class="footnote-ref" href="#fn:gk">3</a></sup></p>
+<h2 id="perche-una-sola-piattaforma-per-virtualizzazione-e-container">Perché una sola piattaforma per virtualizzazione e container</h2>
+<p>Lee cercava uno strumento che non obbligasse a usare più piattaforme solo per capire cosa succede nell'ambiente, e lo ha cercato da quando ha spostato i suoi carichi di produzione su Proxmox. Racconta di essere già passato dalla strada opposta, cioè una piattaforma di monitoring per lo stack di virtualizzazione e un'altra per i container. Con Pulse la visibilità su host Proxmox, storage Proxmox (Ceph incluso) e host Docker sta in un'unica interfaccia, e questo riduce il lavoro di amministrazione. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Lee apprezza anche che Pulse monitori bene entrambe le tecnologie, Proxmox e i container Docker, invece di essere forte su una sola. Nell'articolo sulle automazioni notturne la riassume come una delle migliori soluzioni che ha trovato per monitorare un server Proxmox VE e gli ambienti Docker. <sup id="fnref2:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<h2 id="installazione-e-metriche-raccolte">Installazione e metriche raccolte</h2>
+<p>Secondo Lee il server Pulse è facile da mettere in piedi. Si installano poi agent leggeri sull'host Proxmox e sull'host Docker, e Pulse li mantiene aggiornati in automatico. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Appena gli agent sono attivi, Pulse comincia a raccogliere metriche. Lee giudica che raccolga bene quelle che contano per l'ambiente e che non sommerga di dashboard e schermate di configurazione: lo descrive come molto semplice, con la visibilità che serve.</p>
+<h2 id="alerting-e-ai-agent">Alerting e AI agent</h2>
+<p>L'alerting funziona bene fin dall'installazione. Lee ha ritoccato un po' le soglie predefinite, ma per la maggior parte le ha trovate sensate. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Secondo Lee, Pulse ha inoltre funzionalità di AI agent integrate. Gli agent possono controllare in modo proattivo lo stato di salute di tutto l'ambiente e riferire i risultati, oppure provare a fare triage e a correggere i problemi man mano che li trovano. <sup id="fnref3:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup> Le fonti non dicono come funzionino questi agent né quali correzioni possano applicare.</p>
+<h2 id="pulse-uptime-kuma-e-beszel">Pulse, Uptime Kuma e Beszel</h2>
+<p>Pulse e Uptime Kuma coprono due livelli diversi del monitoring nell'homelab di Lee. Pulse dà visibilità su Proxmox e Docker. Uptime Kuma tiene d'occhio il livello applicativo: Lee lo descrive come uno dei primi strumenti che installa, perché di solito è il primo a segnalare un servizio non disponibile. Può controllare, per esempio, pagine web, query DNS o record restituiti da un database SQL. <sup id="fnref4:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup> <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Rispondendo a un lettore nei commenti dell'articolo, Lee precisa che la maggior parte delle sue automazioni è pianificata di notte, ma il monitoring e gli SSL girano a ciclo continuo. <sup id="fnref5:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<p>Per chi vuole qualcosa di più generico, che non sia concentrato su Proxmox o Docker, Lee indica Beszel (nella trascrizione automatica "Bezel"). Beszel si distribuisce come un semplice container Docker e mostra per tutti i server l'uso di CPU, memoria e disco, l'attività di rete e le metriche storiche delle prestazioni, in un'interfaccia pulita e moderna. Secondo Lee, come Pulse, dà valore subito dopo l'installazione, senza le ore o i giorni di configurazione che altre piattaforme richiedono. <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
 <h2 id="voci-correlate">Voci correlate</h2>
 <ul>
 <li><a href="../../concepts/homelab-monitoring-stack/">Homelab Monitoring Stack</a> — i layer di monitoring di cui Pulse fa parte</li>
@@ -6347,10 +6395,13 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/xN-kvrwpzGs" target="_blank">These 9 Linux Tools Made Managing My Home Lab Much Easier</a> (VirtualizationHowto) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/xN-kvrwpzGs" target="_blank">These 9 Linux Tools Made Managing My Home Lab Much Easier</a> (VirtualizationHowto) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cit-2">
-<p>Fonte: <a href="https://www.virtualizationhowto.com/2026/08/the-9-things-my-home-lab-automates-while-im-sleeping/" target="_blank">The 9 Things My Home Lab Automates While I'm Sleeping</a> (Brandon Lee) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://www.virtualizationhowto.com/2026/08/the-9-things-my-home-lab-automates-while-im-sleeping/" target="_blank">The 9 Things My Home Lab Automates While I'm Sleeping</a> (Brandon Lee) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:gk">
+<p><em>Dato consolidato di dominio (senza fonte primaria singola).</em>&#160;<a class="footnote-backref" href="#fnref:gk" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

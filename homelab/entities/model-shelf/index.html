@@ -3565,10 +3565,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#come-funziona" class="md-nav__link">
+  <a href="#perche-serve-modelli-duplicati-e-cache-illeggibile" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Come funziona
+        Perché serve: modelli duplicati e cache illeggibile
       </span>
     </span>
   </a>
@@ -3576,10 +3576,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problema-che-risolve" class="md-nav__link">
+  <a href="#come-model-shelf-organizza-i-modelli" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Problema che risolve
+        Come Model Shelf organizza i modelli
       </span>
     </span>
   </a>
@@ -3587,10 +3587,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#storage-hardware-acasis-tb504" class="md-nav__link">
+  <a href="#come-lo-usa-un-agente-skill-e-hugging-face-hub" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Storage hardware: Acasis TB504
+        Come lo usa un agente: skill e Hugging Face Hub
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-della-demo-acasis-tb504" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Hardware della demo: Acasis TB504
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disco-esterno-o-interno-il-compromesso" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Disco esterno o interno: il compromesso
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raid-0-per-i-modelli" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        RAID 0 per i modelli
       </span>
     </span>
   </a>
@@ -6154,10 +6187,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#come-funziona" class="md-nav__link">
+  <a href="#perche-serve-modelli-duplicati-e-cache-illeggibile" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Come funziona
+        Perché serve: modelli duplicati e cache illeggibile
       </span>
     </span>
   </a>
@@ -6165,10 +6198,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problema-che-risolve" class="md-nav__link">
+  <a href="#come-model-shelf-organizza-i-modelli" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Problema che risolve
+        Come Model Shelf organizza i modelli
       </span>
     </span>
   </a>
@@ -6176,10 +6209,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#storage-hardware-acasis-tb504" class="md-nav__link">
+  <a href="#come-lo-usa-un-agente-skill-e-hugging-face-hub" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Storage hardware: Acasis TB504
+        Come lo usa un agente: skill e Hugging Face Hub
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-della-demo-acasis-tb504" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Hardware della demo: Acasis TB504
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disco-esterno-o-interno-il-compromesso" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Disco esterno o interno: il compromesso
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raid-0-per-i-modelli" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        RAID 0 per i modelli
       </span>
     </span>
   </a>
@@ -6346,42 +6412,54 @@
 
 
 <h1 id="model-shelf">Model Shelf</h1>
-<p>Model Shelf è uno strumento open-source di Alex Ziskind (repo GitHub <code>alexziskind1/modelshelf</code>, installabile con un solo comando) che risolve il problema della gestione e organizzazione dei modelli AI locali. Sostituisce la cache caotica di HuggingFace con una struttura di directory pulita e leggibile. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="come-funziona">Come funziona</h2>
+<p>Model Shelf è uno strumento open source scritto da Alex Ziskind (repo GitHub <code>alexziskind1/modelshelf</code>) per scaricare, organizzare e ritrovare i modelli AI locali su uno o più dischi. Si installa con un solo comando, che installa sia lo strumento sia una skill per Claude Code. Ziskind lo presenta in un video sponsorizzato da Acasis, il produttore dell'enclosure per SSD usata nella demo. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>La quantizzazione (ad esempio a 4 bit) è la tecnica che memorizza i pesi di un modello con meno bit per ridurne le dimensioni. <sup id="fnref:gk"><a class="footnote-ref" href="#fn:gk">2</a></sup></p>
+<h2 id="perche-serve-modelli-duplicati-e-cache-illeggibile">Perché serve: modelli duplicati e cache illeggibile</h2>
+<p>Ziskind usa un Mac con M5 Max e 8 TB di SSD e ne ha liberi solo 1,8 TB. A riempirlo sono i modelli: LLM locali, pesi per la generazione di immagini e di video, e più varianti quantizzate dello stesso modello, che tiene per poterle confrontare nei video del canale. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Le dimensioni che cita sono queste: Qwen 3 14B a 4 bit occupa 8 GB, un modello della classe 70B quantizzato supera i 40 GB, i pesi di immagini e video arrivano a centinaia di GB, e dataset per RAG e vector database aggiungono altri gigabyte.</p>
+<p>Metà di questi file, racconta, sono copie di quelli che ha già su un'altra macchina o in un'altra cartella della stessa macchina, ma non riusciva a ritrovarli e li riscaricava. Prima di Model Shelf creava una cartella <code>models</code> e sperava di ricordarsi cosa ci fosse dentro.</p>
+<p>La cache di Hugging Face, che Ziskind dice di non sopportare, rende il problema peggiore. Contiene cartelle come <code>models--qwen--...</code> con nomi incomprensibili, una cartella <code>blobs</code> con i file dei pesi, una <code>refs</code> con <code>main</code> e una <code>snapshots</code> dove stanno le configurazioni. Per chi deve puntare llama.cpp o MLX a un file, non è chiaro quale sia quello giusto.</p>
+<h2 id="come-model-shelf-organizza-i-modelli">Come Model Shelf organizza i modelli</h2>
+<p>Model Shelf inizializza su un disco una cartella con una struttura per formato: una directory per i modelli GGUF di <a href="../../concepts/llama-cpp/">llama.cpp</a>, una per quelli MLX e una per quelli safetensors, il formato che serve per esempio a <a href="../../concepts/vllm/">vLLM</a> su una macchina che non è un Mac. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Dentro ogni formato il percorso ricalca l'indirizzo del modello su Hugging Face: formato, publisher (Unsloth, Bartowski o chiunque pubblichi il modello), nome del repo e infine il file. Nella demo il GGUF di Qwen 3.5 9B finisce in una cartella <code>GGUF</code>, poi <code>unsloth</code>, poi la cartella del repo Qwen 3.5 9B, con il file <code>.gguf</code> dentro. Il modello MLX di Qwen 3 4B a 3 bit sta sotto <code>MLX</code> e <code>mlx-community</code>. Non c'è un percorso da copiare dalla cache: il percorso restituito si incolla direttamente nello strumento che esegue il modello.</p>
+<p>Model Shelf funziona su dischi interni, esterni o una combinazione. Può essere inizializzato su più dischi: se Ziskind chiede l'elenco dei modelli, lo strumento guarda tutti i dischi con uno shelf inizializzato e li elenca insieme. Nella demo il Qwen 3.5 9B per llama.cpp sta su un drive, il Gemma 3 4B per llama.cpp su un altro, il Qwen 3 4B MLX a 3 bit su un terzo e lo SmolLM2 di Bartowski sullo shelf locale.</p>
+<p>Per questo l'agente non deve sapere in quale bay o disco si trovi un modello: chiede a Model Shelf, ottiene un percorso e lo usa. Ziskind aggiunge che un drive può essere spostato su un altro Mac e continuare a funzionare.</p>
+<p>Model Shelf non ha un server in esecuzione, né un MCP, né un demone, né un'icona nella barra dei menu. È un comando di shell che restituisce JSON, quindi lo può usare qualsiasi agente capace di eseguire comandi, oppure una persona da un ambiente Python.</p>
+<h2 id="come-lo-usa-un-agente-skill-e-hugging-face-hub">Come lo usa un agente: skill e Hugging Face Hub</h2>
+<p>L'installazione aggiunge a Claude Code una skill, quindi l'agente sa già come usare Model Shelf e non gli va spiegato nulla. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Ziskind descrive la skill con un contrasto: un agente a cui si chiede un modello recente spesso risponde con sicurezza che quel modello non esiste, perché i suoi dati di addestramento hanno forse sei mesi. Con Model Shelf l'agente non discute ma interroga il Hugging Face Hub, che è la fonte di verità al posto della memoria del modello.</p>
+<p>La demo mostra due casi. Nel primo Ziskind chiede a voce, con un tool di dettatura (Super Whisper), il Qwen 3 da 4 miliardi di parametri in versione MLX a 3 bit. La dettatura storpia il nome del modello, ma l'agente capisce, trova che il modello è già sullo shelf, non scarica nulla e restituisce il percorso e il comando da eseguire.</p>
+<p>Nel secondo caso chiede il Qwen 3.5 da 9 miliardi di parametri a 4 bit per llama.cpp. Anche qui l'input è impreciso, quindi l'agente carica la skill e cerca prima nell'hub, e così trova il formato richiesto. Sceglie la versione di Unsloth perché è il repo GGUF più pulito e con più download, e la scarica perché non c'è in locale. Alla fine restituisce il percorso completo e il comando per avviare llama.cpp e <code>llama-server</code> su quel file.</p>
+<p>Se il drive esterno non è collegato, l'agente non scarica in silenzio gli 8 GB sull'SSD interno. Si ferma e dice che il drive non è montato, oppure propone di usare il disco interno, e senza il permesso di Ziskind non lo fa.</p>
+<h2 id="hardware-della-demo-acasis-tb504">Hardware della demo: Acasis TB504</h2>
+<p>Il disco usato nel video è l'enclosure Acasis TB504, che Acasis ha mandato a Ziskind e sponsorizzato. Il prodotto è lanciato su Kickstarter, con prezzi e aggiornamenti nella descrizione del video, e un early bird finché dura. Ziskind nota che oggi anche marchi affermati lanciano così i prodotti. Alla fine del video il nome diventa AKiTiO TB504: la fonte non dice se sia lo stesso prodotto con un altro nome o un errore di trascrizione. <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Secondo Ziskind il TB504 è un enclosure Thunderbolt 5 a 80 Gbps con quattro bay M.2 NVMe. Sta a metà tra un SSD portatile alimentato e un NAS completo, che la maggior parte delle persone non vuole gestire.</p>
+<p>Le caratteristiche che sottolinea:</p>
 <ul>
-<li>Crea una struttura di directory che rispecchia l'indirizzo del modello su HuggingFace (formato, publisher, repo, file):
-  <div class="highlight"><pre><span></span><code>GGUF/&lt;publisher&gt;/&lt;repo&gt;/&lt;file&gt;.gguf
-</code></pre></div></li>
-<li><strong>Nessun demone</strong> o server MCP — solo un shell command che restituisce JSON</li>
-<li>Shipa con una <strong>skill per Claude Code</strong> → l'agente sa già come usarlo; funziona con qualsiasi agente capace di eseguire comandi shell, o da solo in un ambiente Python</li>
-<li>Directory separate per formato: GGUF per llama.cpp, MLX, safetensors (ad esempio per <a href="../../concepts/vllm/">vLLM</a> su un'altra macchina)</li>
-<li>Con più drive inizializzati elenca i modelli di tutti gli shelf: all'agente non interessa su quale disco stia il modello, e un drive spostato su un altro Mac continua a funzionare</li>
-<li>Restituisce il path del file e il comando pronto per llama.cpp / <code>llama-server</code>; nella demo, per un GGUF di Qwen 3.5 9B, l'agente ha scelto il repo Unsloth come il più pulito e scaricato</li>
-<li>Cerca sul <strong>live HuggingFace Hub</strong> (non sulla memoria datata del modello)</li>
-<li>Se il drive esterno è smontato, non scarica sull'internal — si ferma e chiede permesso</li>
-<li>Funziona su drive interni, esterni, o combinazioni</li>
+<li>È completamente fanless: appena acceso non si sente nulla, a differenza del DAS di un video dell'anno scorso, che doveva allontanare dalla scrivania perché troppo rumoroso.</li>
+<li>Ogni bay ha una propria corsia da 80 Gbps, senza dividerla in quattro.</li>
+<li>Ha due porte downstream a 80 Gbps, che si possono usare anche per i monitor, cosa che di solito non si vede in enclosure di questo tipo.</li>
+<li>Ogni bay compare sul Mac come volume indipendente, non come un unico stripe, e si può iniziare con uno o due dischi e aggiungerne man mano che la libreria cresce, oppure dedicarne uno a MLX e uno a GGUF.</li>
 </ul>
-<p><sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="problema-che-risolve">Problema che risolve</h2>
-<p>La cache di HuggingFace usa cartelle come <code>models--qwen--...</code>, <code>blobs/</code>, <code>snapshots/</code> con nomi incomprensibili. Questo porta a:
-- File duplicati su più macchine (non si trovano → si riscaricano)
-- Spazio consumato da centinaia di GB di modelli e multi-quant variant
-- Difficoltà a capire a quale file puntare llama.cpp o MLX</p>
-<p>Ziskind, con un M5 Max da 8 TB, era rimasto con 1,8 TB liberi. Ordini di grandezza: Qwen 3 14B in INT4 occupa circa 8 GB, un modello di classe 70B quantizzato oltre 40 GB, i pesi per immagini e video possono arrivare a centinaia di GB.</p>
-<p><sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="storage-hardware-acasis-tb504">Storage hardware: Acasis TB504</h2>
-<p>Il video presenta anche l'<strong>Acasis TB504</strong> (sponsorizzato):
-- Thunderbolt 5 a 80 Gbps, 4 bay M.2 NVMe
-- Fanless, ogni bay ha la sua corsia da 80 Gbps
-- Velocità: ~6.900 MB/s lettura e ~6.600 MB/s scrittura (AmorphousDiskMark), anche su due dischi in contemporanea
-- Ogni bay appare come volume indipendente; due porte downstream a 80 Gbps utilizzabili anche per monitor
-- L'SSD interno dell'M5 Max (circa 15.000 MB/s) resta più veloce: con un modello 70B il time to first token dal drive esterno arriva qualche secondo dopo
-- <strong>RAID zero</strong> consigliato per modelli (i pesi sono riscaricabili, l'inferenza è bandwidth-bound); nel test la velocità in RAID 0 è rimasta circa la stessa del singolo disco. Per video e foto, file insostituibili, Ziskind consiglia invece RAID 5 o 6</p>
-<p><sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Con Blackmagic Disk Speed un singolo disco fa circa 6.500 in scrittura e 6.000 in lettura, in MB/s. Con AmorphousDiskMark fa 6.900 in lettura e 6.600 in scrittura. Due dischi misurati nello stesso momento mantengono queste velocità.</p>
+<h2 id="disco-esterno-o-interno-il-compromesso">Disco esterno o interno: il compromesso</h2>
+<p>Con Thunderbolt 5 un modello si carica in memoria dal disco esterno in modo rapido, e poi il runtime lo usa direttamente dalla memoria. Nel test Ziskind fa girare il Qwen 3.5 9B con llama.cpp con un prompt di prova, e l'uso di memoria del sistema sale da circa 68 a circa 76 GB, con un picco della GPU. <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>L'SSD interno dell'M5 Max resta più veloce, con circa 15.000 MB/s. Per un modello da 70 miliardi di parametri, dice Ziskind, il tempo al primo token dal disco esterno sarà più alto di qualche secondo rispetto agli stessi pesi sul disco interno, ma è un compromesso accettabile.</p>
+<h2 id="raid-0-per-i-modelli">RAID 0 per i modelli</h2>
+<p>Ziskind ha già messo in RAID 0 tre dischi esterni in un video dell'anno scorso. Un RAID 0 tratta più dischi come uno solo, più veloce e più capiente, ma non dà ridondanza: se un disco si rompe si perde tutto. <sup id="fnref7:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Per i modelli, secondo lui, RAID 0 è la scelta giusta per tre motivi:</p>
+<ul>
+<li>I modelli si possono rigenerare: ogni peso sullo shelf può essere riscaricato dall'hub e non esiste un originale da perdere, quindi la ridondanza di RAID 1, 5 o 6 non serve.</li>
+<li>L'inferenza è limitata dalla banda: caricare in VRAM un modello da 70 miliardi di parametri significa far passare circa 40 GB dal controller dello storage il più velocemente possibile, e quattro dischi in RAID 0 dovrebbero in teoria superare i 15.000 MB/s dell'SSD interno.</li>
+<li>Se uno stripe si rompe, basta riscaricare il modello.</li>
+</ul>
+<p>Per video e foto Ziskind consiglia invece RAID 5 o 6, perché quei file non sono sostituibili.</p>
+<p>Nel test usa il RAID Assistant di Disk Utility su macOS, sceglie un RAID 0 a strisce su tutti e quattro i dischi del TB504, con APFS e chunk size di 256, il che cancella i modelli presenti. Nel test la velocità del RAID 0 è circa la stessa del singolo disco, quindi la previsione teorica non si è verificata, ma Ziskind dice che il test valeva la pena. Poi inizializza Model Shelf sul volume RAID e chiede all'agente il Gemma 3 4B in MLX a 4 bit, che viene scaricato nella struttura dello shelf. Il percorso si risolve come prima e l'agente non nota la differenza.</p>
+<p>Al termine Ziskind sposta i modelli sul TB504 per liberare lo spazio dell'SSD interno e lascia all'agente il compito di trovarli ovunque siano.</p>
 <h2 id="voci-correlate">Voci correlate</h2>
 <ul>
 <li><a href="../../concepts/vllm/">vLLM</a> — serving layer che può usare i modelli safetensors gestiti da Model Shelf</li>
-<li><a href="../../concepts/llama-cpp/">llama.cpp</a> — inference engine che usa i modelli gestiti da Model Shelf</li>
+<li><a href="../../concepts/llama-cpp/">llama.cpp</a> — inference engine che usa i modelli GGUF gestiti da Model Shelf</li>
 <li><a href="../../concepts/gpu-per-ai-locale/">GPU per AI locale</a> — l'hardware che consuma i modelli gestiti</li>
 </ul>
 <hr />
@@ -6390,7 +6468,10 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/YMoDxVlUniI" target="_blank">My LLM Hoarding Got Out of Hand… So I Built This</a> (Alex Ziskind) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/YMoDxVlUniI" target="_blank">My LLM Hoarding Got Out of Hand… So I Built This</a> (Alex Ziskind) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:gk">
+<p><em>Dato consolidato di dominio (senza fonte primaria singola).</em>&#160;<a class="footnote-backref" href="#fnref:gk" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -6410,6 +6491,20 @@
       
       
         <span class="md-tag">local-ai</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">nvme</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">raid</span>
       
     
   </nav>

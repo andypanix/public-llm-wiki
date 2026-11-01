@@ -851,10 +851,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#evidenze" class="md-nav__link">
+  <a href="#perche-i-modelli-non-sono-semplicemente-congelati" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Evidenze
+        Perché i modelli non sono semplicemente "congelati"
       </span>
     </span>
   </a>
@@ -862,10 +862,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#implicazioni-di-sicurezza" class="md-nav__link">
+  <a href="#few-shot-learning-levidenza-di-gpt-3" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Implicazioni di sicurezza
+        Few-shot learning: l'evidenza di GPT-3
       </span>
     </span>
   </a>
@@ -873,10 +873,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#critica-alla-critica-sono-congelati" class="md-nav__link">
+  <a href="#documenti-falsi-fine-tuning-e-contesto-a-confronto" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Critica alla critica "sono congelati"
+        Documenti falsi: fine tuning e contesto a confronto
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conseguenze-per-la-sicurezza" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Conseguenze per la sicurezza
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limiti-del-contesto-come-memoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Limiti del contesto come memoria
       </span>
     </span>
   </a>
@@ -6143,10 +6165,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#evidenze" class="md-nav__link">
+  <a href="#perche-i-modelli-non-sono-semplicemente-congelati" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Evidenze
+        Perché i modelli non sono semplicemente "congelati"
       </span>
     </span>
   </a>
@@ -6154,10 +6176,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#implicazioni-di-sicurezza" class="md-nav__link">
+  <a href="#few-shot-learning-levidenza-di-gpt-3" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Implicazioni di sicurezza
+        Few-shot learning: l'evidenza di GPT-3
       </span>
     </span>
   </a>
@@ -6165,10 +6187,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#critica-alla-critica-sono-congelati" class="md-nav__link">
+  <a href="#documenti-falsi-fine-tuning-e-contesto-a-confronto" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Critica alla critica "sono congelati"
+        Documenti falsi: fine tuning e contesto a confronto
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conseguenze-per-la-sicurezza" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Conseguenze per la sicurezza
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limiti-del-contesto-come-memoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Limiti del contesto come memoria
       </span>
     </span>
   </a>
@@ -6342,19 +6386,26 @@
 
 
 <h1 id="in-context-learning">In-Context Learning</h1>
-<p>Forma di apprendimento che avviene tramite il prompt, senza modificare i pesi del modello. Non persistente, ma distinta dall'apprendimento che modifica i pesi (training, fine tuning).<sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="evidenze">Evidenze</h2>
+<p>Per l'in-context learning le cose che si mettono nel prompt sono una forma di apprendimento: modificano le credenze del modello e quindi il suo output, senza cambiare i pesi. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> L'apprendimento "propriamente detto", come lo chiama Enkk, è invece quello in cui i pesi cambiano, per esempio con il fine tuning. Enkk ne parla nel video sulle otto critiche al <a href="../pappagallo-stocastico/">pappagallo stocastico</a>, dentro la sesta critica ("non si aggiornano, sono congelati"). Secondo lui è una capacità importante, fondamentale dei large language model.</p>
+<h2 id="perche-i-modelli-non-sono-semplicemente-congelati">Perché i modelli non sono semplicemente "congelati"</h2>
+<p>La critica dice che le conoscenze di un modello restano fissate al termine dell'addestramento e che ciò che apprende durante una conversazione non è persistente. Enkk la considera strutturalmente vera, ma dice che trascura l'in-context learning: l'apprendimento nel prompt non è persistente, però esistono i sistemi RAG e i file esterni, e si può cercare di ottenere persistenza con quelli, magari con l'aiuto di un harness. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Un harness è un pezzo di software esterno al modello che gli dà accesso a funzionalità come cercare sul web o scrivere ed eseguire codice, controllandone l'output. RAG (retrieval-augmented generation) è una tecnica che recupera documenti esterni e li inserisce nel contesto del modello prima della risposta. <sup id="fnref:gk"><a class="footnote-ref" href="#fn:gk">2</a></sup> Per Enkk, per questi motivi la critica "lascia il tempo che trova".</p>
+<h2 id="few-shot-learning-levidenza-di-gpt-3">Few-shot learning: l'evidenza di GPT-3</h2>
+<p>La prima evidenza citata da Enkk è il paper OpenAI del 2020 che presenta GPT-3, intitolato "Language Models are few shot learners". Gli si possono dare alcuni esempi nel contesto, anche di cose mai viste, e il modello se la cava: per Enkk è il segno che impara dagli esempi dati nel contesto. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<h2 id="documenti-falsi-fine-tuning-e-contesto-a-confronto">Documenti falsi: fine tuning e contesto a confronto</h2>
+<p>La seconda evidenza è uno studio su come i modelli apprendono affermazioni e negazioni, raccontato da Enkk con più spazio perché gli è piaciuto molto. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p><strong>Impostazione.</strong> Gli autori preparano affermazioni inventate e implausibili, per esempio "Ed Sheeran ha vinto le Olimpiadi" o "la regina Elisabetta ha imparato a programmare in Python dopo il Covid". Vogliono vedere come cambiano le credenze del modello a seconda di come le affermazioni gli vengono date: in fase di allenamento, con o senza l'avvertenza che sono false, oppure nel contesto. La misura è il belief rate, cioè quanto il modello dice che un'affermazione è vera. Il modello usato ha 400 miliardi di parametri e, in media, parte da un belief rate del 2,5% su queste affermazioni: di suo non le rappresenta come vere.</p>
+<p><strong>Risultati con il fine tuning.</strong> Se il modello viene sottoposto a fine tuning con documenti che contengono le affermazioni, preceduti da "quanto segue è falso", il belief rate sale a più dell'88% in media. Aggiungere un secondo avviso ("quanto detto prima è falso") lo fa scendere solo all'84%, pochissima differenza, anche ripetendo ulteriormente che è falso. Senza alcun avviso, che dà il limite massimo di credenza, si arriva al 92%.</p>
+<p><strong>Risultati nel contesto.</strong> Se gli stessi documenti vengono dati in context learning, il belief rate è del 15%, anche dicendo al modello che sono inventati o inaffidabili (per esempio "questo articolo è falso, non devi crederci").</p>
+<p><strong>Differenza dall'apprendimento umano.</strong> Secondo Enkk il risultato dice che l'apprendimento dei modelli è diverso dal nostro: un essere umano che leggesse libri con affermazioni di questo tipo capirebbe che Ed Sheeran non ha vinto le Olimpiadi. Per i modelli le cose cambiano, e cambiano anche tra fine tuning e contesto.</p>
+<h2 id="conseguenze-per-la-sicurezza">Conseguenze per la sicurezza</h2>
+<p>Enkk dice che l'esperimento ha impatti importanti sull'uso di questi strumenti, perché l'allenamento è una fase molto estensiva. Gli autori ipotizzano che dando al modello codice malevolo accompagnato dall'avviso "questo è codice malevolo, non scrivere codice così", il modello impari comunque a scrivere quel codice. <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Enkk osserva che nel mondo molti documenti funzionano così: dicono qualcosa per assurdo e poi precisano che è sbagliato.</p>
+<h2 id="limiti-del-contesto-come-memoria">Limiti del contesto come memoria</h2>
+<p>Nella critica successiva ("non hanno memoria") Enkk mostra che ciò che sta nel contesto non viene sempre usato bene, e la presenta come un problema reale, mitigato in molti modi ma non risolto. <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
 <ul>
-<li><strong>GPT-3</strong> (OpenAI 2020): "Language Models are few shot learners" — basta dare pochi esempi nel contesto<sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li><strong>Belief rate study</strong>: affermazioni inventate e implausibili (es. "Ed Sheeran ha vinto le Olimpiadi"), su un modello da 400 miliardi di parametri con belief rate iniziale del 2,5%:</li>
-<li>Fine tuning con documenti preceduti da "quanto segue è falso" → oltre 88% di belief rate (92% senza dire che è falso)</li>
-<li>In-context, anche dicendo che è falso o inaffidabile → 15% di belief rate</li>
-<li>L'apprendimento LLM è diverso da umano: gli umani leggerebbero e capirebbero che è falso</li>
+<li>Un paper di maggio 2025, su modelli ormai obsoleti, spezza i problemi in pezzi dati in una conversazione a più turni: le prestazioni calano in media del 39%, perché senza tutti i dettagli iniziali i modelli formulano ipotesi per colmare i buchi e vi restano attaccati. Enkk pensa che oggi l'effetto sia molto più attenuato, ma è una sua impressione.</li>
+<li>Un lavoro più recente sul <a href="../context-rot/">context rot</a> fa giudicare a un modello l'operato di un altro, per scoprire azioni illegali nella traccia di ragionamento. Se la traccia contiene moltissimi token di operazioni innocue, trovare l'azione malevola diventa più difficile, quindi il contesto, oggi di solito da un milione di token, non è tutto uguale.</li>
+<li>Un report di un security institute molto autorevole in cybersecurity e large language model, che Enkk considera meno rigoroso di un paper, sospetta che la compattazione automatica della finestra di contesto possa perdere sottigliezze e portare il modello ad avere fatti sbagliati. L'esempio è una persona considerata reale che, dopo varie compattazioni, viene trattata come un agente del test.</li>
 </ul>
-<h2 id="implicazioni-di-sicurezza">Implicazioni di sicurezza</h2>
-<p>Gli autori ipotizzano che codice malevolo etichettato come "non scrivere così" porti il modello a imparare comunque a scriverlo. Molti documenti nel mondo affermano qualcosa per poi dire che è sbagliato.<sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="critica-alla-critica-sono-congelati">Critica alla critica "sono congelati"</h2>
-<p>La critica che i LLM non si aggiornano è strutturalmente vera (i pesi sono fissi), ma ignora che l'in-context learning è una forma reale di apprendimento. RAG, file esterni e harness possono fornire persistenza.<sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
 <p>Vedi anche: <a href="../pappagallo-stocastico/">Pappagallo Stocastico (Stochastic Parrot)</a>, <a href="../context-rot/">Context Rot</a>, <a href="../rlvr/">RLVR (Reinforcement Learning from Verifiable Rewards)</a></p>
 <hr />
 <h2 id="fonti-e-riferimenti">Fonti e Riferimenti</h2>
@@ -6362,7 +6413,10 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/8ohhq9Im7Lg" target="_blank">Autopsia di un pappagallo: le reali capacità dell'AI</a> (Enkk) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/8ohhq9Im7Lg" target="_blank">Autopsia di un pappagallo: le reali capacità dell'AI</a> (Enkk) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:gk">
+<p><em>Dato consolidato di dominio (senza fonte primaria singola).</em>&#160;<a class="footnote-backref" href="#fnref:gk" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

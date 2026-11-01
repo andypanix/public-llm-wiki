@@ -3700,10 +3700,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#architettura" class="md-nav__link">
+  <a href="#perche-serve-uninterfaccia-grafica-per-docker-compose" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Architettura
+        Perché serve un'interfaccia grafica per Docker Compose
       </span>
     </span>
   </a>
@@ -3711,10 +3711,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#funzione-unica-snapshot" class="md-nav__link">
+  <a href="#come-funziona-un-container-centrale-e-un-agent-per-host" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Funzione unica: Snapshot
+        Come funziona: un container centrale e un agent per host
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#snapshot-degli-stack-prima-di-una-modifica" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Snapshot degli stack prima di una modifica
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confronto-con-portainer-e-komodo" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Confronto con Portainer e Komodo
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pagine-collegate" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Pagine collegate
       </span>
     </span>
   </a>
@@ -6132,10 +6165,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#architettura" class="md-nav__link">
+  <a href="#perche-serve-uninterfaccia-grafica-per-docker-compose" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Architettura
+        Perché serve un'interfaccia grafica per Docker Compose
       </span>
     </span>
   </a>
@@ -6143,10 +6176,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#funzione-unica-snapshot" class="md-nav__link">
+  <a href="#come-funziona-un-container-centrale-e-un-agent-per-host" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Funzione unica: Snapshot
+        Come funziona: un container centrale e un agent per host
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#snapshot-degli-stack-prima-di-una-modifica" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Snapshot degli stack prima di una modifica
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confronto-con-portainer-e-komodo" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Confronto con Portainer e Komodo
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pagine-collegate" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Pagine collegate
       </span>
     </span>
   </a>
@@ -6302,16 +6368,18 @@
 
 
 <h1 id="sencho">Sencho</h1>
-<p>Management GUI per Docker Compose. Secondo Brandon Lee è un'alternativa a Portainer e Komodo con un approccio fresco. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="architettura">Architettura</h2>
-<ul>
-<li>Container centrale di management</li>
-<li>Agent leggero ("pilot") installato su ogni Docker host</li>
-<li>Dashboard unificata per multi-host Docker compose stack</li>
-</ul>
-<p><sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="funzione-unica-snapshot">Funzione unica: Snapshot</h2>
-<p>Prima di modificare un Docker compose stack, si può creare uno snapshot direttamente dall'interfaccia. Non è un VM snapshot ma uno snapshot della configurazione compose — funzione che Brandon Lee dice di non aver visto in altri tool. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Sencho è uno strumento con interfaccia grafica per gestire applicazioni Docker Compose. Brandon Lee di VirtualizationHowto lo presenta come uno dei nove tool di gestione Linux del suo video, e dice che gli ha fatto una buona impressione ("a tool that really surprised me recently"). <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<h2 id="perche-serve-uninterfaccia-grafica-per-docker-compose">Perché serve un'interfaccia grafica per Docker Compose</h2>
+<p>Lee dice di apprezzare ancora la modifica diretta dei file Docker Compose. Secondo lui, però, quando si gestiscono molte applicazioni Compose un'interfaccia grafica per i deployment e gli stack rende la vita molto più facile. Sencho è pensato per questo caso. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<h2 id="come-funziona-un-container-centrale-e-un-agent-per-host">Come funziona: un container centrale e un agent per host</h2>
+<p>Sencho usa un container di management centralizzato e un agent leggero, che il progetto chiama "pilot agent" e che si installa sull'host Docker. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Da un'unica interfaccia si tengono sotto controllo più server Docker e si vede lo stato di salute degli stack Compose su tutto l'insieme degli host, che Sencho chiama "fleet". Lee conclude che da quell'unica dashboard si può gestire l'intero ambiente Docker.</p>
+<h2 id="snapshot-degli-stack-prima-di-una-modifica">Snapshot degli stack prima di una modifica</h2>
+<p>Prima di cambiare uno stack Docker Compose si può creare uno snapshot direttamente dall'interfaccia. Non è lo snapshot di una macchina virtuale: è lo snapshot degli stack, cioè della configurazione Docker Compose. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Secondo Lee questa è la funzione che si distingue di più, e dice di non averla vista o notata in altre piattaforme. È un'opinione sua, non una verifica del confronto con gli altri prodotti.</p>
+<h2 id="confronto-con-portainer-e-komodo">Confronto con Portainer e Komodo</h2>
+<p>Lee dice che chi ha già usato tool come Portainer o Komodo troverà in Sencho "a refreshing take" sulla gestione di Docker Compose. Il video non spiega come funzionino Portainer e Komodo né in cosa Sencho differisca oltre allo snapshot. Lee aggiunge che Docker Compose è ormai una parte importante della maggior parte degli home lab, e che uno strumento di questo tipo "pays off quickly". <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<h2 id="pagine-collegate">Pagine collegate</h2>
 <p>Vedi anche: <a href="../../concepts/homelab-monitoring-stack/">Homelab Monitoring Stack</a>, LoggiFly, <a href="../cockpit/">Cockpit</a>, e nella wiki devops <a href="../../../devops/entities/dockcheck/">dockcheck</a>, <a href="../../../devops/entities/argocd/">Argo CD</a> e <a href="../../../devops/entities/semaphore-ui/">Semaphore UI</a></p>
 <hr />
 <h2 id="fonti-e-riferimenti">Fonti e Riferimenti</h2>
@@ -6319,7 +6387,7 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/xN-kvrwpzGs" target="_blank">These 9 Linux Tools Made Managing My Home Lab Much Easier</a> (VirtualizationHowto) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/xN-kvrwpzGs" target="_blank">These 9 Linux Tools Made Managing My Home Lab Much Easier</a> (VirtualizationHowto) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

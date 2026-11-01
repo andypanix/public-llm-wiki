@@ -3619,10 +3619,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setup-homelab-brandon-lee" class="md-nav__link">
+  <a href="#a-cosa-serve-un-backup-e-quando-gira" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Setup homelab (Brandon Lee)
+        A cosa serve un backup e quando gira
       </span>
     </span>
   </a>
@@ -3630,10 +3630,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#alternativa-nfs-sul-nas-wundertech" class="md-nav__link">
+  <a href="#come-lo-usa-brandon-lee-snapshot-notturno-del-cluster" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Alternativa: NFS sul NAS (WunderTech)
+        Come lo usa Brandon Lee: snapshot notturno del cluster
       </span>
     </span>
   </a>
@@ -3641,10 +3641,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#caratteristiche" class="md-nav__link">
+  <a href="#una-difesa-a-piu-copie" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Caratteristiche
+        Una difesa a più copie
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rinunciare-a-pbs-lalternativa-nfs-sul-nas-wundertech" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Rinunciare a PBS: l'alternativa NFS sul NAS (WunderTech)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perche-con-un-solo-nodo-i-backup-diventano-indispensabili" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Perché con un solo nodo i backup diventano indispensabili
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-due-posizioni-a-confronto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Le due posizioni a confronto
       </span>
     </span>
   </a>
@@ -6143,10 +6176,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setup-homelab-brandon-lee" class="md-nav__link">
+  <a href="#a-cosa-serve-un-backup-e-quando-gira" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Setup homelab (Brandon Lee)
+        A cosa serve un backup e quando gira
       </span>
     </span>
   </a>
@@ -6154,10 +6187,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#alternativa-nfs-sul-nas-wundertech" class="md-nav__link">
+  <a href="#come-lo-usa-brandon-lee-snapshot-notturno-del-cluster" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Alternativa: NFS sul NAS (WunderTech)
+        Come lo usa Brandon Lee: snapshot notturno del cluster
       </span>
     </span>
   </a>
@@ -6165,10 +6198,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#caratteristiche" class="md-nav__link">
+  <a href="#una-difesa-a-piu-copie" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Caratteristiche
+        Una difesa a più copie
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rinunciare-a-pbs-lalternativa-nfs-sul-nas-wundertech" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Rinunciare a PBS: l'alternativa NFS sul NAS (WunderTech)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perche-con-un-solo-nodo-i-backup-diventano-indispensabili" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Perché con un solo nodo i backup diventano indispensabili
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-due-posizioni-a-confronto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Le due posizioni a confronto
       </span>
     </span>
   </a>
@@ -6324,32 +6390,42 @@
 
 
 <h1 id="proxmox-backup-server">Proxmox Backup Server</h1>
-<p>Soluzione di backup (PBS) per cluster <a href="../proxmox-ve/">Proxmox VE</a>. Versione 4.2.<sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="setup-homelab-brandon-lee">Setup homelab (Brandon Lee)</h2>
-<ul>
-<li>Installato su bare metal di Beelink ME Pro 2-bay NAS (power efficient)<sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Snapshot incrementale e versionato del cluster Proxmox ogni notte</li>
-<li>Primo layer di difesa, complementato da Veeam Backup &amp; Replication 13.x come seconda copia</li>
-<li>Brandon Lee vuole almeno due copie dei dati oltre alla ridondanza già offerta dallo storage Ceph HCI del cluster; i job di backup sono sfalsati nella notte per non sovrapporsi e passano quasi inosservati sulla sua rete a 10 Gbit</li>
-</ul>
-<h2 id="alternativa-nfs-sul-nas-wundertech">Alternativa: NFS sul NAS (WunderTech)</h2>
-<p>Nel passaggio da un cluster a 2 nodi a un <a href="../../concepts/mini-itx-single-node/">singolo server mini-ITX</a>, WunderTech ha rinunciato a PBS come perdita principale della migrazione: per ora fa i backup di VM e LXC su una share NFS del NAS, che ha spazio in abbondanza, e prevede di installare PBS come VM sul NAS se diventerà necessario.<sup id="fnref:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
-<h2 id="caratteristiche">Caratteristiche</h2>
-<ul>
-<li>Snapshot incrementali e versionati<sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Protezione del cluster Proxmox VE a livello di VM e LXC</li>
-</ul>
-<p>Vedi anche: <a href="../../../devops/concepts/homelab-automation-overnight/">Homelab Automation (Overnight)</a>, <a href="../proxmox-ve/">Proxmox VE</a>, <a href="../frigate/">Frigate</a></p>
+<p>Proxmox Backup Server (PBS) è la soluzione di backup della famiglia Proxmox, usata per proteggere i cluster <a href="../proxmox-ve/">Proxmox VE</a>. <sup id="fnref:gk"><a class="footnote-ref" href="#fn:gk">3</a></sup> Le due fonti della pagina lo trattano da angoli opposti. Brandon Lee (VirtualizationHowto) lo tiene come prima linea di difesa del suo cluster e ne descrive la versione 4.2. WunderTech lo ha perso passando da un cluster a due nodi a un solo server e lo sostituisce, per ora, con una condivisione NFS. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> <sup id="fnref:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<h2 id="a-cosa-serve-un-backup-e-quando-gira">A cosa serve un backup e quando gira</h2>
+<p>Secondo Brandon i backup sono l'automazione che "salva la pelle" quando le cose vanno male. Se un'unità di storage si guasta o succede qualcosa di catastrofico, un backup permette di ricreare i dati da un recente punto di ripristino. Per questo è una delle prime automazioni che ha messo in piedi nel suo homelab: non è la più eccitante, ma l'obiettivo è che sia "noiosa", cioè che funzioni senza che lui ci pensi. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>I backup girano di notte, e Brandon li sfalsa in modo che due job non partano insieme e non sovraccarichino le risorse. Sulla sua rete a 10 gigabit li nota appena, quando uno è in corso. Rispondendo a un commento, Brandon precisa che la maggior parte delle sue automazioni è pianificata di notte, mentre monitoring e rinnovo dei certificati girano 24 ore su 24.</p>
+<h2 id="come-lo-usa-brandon-lee-snapshot-notturno-del-cluster">Come lo usa Brandon Lee: snapshot notturno del cluster</h2>
+<p>PBS 4.2 gira direttamente sul bare metal di un Beelink ME Pro, un NAS a 2 baie. Brandon lo descrive come efficiente dal punto di vista energetico, adatto al compito. Ogni notte PBS prende uno snapshot dell'intero cluster Proxmox "di produzione", e lo snapshot è incrementale e versionato. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Un backup incrementale salva solo ciò che è cambiato dall'ultimo backup, invece di copiare ogni volta tutti i dati. <sup id="fnref2:gk"><a class="footnote-ref" href="#fn:gk">3</a></sup> PBS protegge il cluster Proxmox VE a livello di VM e container LXC.</p>
+<h2 id="una-difesa-a-piu-copie">Una difesa a più copie</h2>
+<p>Per Brandon PBS è solo il primo livello. Brandon usa anche Veeam Backup &amp; Replication 13.x, che protegge a sua volta il cluster Proxmox VE e gli dà una seconda copia dei dati. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Veeam Backup &amp; Replication è un software di backup commerciale prodotto da Veeam. <sup id="fnref3:gk"><a class="footnote-ref" href="#fn:gk">3</a></sup></p>
+<p>Brandon vuole almeno due copie diverse dei dati, oltre alla ridondanza che già gli dà lo storage Ceph HCI del cluster. Ceph è un sistema di storage distribuito open source. <sup id="fnref4:gk"><a class="footnote-ref" href="#fn:gk">3</a></sup></p>
+<p>PBS e Veeam coprono VM e LXC. Gli altri carichi hanno strumenti dedicati, che Brandon nomina senza descriverli: Duplicati e Portabase per i container Docker, Kasten K10 di Veeam per i carichi del cluster Kubernetes con Talos Linux. Tutti sono pianificati nella notte per prendere il backup di ogni cosa.</p>
+<p>Tra le notifiche che Brandon considera significative ci sono i fallimenti dei backup, insieme allo storage in esaurimento, ai rinnovi di certificato falliti, ai guasti dei servizi critici e ai problemi hardware. Le notifiche arrivano al suo server Mailrise e, quando il prodotto lo supporta, direttamente a Pushover. Limitarsi a questi casi evita l'"alert fatigue", cioè smettere di leggere gli avvisi perché somigliano ai mille precedenti.</p>
+<h2 id="rinunciare-a-pbs-lalternativa-nfs-sul-nas-wundertech">Rinunciare a PBS: l'alternativa NFS sul NAS (WunderTech)</h2>
+<p>Nel passare a un singolo server <a href="../../concepts/mini-itx-single-node/">Mini-ITX</a>, WunderTech ha dovuto ridurre la RAM da 192 GB complessivi a 64 GB. Tra i compromessi dell'operazione elenca Proxmox Backup Server, che chiama "la grande perdita" della migrazione. <sup id="fnref2:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<p>La perdita pesa poco, perché il suo NAS ha tanto spazio. Per ora i backup di VM e LXC vanno su una condivisione NFS del NAS, e se questo non bastasse più, WunderTech installerebbe PBS come VM sul NAS. Già in fase di progetto aveva previsto di usare una condivisione NFS oppure Proxmox Backup Server per salvare con regolarità tutte le VM e i container, con i dati che confluiscono nel NAS.</p>
+<p>Nella migrazione il NAS è servito come storage di backup, e i backup sono stati lo strumento stesso del passaggio. WunderTech ha salvato le VM e gli LXC importanti dal vecchio cluster e li ha ripristinati sul nuovo host. Secondo WunderTech backup e restore tra hardware diversi di norma funzionano senza intoppi, purché non si usi il PCIe passthrough. Le VM non partivano finché non sono state ricreate le reti VLAN e i bridge.</p>
+<h2 id="perche-con-un-solo-nodo-i-backup-diventano-indispensabili">Perché con un solo nodo i backup diventano indispensabili</h2>
+<p>Con un solo nodo, dice WunderTech, la configurazione è più semplice ma non più resiliente. Se la macchina si ferma, si ferma tutto, e l'obiettivo passa da "zero downtime" al recupero. La domanda realistica diventa come sarebbe il ripristino se il server morisse stanotte. <sup id="fnref3:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<p>Il suo piano prevede backup notturni di VM e LXC con retention minima di 30 giorni sul NAS, più backup offsite ogni notte. Il ripristino richiederebbe circa 2 ore, le stesse della migrazione: installare Proxmox, ripristinare dal NAS e verificare. Senza un ricambio pronto, se si rompe la scheda madre il fermo può durare giorni in attesa del pezzo, e WunderTech accetta il compromesso perché il suo è un homelab.</p>
+<p>Per WunderTech la condizione di un setup a nodo singolo è avere backup affidabili con retention e un percorso di restore realistico. I backup non sostituiscono la ridondanza, ma per il suo caso d'uso dovrebbero bastare.</p>
+<h2 id="le-due-posizioni-a-confronto">Le due posizioni a confronto</h2>
+<p>Le fonti concordano sui backup notturni delle VM e dei container su un dispositivo separato da quello che esegue i carichi, il NAS. Differiscono su PBS. Brandon lo ha dedicato a un NAS e lo affianca a Veeam per avere due copie, mentre WunderTech lo ha messo da parte perché un NFS sul NAS basta, e lo tiene come ripiego su una VM. <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> <sup id="fnref4:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<p>Vedi anche: <a href="../proxmox-ve/">Proxmox VE</a>, <a href="../../concepts/mini-itx-single-node/">Mini-ITX single node</a>, <a href="../../../devops/concepts/homelab-automation-overnight/">Homelab Automation (Overnight)</a></p>
 <hr />
 <h2 id="fonti-e-riferimenti">Fonti e Riferimenti</h2>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://www.virtualizationhowto.com/2026/08/the-9-things-my-home-lab-automates-while-im-sleeping/" target="_blank">The 9 Things My Home Lab Automates While I'm Sleeping</a> (Brandon Lee) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://www.virtualizationhowto.com/2026/08/the-9-things-my-home-lab-automates-while-im-sleeping/" target="_blank">The 9 Things My Home Lab Automates While I'm Sleeping</a> (Brandon Lee) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cit-2">
-<p>Fonte: <a href="https://youtu.be/oizzW7RAFPQ" target="_blank">You Probably Don't Need a Proxmox Cluster</a> (WunderTech) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/oizzW7RAFPQ" target="_blank">You Probably Don't Need a Proxmox Cluster</a> (WunderTech) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:gk">
+<p><em>Dato consolidato di dominio (senza fonte primaria singola).</em>&#160;<a class="footnote-backref" href="#fnref:gk" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:gk" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:gk" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:gk" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -6369,6 +6445,13 @@
       
       
         <span class="md-tag">storage</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">backup</span>
       
     
   </nav>

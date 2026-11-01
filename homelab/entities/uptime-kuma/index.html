@@ -3727,10 +3727,32 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#cosa-monitora" class="md-nav__link">
+  <a href="#perche-segnala-i-guasti-prima-degli-altri" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Cosa monitora
+        Perché segnala i guasti prima degli altri
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cosa-puo-monitorare" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Cosa può monitorare
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controlli-a-livello-applicativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Controlli a livello applicativo
       </span>
     </span>
   </a>
@@ -3749,10 +3771,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#strategia-di-deploy" class="md-nav__link">
+  <a href="#da-cosa-partire-prima-linfrastruttura-critica" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Strategia di deploy
+        Da cosa partire: prima l'infrastruttura critica
       </span>
     </span>
   </a>
@@ -3760,10 +3782,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#uso-applicativo" class="md-nav__link">
+  <a href="#come-si-affianca-a-pulse-e-beszel" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Uso applicativo
+        Come si affianca a Pulse e Beszel
       </span>
     </span>
   </a>
@@ -6154,10 +6176,32 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#cosa-monitora" class="md-nav__link">
+  <a href="#perche-segnala-i-guasti-prima-degli-altri" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Cosa monitora
+        Perché segnala i guasti prima degli altri
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cosa-puo-monitorare" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Cosa può monitorare
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controlli-a-livello-applicativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Controlli a livello applicativo
       </span>
     </span>
   </a>
@@ -6176,10 +6220,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#strategia-di-deploy" class="md-nav__link">
+  <a href="#da-cosa-partire-prima-linfrastruttura-critica" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Strategia di deploy
+        Da cosa partire: prima l'infrastruttura critica
       </span>
     </span>
   </a>
@@ -6187,10 +6231,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#uso-applicativo" class="md-nav__link">
+  <a href="#come-si-affianca-a-pulse-e-beszel" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Uso applicativo
+        Come si affianca a Pulse e Beszel
       </span>
     </span>
   </a>
@@ -6346,31 +6390,42 @@
 
 
 <h1 id="uptime-kuma">Uptime Kuma</h1>
-<p>Tool di uptime monitoring e alerting per homelab. Uno dei primi tool di monitoring che Brandon Lee installa, perché di solito è il primo a segnalare un guasto. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="cosa-monitora">Cosa monitora</h2>
-<p>Siti web, API, Docker services, VM, DNS server, reverse proxy, SQL server e altri database, e qualsiasi cosa risponda over the network. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Uptime Kuma è un tool open source di uptime monitoring e alerting, molto usato nei homelab. <sup id="fnref:gk"><a class="footnote-ref" href="#fn:gk">3</a></sup> Brandon Lee, l'autore di VirtualizationHowto, lo descrive come uno dei tool che ogni self-hoster ha sentito nominare negli ultimi due o tre anni. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Per Lee è uno dei primi strumenti di monitoring da installare, perché di solito è il primo a dirgli che qualcosa nel lab è andato storto.</p>
+<h2 id="perche-segnala-i-guasti-prima-degli-altri">Perché segnala i guasti prima degli altri</h2>
+<p>Secondo Lee la maggior parte dei problemi di infrastruttura finisce per presentarsi come un servizio non raggiungibile: il reverse proxy che si ferma, il server DNS che smette di rispondere, un'applicazione Docker che va in crash. Qualunque sia la causa, Uptime Kuma avvisa subito che il servizio non è disponibile, e Lee indica proprio questo come il punto di forza dello strumento: dice molto in fretta se qualcosa è down. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<h2 id="cosa-puo-monitorare">Cosa può monitorare</h2>
+<p>Uno dei punti di forza che Lee sottolinea è la varietà di bersagli. Uptime Kuma controlla siti web, API, servizi Docker, macchine virtuali, server DNS, reverse proxy, SQL server e altri database, e in generale qualsiasi cosa risponda in rete. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<h2 id="controlli-a-livello-applicativo">Controlli a livello applicativo</h2>
+<p>Oltre al semplice "il servizio risponde", Lee usa Uptime Kuma per verificare cosa succede a livello applicativo. Può fare scraping di una pagina web, eseguire query DNS di verifica, o perfino restituire dei record da un database SQL per capire se tutto funziona davvero. Lee nota anche che Uptime Kuma è conosciuto sia nella community homelab sia negli ambienti di produzione. <sup id="fnref:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
 <h2 id="notifiche">Notifiche</h2>
-<p>Email, Discord, Slack, Teams, Telegram, e molte altre piattaforme. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="strategia-di-deploy">Strategia di deploy</h2>
-<ol>
-<li>Partire dall'infrastruttura critica: DNS, reverse proxy, identity provider, storage, backup, host di virtualizzazione (ad esempio <a href="../proxmox-ve/">Proxmox VE</a>)</li>
-<li>Aggiungere gli application stack solo dopo che i core services sono coperti</li>
-<li>Questo approccio dà più fiducia che ogni alert ricevuto meriti attenzione</li>
-</ol>
-<p><sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="uso-applicativo">Uso applicativo</h2>
-<p>Brandon Lee lo usa per controllare cosa succede a livello applicativo: scraping di pagine web, query DNS di verifica, perfino il recupero di record da un database SQL per sapere se tutto funziona. Lo affianca a <a href="../pulse/">Pulse</a>, dedicato a Proxmox e Docker, e nota che Uptime Kuma è diffuso anche in ambienti di produzione. <sup id="fnref:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
-<p>Vedi anche: <a href="../../concepts/homelab-monitoring-stack/">Homelab Monitoring Stack</a>, <a href="../pulse/">Pulse</a>, Beszel, btop, e nella wiki devops <a href="../../../devops/concepts/homelab-automation-overnight/">Homelab Automation (Overnight)</a></p>
+<p>Uptime Kuma si integra con molte piattaforme di notifica: email, Discord, Slack, Teams, Telegram e molte altre. Lee le giudica ottime, e dice che qualunque canale si preferisca, Uptime Kuma probabilmente lo supporta. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<h2 id="da-cosa-partire-prima-linfrastruttura-critica">Da cosa partire: prima l'infrastruttura critica</h2>
+<p>Lee consiglia di configurare per prime le risorse critiche, e non gli application stack. Le risorse da coprire per prime sono:</p>
+<ul>
+<li>i server DNS;</li>
+<li>i reverse proxy;</li>
+<li>gli identity provider;</li>
+<li>i sistemi di storage;</li>
+<li>i server di backup;</li>
+<li>l'host di virtualizzazione, ad esempio <a href="../proxmox-ve/">Proxmox VE</a>.</li>
+</ul>
+<p>Solo quando questi servizi di base sono coperti si aggiungono gli application stack. Lee spiega che così, quando arriva un alert, è più probabile che meriti davvero attenzione. <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<h2 id="come-si-affianca-a-pulse-e-beszel">Come si affianca a Pulse e Beszel</h2>
+<p>Nel suo lab Lee non usa Uptime Kuma da solo. Nell'articolo sull'automazione notturna lo indica come lo strumento per il monitoring generale della disponibilità, in coppia con <a href="../pulse/">Pulse</a>, che usa per monitorare Proxmox e Docker. <sup id="fnref2:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup> Pulse ha un campo più specifico: dà visibilità su host Proxmox, storage (compreso Ceph) e host Docker da un'unica dashboard, tramite agent leggeri installati sugli host. <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Lee cita anche Beszel come opzione più generica, che non è specifica per Proxmox o Docker: è un semplice container Docker che mostra uso di CPU, memoria, disco, attività di rete e metriche storiche dei server. Il quadro completo di come questi strumenti si dividono il lavoro è in <a href="../../concepts/homelab-monitoring-stack/">Homelab Monitoring Stack</a>. Il ruolo del monitoring tra le automazioni notturne è trattato nella wiki devops in <a href="../../../devops/concepts/homelab-automation-overnight/">Homelab Automation (Overnight)</a>.</p>
 <hr />
 <h2 id="fonti-e-riferimenti">Fonti e Riferimenti</h2>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/xN-kvrwpzGs" target="_blank">These 9 Linux Tools Made Managing My Home Lab Much Easier</a> (VirtualizationHowto) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/xN-kvrwpzGs" target="_blank">These 9 Linux Tools Made Managing My Home Lab Much Easier</a> (VirtualizationHowto) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cit-2">
-<p>Fonte: <a href="https://www.virtualizationhowto.com/2026/08/the-9-things-my-home-lab-automates-while-im-sleeping/" target="_blank">The 9 Things My Home Lab Automates While I'm Sleeping</a> (Brandon Lee) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://www.virtualizationhowto.com/2026/08/the-9-things-my-home-lab-automates-while-im-sleeping/" target="_blank">The 9 Things My Home Lab Automates While I'm Sleeping</a> (Brandon Lee) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:gk">
+<p><em>Dato consolidato di dominio (senza fonte primaria singola).</em>&#160;<a class="footnote-backref" href="#fnref:gk" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

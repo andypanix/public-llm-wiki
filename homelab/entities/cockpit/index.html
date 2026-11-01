@@ -3457,10 +3457,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#funzionalita" class="md-nav__link">
+  <a href="#a-cosa-serve-fare-dal-browser-cio-che-di-solito-richiede-ssh" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Funzionalità
+        A cosa serve: fare dal browser ciò che di solito richiede SSH
       </span>
     </span>
   </a>
@@ -3468,10 +3468,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#filosofia" class="md-nav__link">
+  <a href="#perche-non-nasconde-linux" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Filosofia
+        Perché non nasconde Linux
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dove-si-colloca-tra-gli-altri-tool-del-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dove si colloca tra gli altri tool del video
       </span>
     </span>
   </a>
@@ -6132,10 +6143,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#funzionalita" class="md-nav__link">
+  <a href="#a-cosa-serve-fare-dal-browser-cio-che-di-solito-richiede-ssh" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Funzionalità
+        A cosa serve: fare dal browser ciò che di solito richiede SSH
       </span>
     </span>
   </a>
@@ -6143,10 +6154,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#filosofia" class="md-nav__link">
+  <a href="#perche-non-nasconde-linux" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Filosofia
+        Perché non nasconde Linux
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dove-si-colloca-tra-gli-altri-tool-del-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dove si colloca tra gli altri tool del video
       </span>
     </span>
   </a>
@@ -6302,26 +6324,35 @@
 
 
 <h1 id="cockpit">Cockpit</h1>
-<p>Interfaccia web per l'amministrazione di server Linux. Uno dei tool Linux più sottovalutati secondo Brandon Lee (VirtualizationHowto). <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="funzionalita">Funzionalità</h2>
+<p>Cockpit è un'interfaccia web per l'amministrazione di server Linux. <sup id="fnref:gk"><a class="footnote-ref" href="#fn:gk">2</a></sup> Brandon Lee (VirtualizationHowto) la presenta come primo dei nove tool Linux che usa nel suo home lab e la considera ancora oggi uno dei tool di gestione Linux più sottovalutati. Secondo lui chi frequenta Linux da un po' ne ha probabilmente già sentito parlare, e lo indica comunque come una delle sue raccomandazioni principali. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<h2 id="a-cosa-serve-fare-dal-browser-cio-che-di-solito-richiede-ssh">A cosa serve: fare dal browser ciò che di solito richiede SSH</h2>
+<p>Una volta installato, Cockpit espone un'interfaccia di amministrazione web pulita. Lo scopo è eseguire dal browser i compiti da amministratore per cui normalmente bisognerebbe entrare nel server in SSH. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Lee elenca queste operazioni disponibili dal browser:</p>
 <ul>
-<li><strong>System performance</strong>: CPU, memoria, disco <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li><strong>Storage management</strong>: gestione dello storage</li>
-<li><strong>Services</strong>: riavvio dei servizi</li>
-<li><strong>System logs</strong>: browsing log di sistema</li>
-<li><strong>OS updates</strong>: applicazione update dal browser</li>
-<li><strong>Web terminal</strong>: shell diretta integrata nel browser</li>
+<li>controllare le prestazioni del sistema, in particolare CPU, memoria e disco;</li>
+<li>gestire lo storage;</li>
+<li>riavviare i servizi;</li>
+<li>consultare i log di sistema;</li>
+<li>applicare gli aggiornamenti del sistema operativo;</li>
+<li>aprire un terminale web, quando serve un accesso diretto alla shell.</li>
 </ul>
-<h2 id="filosofia">Filosofia</h2>
-<p>Cockpit non nasconde Linux: fornisce un'interfaccia pulita per task admin comuni mantenendo accesso completo all'OS sottostante. Non è una "scatola nera" ma uno strato di convenienza. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<p>Vedi anche: <a href="../proxmox-ve/">Proxmox VE</a>, <a href="../../concepts/homelab-monitoring-stack/">Homelab Monitoring Stack</a>, Patchman, e nella wiki devops <a href="../../../devops/entities/semaphore-ui/">Semaphore UI</a> e <a href="../../../devops/concepts/homelab-automation-overnight/">Homelab Automation (Overnight)</a></p>
+<h2 id="perche-non-nasconde-linux">Perché non nasconde Linux</h2>
+<p>Lee apprezza soprattutto che Cockpit non cerchi di nascondere Linux a chi lo usa. Lo descrive come un'interfaccia gradevole che rende molto più semplici i compiti di amministrazione comuni, lasciando comunque pieno accesso al sistema operativo sottostante ogni volta che serve. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Cockpit è quindi uno strato di comodità sopra Linux e non una scatola nera. Nel finale Lee lo inserisce in un discorso più ampio: la convinzione che amministrare server Linux significhi passare la giornata dentro decine di sessioni SSH è, secondo lui, uno dei fraintendimenti più diffusi, e i tool del video mostrano che l'amministrazione Linux moderna è cambiata molto. Precisa però che la riga di comando resta importantissima.</p>
+<h2 id="dove-si-colloca-tra-gli-altri-tool-del-video">Dove si colloca tra gli altri tool del video</h2>
+<p>Cockpit copre l'amministrazione di un singolo server dal browser. Gli altri tool del video si occupano di aspetti diversi, e Lee dice che ognuno risolve un problema specifico che si incontra quando l'home lab cresce: patching centralizzato con Patchman, monitoraggio dell'infrastruttura con Pulse, Beszel e Uptime Kuma, gestione di Docker Compose con Sencho, alert sui log dei container con LogFly e automazione della configurazione con Semaphore UI. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Per il monitoraggio vedi <a href="../pulse/">Pulse</a>, <a href="../uptime-kuma/">Uptime Kuma</a> e <a href="../../concepts/homelab-monitoring-stack/">Homelab Monitoring Stack</a>; per Docker Compose vedi <a href="../sencho/">Sencho</a>.</p>
+<p>Lee aggiunge che la maggior parte di questi tool si installa nell'arco di un solo fine settimana e che il valore si vede quasi subito.</p>
+<p>Vedi anche: <a href="../proxmox-ve/">Proxmox VE</a> e, nella wiki devops, <a href="../../../devops/entities/semaphore-ui/">Semaphore UI</a> e <a href="../../../devops/concepts/homelab-automation-overnight/">Homelab Automation (Overnight)</a>.</p>
 <hr />
 <h2 id="fonti-e-riferimenti">Fonti e Riferimenti</h2>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/xN-kvrwpzGs" target="_blank">These 9 Linux Tools Made Managing My Home Lab Much Easier</a> (VirtualizationHowto) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/xN-kvrwpzGs" target="_blank">These 9 Linux Tools Made Managing My Home Lab Much Easier</a> (VirtualizationHowto) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:gk">
+<p><em>Dato consolidato di dominio (senza fonte primaria singola).</em>&#160;<a class="footnote-backref" href="#fnref:gk" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

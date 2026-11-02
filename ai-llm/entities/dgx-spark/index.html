@@ -1391,10 +1391,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#specifiche" class="md-nav__link">
+  <a href="#architettura-un-chiplet-con-memoria-unificata" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Specifiche
+        Architettura: un chiplet con memoria unificata
       </span>
     </span>
   </a>
@@ -1402,10 +1402,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#versione-consumer-rtx-spark" class="md-nav__link">
+  <a href="#la-banda-di-memoria-il-limite-della-macchina" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Versione consumer: RTX Spark
+        La banda di memoria: il limite della macchina
       </span>
     </span>
   </a>
@@ -1413,10 +1413,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#macchine-con-lo-stesso-hardware" class="md-nav__link">
+  <a href="#dwarf-star-sul-dgx-spark-ottimizzare-i-kernel-cuda" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Macchine con lo stesso hardware
+        Dwarf Star sul DGX Spark: ottimizzare i kernel CUDA
       </span>
     </span>
   </a>
@@ -1424,10 +1424,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#uso-in-dwarf-star" class="md-nav__link">
+  <a href="#prezzo" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Uso in Dwarf Star
+        Prezzo
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-altre-macchine-gb10" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Le altre macchine GB10
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collegare-piu-macchine" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Collegare più macchine
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rtx-spark-lo-stesso-chip-per-il-mercato-consumer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        RTX Spark: lo stesso chip per il mercato consumer
       </span>
     </span>
   </a>
@@ -6154,10 +6187,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#specifiche" class="md-nav__link">
+  <a href="#architettura-un-chiplet-con-memoria-unificata" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Specifiche
+        Architettura: un chiplet con memoria unificata
       </span>
     </span>
   </a>
@@ -6165,10 +6198,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#versione-consumer-rtx-spark" class="md-nav__link">
+  <a href="#la-banda-di-memoria-il-limite-della-macchina" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Versione consumer: RTX Spark
+        La banda di memoria: il limite della macchina
       </span>
     </span>
   </a>
@@ -6176,10 +6209,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#macchine-con-lo-stesso-hardware" class="md-nav__link">
+  <a href="#dwarf-star-sul-dgx-spark-ottimizzare-i-kernel-cuda" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Macchine con lo stesso hardware
+        Dwarf Star sul DGX Spark: ottimizzare i kernel CUDA
       </span>
     </span>
   </a>
@@ -6187,10 +6220,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#uso-in-dwarf-star" class="md-nav__link">
+  <a href="#prezzo" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Uso in Dwarf Star
+        Prezzo
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-altre-macchine-gb10" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Le altre macchine GB10
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collegare-piu-macchine" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Collegare più macchine
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rtx-spark-lo-stesso-chip-per-il-mercato-consumer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        RTX Spark: lo stesso chip per il mercato consumer
       </span>
     </span>
   </a>
@@ -6360,46 +6426,69 @@
 
 
 <h1 id="dgx-spark">DGX Spark</h1>
-<p>Mini PC AI di NVIDIA pensato per sviluppatori AI. È basato su un chiplet: un die GPU Blackwell fuso a un die CPU MediaTek tramite NVLink. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> È una delle macchine supportate da <a href="../dwarf-star/">Dwarf Star</a>. <sup id="fnref:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
-<h2 id="specifiche">Specifiche</h2>
+<p>Il DGX Spark è un piccolo computer di NVIDIA per l'AI, pensato per un pubblico di nicchia: sviluppatori e appassionati di AI. Secondo Alex Ziskind, che lo usa per i suoi test, è stato un successo sorprendente proprio perché il pubblico era così ristretto, e ha dimostrato che la gente vuole macchine AI CUDA trasportabili: lo si può mettere in una valigetta e portare con sé, a patto di ricordarsi alimentatore, monitor, cavi, mouse e tastiera. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> CUDA è la piattaforma di calcolo per GPU di NVIDIA. <sup id="fnref:gk"><a class="footnote-ref" href="#fn:gk">6</a></sup></p>
+<p>Per l'<a href="../../concepts/inferenza-locale/">Inferenza Locale</a> il DGX Spark è una delle macchine supportate da <a href="../dwarf-star/">Dwarf Star</a>, il motore di inferenza di <a href="../salvatore-sanfilippo/">Salvatore Sanfilippo (antirez)</a>, che però gli rimprovera la poca banda di memoria. <sup id="fnref:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<h2 id="architettura-un-chiplet-con-memoria-unificata">Architettura: un chiplet con memoria unificata</h2>
+<p>Il chip del DGX Spark è un chiplet: un die GPU Blackwell unito a un die CPU MediaTek tramite NVLink. La CPU è ARM a 20 core, la GPU ha 6.144 core, e fino a 128 GB di memoria unificata sono a disposizione della GPU per i carichi AI. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>La memoria unificata è ciò che distingue questa GPU da una scheda video tradizionale. Ziskind spiega il contrasto con la RTX 5070 Ti, a cui la GPU somiglia sulla carta: la 5070 Ti è una scheda discreta con alimentazione propria e una VRAM propria e veloce, mentre qui c'è una iGPU che condivide la memoria di sistema e consuma una frazione dei watt.</p>
+<p>Techno Tim chiama questa base hardware piattaforma <strong>GB10 Grace Blackwell</strong>: una CPU ARM, una GPU Blackwell e 128 GB di memoria unificata in una scatola molto piccola. Per l'AI locale, osserva, la domanda di solito non è "posso farlo girare?" ma "quanto è grande il modello e ci sta in memoria?". <sup id="fnref:cit-3"><a class="footnote-ref" href="#fn:cit-3">3</a></sup></p>
+<p>Il DGX Spark gira su Linux. Secondo Ziskind continuerà a farlo e erediterà i chip successivi di NVIDIA, Vera Rubin e Feynman, con le CPU che verranno abbinate a quei chip, come detto anche nel keynote. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Sotto carico il DGX Spark di Ziskind arriva a circa 140 W. Spinto al massimo scalda parecchio, nonostante una ventola relativamente grande e uno chassis che ha più spazio di un laptop per dissipare il calore.</p>
+<h2 id="la-banda-di-memoria-il-limite-della-macchina">La banda di memoria: il limite della macchina</h2>
+<p>Nella generazione dei token conta soprattutto la banda di memoria: secondo Sanfilippo la generazione dovrebbe essere limitata principalmente dalla banda disponibile, anche se c'è una parte di calcolo non banale. <sup id="fnref:cit-4"><a class="footnote-ref" href="#fn:cit-4">4</a></sup> Vedi <a href="../../concepts/prefill-e-decode/">Prefill e Decode</a> per la differenza tra la fase di calcolo e quella di generazione.</p>
+<p>Su questo fronte il DGX Spark è debole. Sanfilippo lo colloca intorno ai 250 GB/s, contro i 600 GB/s del suo Mac, gli 800 GB/s di un M3 Ultra e, probabilmente, 1,2 TB/s delle prossime macchine Apple, che si avvicinano ai numeri delle schede video NVIDIA di fascia alta. <sup id="fnref2:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<p>Manolo Remiddi, che usa una macchina da 128 GB con lo stesso hardware del DGX Spark, arriva alla stessa conclusione dall'uso quotidiano. La giudica estremamente stabile, perché progettata da NVIDIA in un momento in cui l'AI è sviluppata su sistemi NVIDIA, e le trova un solo difetto: la RAM non è abbastanza veloce, quindi i token al secondo possono scendere a un livello frustrante, a seconda della dimensione e dell'architettura del modello. <sup id="fnref:cit-5"><a class="footnote-ref" href="#fn:cit-5">5</a></sup></p>
+<p>I suoi numeri mostrano quanto conti l'architettura del modello:</p>
 <ul>
-<li>CPU ARM a 20 core, GPU Blackwell, fino a 128 GB di memoria unificata <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Prezzo: inizialmente atteso a $3.000, $4.000 al lancio, poi $4.600-4.700</li>
-<li>Banda memoria: circa 250 GB/s, contro i 600 GB/s del Mac di Sanfilippo e gli 800 GB/s di un M3 Ultra <sup id="fnref3:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></li>
-<li>Consumo: fino a circa 140 W sotto carico, secondo Alex Ziskind <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
+<li>Qwen 3.6 35B con 3B di parametri attivi gira a circa 70 token/s: secondo Remiddi ha la velocità di un modello da 3 miliardi di parametri e l'intelligenza di uno da 35. Quando la finestra di contesto cresce rallenta un po', in modo lineare. È il modello che usa sulla macchina, anche per il suo agente <a href="../hermes-agent/">Hermes</a>.</li>
+<li>Il denso Qwen 27B usa tutti i 27 miliardi di parametri a ogni passo, quindi richiede molto più calcolo: è più intelligente ma si ferma intorno ai 10 token/s, una velocità che Remiddi considera usabile ma frustrante.</li>
+<li>Gemma 4 27B con 4B di parametri attivi va un po' più piano del Qwen 35B, intorno ai 50 token/s.</li>
 </ul>
-<h2 id="versione-consumer-rtx-spark">Versione consumer: RTX Spark</h2>
-<p>NVIDIA ha annunciato RTX Spark, secondo Alex Ziskind lo stesso chip del DGX Spark "riconfezionato" per il mercato consumer (laptop e desktop), con Windows on ARM al lancio. Due varianti: N1X (spec complete) e N1 (ridotta). Le indiscrezioni indicano un consumo di 45-80 W. Per Ziskind la scelta "Windows first" è sensata perché gamer e creativi vivono su Windows, e la carta vincente è CUDA. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<p>Nella prima puntata di ZIP <a href="../salvatore-sanfilippo/">Salvatore Sanfilippo (antirez)</a> definisce l'annuncio NVIDIA di schede con memoria unificata "un po' un bluff", una versione depotenziata dell'attuale DGX Spark, che già ha poca banda di memoria. <sup id="fnref2:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
-<ul>
-<li><strong>Prestazioni</strong>: sulla carta la GPU (fino a 6.144 core, come il DGX Spark) somiglia a una RTX 5070 Ti, ma è una iGPU che condivide la memoria di sistema con una frazione dei watt. Dai suoi test sul DGX Spark Ziskind si aspetta prestazioni reali più vicine a una macchina AMD Strix Halo che a una 5070 Ti. <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li><strong>Prezzo</strong>: la versione N1 potrebbe scendere a 8-10 core CPU. Le macchine GB10 (DGX Spark, Dell GB10) includono una doppia interfaccia ConnectX-7 da data center che da sola vale circa $1.500; le RTX Spark consumer avranno probabilmente un semplice Ethernet a 10 Gbit.</li>
-<li><strong>Linux</strong>: chi vuole Linux subito ha già il DGX Spark, che gira su Linux e erediterà i chip successivi (Vera Rubin, Feynman). Secondo Ziskind portare Windows su ARM è il problema difficile, mentre Linux su ARM è sostanzialmente risolto: l'ecosistema ARM costruito per Windows sarà ereditato da Linux.</li>
-</ul>
-<h2 id="macchine-con-lo-stesso-hardware">Macchine con lo stesso hardware</h2>
-<p>Manolo Remiddi usa una macchina da 128 GB con lo stesso hardware del DGX Spark, collegabile ad altre unità (fino a quattro, secondo lui). La giudica stabilissima ma limitata dalla velocità della RAM: con Qwen 3.6 35B (3B attivi) arriva a circa 70 tok/s, con il denso Qwen 27B a circa 10. Vedi <a href="../../concepts/prefill-e-decode/">Prefill e Decode</a>. <sup id="fnref:cit-3"><a class="footnote-ref" href="#fn:cit-3">3</a></sup></p>
-<p>Anche l'ASUS Ascent GX10 è basata sulla piattaforma GB10 con 128 GB di memoria unificata: vedi <a href="../../../homelab/entities/asus-gx10/">ASUS GX10</a> nella wiki homelab. <sup id="fnref:cit-4"><a class="footnote-ref" href="#fn:cit-4">4</a></sup></p>
-<h2 id="uso-in-dwarf-star">Uso in Dwarf Star</h2>
-<p><a href="../salvatore-sanfilippo/">Salvatore Sanfilippo (antirez)</a> riporta che la generazione di <a href="../dwarf-star/">Dwarf Star</a> sul DGX Spark, con <a href="../deepseek/">DeepSeek</a> V4 Flash quantizzato a 2 bit, era ferma a 15 token/s, troppo poco per un carico che dovrebbe essere limitato dalla banda di memoria. Con <a href="../claude-fable/">Claude Fable</a> è salita a circa 17,5 token/s. Le prossime strade sono una verifica dei token abbastanza economica (prima ancora di MTP) e il grafo di inferenza CUDA, perché oggi i kernel vengono chiamati uno per uno. <sup id="fnref:cit-5"><a class="footnote-ref" href="#fn:cit-5">5</a></sup></p>
+<p>Con 128 GB si possono anche far girare più istanze dello stesso modello in parallelo, e il numero dipende dalla finestra di contesto: secondo Remiddi con il Qwen 35B si arriva a una ventina di istanze con contesti piccoli, oppure a due o tre con una finestra di 200.000 token, per esempio una per l'agente e una per un coding agent che scrive codice tutto il giorno. Per lui 128 GB sono il punto di equilibrio: abbastanza per un modello grande con un contesto ampio e una velocità ancora utilizzabile, mentre caricare un modello enorme su 512 GB serve a poco se poi gira troppo piano per usarlo.</p>
+<p>Anche Ziskind, in base ai suoi test sul DGX Spark, si aspetta che le prestazioni reali di questo chip siano più vicine a quelle di una macchina AMD Strix Halo che a quelle di una RTX 5070 Ti. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<h2 id="dwarf-star-sul-dgx-spark-ottimizzare-i-kernel-cuda">Dwarf Star sul DGX Spark: ottimizzare i kernel CUDA</h2>
+<p>Sanfilippo racconta che la generazione di <a href="../dwarf-star/">Dwarf Star</a> sul DGX Spark, con <a href="../deepseek/">DeepSeek</a> V4 Flash quantizzato a 2 bit, era ferma a 15 token/s. Confrontando il peso totale del modello quantizzato con la velocità ottenuta, la macchina avrebbe dovuto andare molto più veloce, visto che la generazione è limitata soprattutto dalla banda di memoria. <sup id="fnref2:cit-4"><a class="footnote-ref" href="#fn:cit-4">4</a></sup></p>
+<p>Con <a href="../claude-fable/">Claude Fable</a> la velocità è salita a circa 17,5 token/s. Sanfilippo indica due strade successive. La prima, prima ancora di MTP, è trovare un modo per verificare i token che sia abbastanza economico rispetto alla percentuale di accettazione; vedi <a href="../../concepts/speculative-decoding/">Speculative Decoding</a>. La seconda è usare il grafo di inferenza di CUDA: oggi il grafo non c'è e ogni kernel viene chiamato a sé. MTP (multi-token prediction) è una tecnica con cui un modello predice più token futuri in un solo passo. <sup id="fnref2:gk"><a class="footnote-ref" href="#fn:gk">6</a></sup></p>
+<p>Sanfilippo delega questo lavoro ai modelli di frontiera perché non può essere insieme esperto di kernel Metal, CUDA e ROCm e dell'inferenza di ogni nuovo modello: gli servirebbe un team di 50 persone. Usa Fable proprio dove si era scontrato con dei limiti, dopo che GPT 5.5 aveva già fatto le ottimizzazioni di cui era capace.</p>
+<h2 id="prezzo">Prezzo</h2>
+<p>Secondo Ziskind il DGX Spark era atteso a 3.000 dollari, è uscito a 4.000 e poi è salito a 4.600-4.700; la versione Dell costa ancora di più. "Non sono soldi da appassionato, sono soldi da giustificare nella dichiarazione dei redditi." <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Parte del prezzo si spiega con la rete. Le macchine GB10 hanno una doppia interfaccia ConnectX-7, rete professionale da data center, che secondo Ziskind da sola vale circa 1.500 dollari.</p>
+<p>Remiddi ha pagato la sua macchina 3.200 dollari e oggi costa quasi 1.000 dollari in più. Secondo lui queste macchine non perdono valore, perché i modelli usciti dopo l'acquisto, come Gemma 4 e Qwen 3.6, girano più veloci e sono più intelligenti nella stessa quantità di memoria. <sup id="fnref2:cit-5"><a class="footnote-ref" href="#fn:cit-5">5</a></sup></p>
+<h2 id="le-altre-macchine-gb10">Le altre macchine GB10</h2>
+<p>Il DGX Spark non è l'unica macchina con questo hardware. Ziskind cita il Dell GB10 e altre macchine GB10. <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> L'ASUS Ascent GX10 usa la stessa piattaforma GB10 con 128 GB di memoria unificata ed è, secondo Techno Tim, una delle versioni più economiche, a 3.500 dollari; i dettagli sono nella pagina <a href="../../../homelab/entities/asus-gx10/">ASUS GX10</a> della wiki homelab. <sup id="fnref2:cit-3"><a class="footnote-ref" href="#fn:cit-3">3</a></sup> Anche la macchina di Remiddi ha lo stesso hardware del DGX Spark. <sup id="fnref3:cit-5"><a class="footnote-ref" href="#fn:cit-5">5</a></sup></p>
+<h2 id="collegare-piu-macchine">Collegare più macchine</h2>
+<p>Le porte di rete servono a collegare più macchine tra loro: secondo Remiddi se ne possono collegare fino a quattro. <sup id="fnref4:cit-5"><a class="footnote-ref" href="#fn:cit-5">5</a></sup></p>
+<p>Techno Tim ha provato a farlo con due ASUS GX10, collegati con un cavo QSFP112 tra le porte ConnectX-7, per avere 256 GB di memoria sulla scrivania. Le due macchine non diventano da sole un unico grande blocco di memoria: il software deve saper usare entrambe. <sup id="fnref3:cit-3"><a class="footnote-ref" href="#fn:cit-3">3</a></sup> Ha usato NCCL, la libreria di NVIDIA che fa comunicare in modo efficiente GPU su più dispositivi o più macchine, e vLLM configurato come cluster Ray con un nodo principale e un nodo worker.</p>
+<p>Il collegamento ha funzionato, ma il test NCCL ha misurato circa 130 Gbit/s invece dei 200 attesi. I test RDMA a basso livello mostravano una latenza molto bassa, quindi il collegamento ConnectX-7 funzionava; NVIDIA però dichiara che GPUDirect RDMA non è supportato sui sistemi GB10, quindi il percorso diretto dalla GPU alla scheda di rete non è disponibile.</p>
+<p>Con le due macchine Techno Tim ha fatto girare MiniMax M2.7, un modello che su una sola macchina non aveva senso e che anche con 256 GB stava molto stretto. Il modello cominciava a caricarsi e poi andava in crash, e Techno Tim ha scoperto così che la dimensione dei file del modello non basta a dire quanta memoria serve: bisogna lasciare spazio anche alla <strong>KV cache</strong>, la memoria che il modello usa per tenere traccia del contesto mentre genera. Per questo è passato a una versione quantizzata AWQ a 4 bit, un po' più piccola e probabilmente un po' meno accurata, ma sempre basata su MiniMax M2.7. All'inizio otteneva 26-28 token/s, contro i circa 40 che altri riportavano su Spark Arena; è arrivato a circa 41 token/s eseguendo il container di vLLM in modalità privilegiata.</p>
+<h2 id="rtx-spark-lo-stesso-chip-per-il-mercato-consumer">RTX Spark: lo stesso chip per il mercato consumer</h2>
+<p>NVIDIA ha annunciato RTX Spark, che secondo Ziskind non è un chip nuovo ma lo stesso chip del DGX Spark "riconfezionato" per il resto del mondo: stesso chiplet, stessa disposizione a 20 core, stessa GPU con 6.144 core, fino a 128 GB di memoria unificata. <sup id="fnref7:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Cambia il pubblico. Il DGX Spark era solo per sviluppatori AI; RTX Spark arriva su laptop e desktop con configurazioni da 16 a 128 GB, per gamer, creativi, sviluppatori e appassionati di AI, con Windows on ARM al lancio.</p>
+<p>Ci saranno due varianti, ottenute per binning: i chip con un core difettoso o blocchi GPU guasti vengono venduti con quelle parti disattivate, a prezzo più basso. N1X è la versione completa, N1 quella ridotta, che potrebbe scendere a 8-10 core CPU. Secondo le indiscrezioni il consumo sarà di 45-80 W a seconda della configurazione, molto meno dei circa 140 W del DGX Spark, e le RTX Spark avranno probabilmente un semplice Ethernet a 10 Gbit al posto della doppia ConnectX-7.</p>
+<p>Per Ziskind la scelta "Windows first" è sensata: gamer e creativi vivono su Windows, la carta vincente è CUDA, e portare Windows su ARM è il problema difficile, mentre Linux su ARM è sostanzialmente risolto. L'ecosistema ARM costruito per Windows sarà poi ereditato da Linux, e chi vuole Linux subito ha già il DGX Spark.</p>
+<p>Sanfilippo ne dà una lettura più severa. Nella prima puntata di ZIP, con <a href="../enk/">Enkk</a>, definisce l'annuncio di NVIDIA "un po' un bluff", perché si tratta di una versione depotenziata del DGX Spark, che già ha poca banda di memoria. <sup id="fnref3:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
 <hr />
 <h2 id="fonti-e-riferimenti">Fonti e Riferimenti</h2>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/VGVwOI2gcF4" target="_blank">RTX Spark Is Already Making People Mad</a> (Alex Ziskind) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/VGVwOI2gcF4" target="_blank">RTX Spark Is Already Making People Mad</a> (Alex Ziskind) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cit-2">
 <p>Fonte: <a href="https://youtu.be/mRRV8BbvNVM" target="_blank">GPT 5.6, Fable e i moscerini della frutta | Zip episodio 01</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cit-3">
-<p>Fonte: <a href="https://youtu.be/xGmxf90feSc" target="_blank">The Local AI Hardware Mistake Everyone Makes</a> (Manolo Remiddi) ↗&#160;<a class="footnote-backref" href="#fnref:cit-3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/K2IGHj7KQoM" target="_blank">Are Local Models Finally Good Enough?</a> (Techno Tim) ↗&#160;<a class="footnote-backref" href="#fnref:cit-3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cit-4">
-<p>Fonte: <a href="https://youtu.be/K2IGHj7KQoM" target="_blank">Are Local Models Finally Good Enough?</a> (Techno Tim) ↗&#160;<a class="footnote-backref" href="#fnref:cit-4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/x9uFLpwq9PE" target="_blank">Se gli LLM fossero esoscheletri</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cit-5">
-<p>Fonte: <a href="https://youtu.be/x9uFLpwq9PE" target="_blank">Se gli LLM fossero esoscheletri</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/xGmxf90feSc" target="_blank">The Local AI Hardware Mistake Everyone Makes</a> (Manolo Remiddi) ↗&#160;<a class="footnote-backref" href="#fnref:cit-5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:gk">
+<p><em>Dato consolidato di dominio (senza fonte primaria singola).</em>&#160;<a class="footnote-backref" href="#fnref:gk" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:gk" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

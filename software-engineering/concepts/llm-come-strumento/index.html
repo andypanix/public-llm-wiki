@@ -4436,10 +4436,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#lanalogia-col-compilatore-e-i-suoi-limiti" class="md-nav__link">
+  <a href="#come-torvalds-usa-i-llm-nel-kernel" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        L'analogia col compilatore e i suoi limiti
+        Come Torvalds usa i LLM nel kernel
       </span>
     </span>
   </a>
@@ -4447,10 +4447,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#il-layer-di-comprensione-si-sposta" class="md-nav__link">
+  <a href="#nessuna-regola-sullo-strumento-solo-sullaspettativa-di-capire" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Il layer di comprensione si sposta
+        Nessuna regola sullo strumento, solo sull'aspettativa di capire
       </span>
     </span>
   </a>
@@ -4458,10 +4458,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#il-dualismo-umanoai-e-inutile-e-lo-slop-e-una-barzelletta" class="md-nav__link">
+  <a href="#dove-lanalogia-col-compilatore-regge-e-dove-no" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Il dualismo umano/AI è inutile, e lo slop è una barzelletta
+        Dove l'analogia col compilatore regge e dove no
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#il-livello-di-comprensione-si-sposta" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Il livello di comprensione si sposta
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#umano-contro-ai-e-lo-slop" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Umano contro AI, e lo "slop"
       </span>
     </span>
   </a>
@@ -4480,10 +4502,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#il-caso-concreto-sorted-set-di-redis" class="md-nav__link">
+  <a href="#il-caso-concreto-di-sanfilippo-la-memoria-dei-sorted-set" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Il caso concreto: sorted set di Redis
+        Il caso concreto di Sanfilippo: la memoria dei sorted set
       </span>
     </span>
   </a>
@@ -6165,10 +6187,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#lanalogia-col-compilatore-e-i-suoi-limiti" class="md-nav__link">
+  <a href="#come-torvalds-usa-i-llm-nel-kernel" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        L'analogia col compilatore e i suoi limiti
+        Come Torvalds usa i LLM nel kernel
       </span>
     </span>
   </a>
@@ -6176,10 +6198,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#il-layer-di-comprensione-si-sposta" class="md-nav__link">
+  <a href="#nessuna-regola-sullo-strumento-solo-sullaspettativa-di-capire" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Il layer di comprensione si sposta
+        Nessuna regola sullo strumento, solo sull'aspettativa di capire
       </span>
     </span>
   </a>
@@ -6187,10 +6209,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#il-dualismo-umanoai-e-inutile-e-lo-slop-e-una-barzelletta" class="md-nav__link">
+  <a href="#dove-lanalogia-col-compilatore-regge-e-dove-no" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Il dualismo umano/AI è inutile, e lo slop è una barzelletta
+        Dove l'analogia col compilatore regge e dove no
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#il-livello-di-comprensione-si-sposta" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Il livello di comprensione si sposta
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#umano-contro-ai-e-lo-slop" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Umano contro AI, e lo "slop"
       </span>
     </span>
   </a>
@@ -6209,10 +6253,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#il-caso-concreto-sorted-set-di-redis" class="md-nav__link">
+  <a href="#il-caso-concreto-di-sanfilippo-la-memoria-dei-sorted-set" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Il caso concreto: sorted set di Redis
+        Il caso concreto di Sanfilippo: la memoria dei sorted set
       </span>
     </span>
   </a>
@@ -6404,17 +6448,29 @@
 
 
 <h1 id="llm-come-strumento">LLM come strumento</h1>
-<p><a href="../../entities/linus-torvalds/">Linus Torvalds</a> caratterizza i LLM <strong>in termini ingegneristici: strumenti</strong>, come il compilatore nell'analogia "non usare l'AI = non usare i compilatori, mostra che capisci scrivendo in assembler". Per <a href="../../../ai-llm/entities/salvatore-sanfilippo/">Salvatore Sanfilippo (antirez)</a> è la caratterizzazione giusta per un argomento pragmatico — ma con una precisazione importante. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="lanalogia-col-compilatore-e-i-suoi-limiti">L'analogia col compilatore e i suoi limiti</h2>
-<p>Quando scrivi in C invece che in assembly rinunci al basso livello: accetti una rappresentazione meno precisa ma più densa — un layer di traduzione con sorprese ma <strong>largamente prevedibile</strong>. Con i LLM è diverso: oggi uno che non capisce niente può davvero produrre una patch del kernel funzionante — l'LLM può fixare un bug <em>solo perché era lì a guardare quella cosa</em> (come i tre bug del 2013 trovati nella libreria degli array associativi). Il salto non è lo stesso di assembly→C, ma è più interessante: si delega all'LLM la <strong>comprensione semantica</strong> ("rendimi comprensibile questo codice, dividilo, commentalo, assicurati che non ci siano nuovi bug — anzi fixane altri tre"). <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="il-layer-di-comprensione-si-sposta">Il layer di comprensione si sposta</h2>
-<p>Torvalds: "la comprensione ha davvero poco a che fare con i tool utilizzati". Sanfilippo è in disaccordo parziale: come passare dall'assembly al C, anche i LLM ti allontanano da qualcosa — hai comprensione del codice ma <strong>a un layer diverso</strong>. Il livello necessario prima era capire riga per riga cosa facesse il codice; ora bisogna capire <strong>a livello concettuale</strong> cosa fa e come lo fa. È implicito in ciò che lo stesso Torvalds ha fatto delegando splitting e commenti. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="il-dualismo-umanoai-e-inutile-e-lo-slop-e-una-barzelletta">Il dualismo umano/AI è inutile, e lo slop è una barzelletta</h2>
-<p>Dopo i quattro bug (uno del report + tre del 2013) nella libreria kernel: immaginate un'IA libera di rispondere senza condizionamenti né fine-tuning per la gentilezza — "ma come, dal 2013 non vi accorgete di tutti sti bug? Ragazzetto, ma che cazzo fai?". I bug esistono anche nel codice umano: <strong>il dualismo umano/AI è una cazzata</strong>, si usano le capacità di entrambi per fare il meglio possibile. Chi lavora bene con i <a href="../../../ai-llm/concepts/coding-agent/">Coding Agent</a> resta valutabile: l'articolazione di una pull request dice già se vale la pena leggerla, e gli stessi LLM aiutano a capire se una submission di uno sconosciuto ha senso. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Trattare un LLM come uno strumento significa giudicarlo come si giudica qualunque altro tool di sviluppo: dal lavoro che permette di fare e dalla responsabilità di chi lo usa, senza una categoria morale a parte per il codice "scritto dall'AI". È la posizione che <a href="../../entities/linus-torvalds/">Linus Torvalds</a> tiene sull'uso dei LLM nel kernel di Linux, secondo la ricostruzione di <a href="../../../ai-llm/entities/salvatore-sanfilippo/">Salvatore Sanfilippo (antirez)</a> in un suo video. Sanfilippo la condivide sul piano pragmatico, ma ne contesta un pezzo: i LLM non sono traduttori prevedibili come i compilatori, e cambiano il livello a cui serve capire il codice. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Le parole di Torvalds arrivano al lettore di questa pagina di seconda mano: sono citate e parafrasate da Sanfilippo in una trascrizione automatica. Sanfilippo ricorda che Torvalds aveva già detto altre volte che per lui l'AI è un tool utile, e che questa caratterizzazione come strumento è parte centrale della sua visione.</p>
+<h2 id="come-torvalds-usa-i-llm-nel-kernel">Come Torvalds usa i LLM nel kernel</h2>
+<p>Secondo Sanfilippo, Torvalds usava già l'AI come aiuto per il debugging del kernel e, fuori dal kernel, per un po' di programmazione. Ora usa Claude Code per lavorare alle feature del prossimo kernel: mentre aspettava una release candidate, Torvalds si è accorto di una nuova branch nel suo repository, un fatto insolito perché di norma lavora direttamente sulla branch principale dove confluiscono le patch. La branch si chiama "ref file map read with LLM", e la sigla LLM nel nome indica che il miglioramento è stato ottenuto con Claude Code. È un'ottimizzazione della lettura della page cache in una condizione patologica; con otto thread Sanfilippo cita un guadagno di velocità di circa tre volte (da 10 a 30). <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Un secondo caso viene dal weekend successivo. Un contributor aveva segnalato un bug nella libreria di array associativi del kernel, con una patch per correggerlo, ma Torvalds ha trovato il codice troppo oscuro per seguirlo. Ha quindi fatto, dice, "ciò che predico": ha usato un LLM per capire il codice. L'LLM ha reso il codice più leggibile dividendo funzioni grandi e complicate in funzioni più piccole. Poi il codice è stato eseguito con una serie di test in user space, che hanno confermato il bug e ne hanno trovati altri tre, tutti nati nel 2013, quando la libreria era stata introdotta. Secondo Sanfilippo Torvalds ha scritto tutto questo direttamente nel commit; la patch non era ancora nella branch master.</p>
+<p>Sanfilippo aggiunge una considerazione sul codice difficile da leggere. Esiste codice molto corretto, che funziona bene, ma scritto stilisticamente malissimo, perché molti bravi programmatori non hanno il talento di trovare il modo più semplice per esprimere una computazione. Per lui è questo il motivo per cui nemmeno Torvalds riusciva a seguire quella libreria.</p>
+<h2 id="nessuna-regola-sullo-strumento-solo-sullaspettativa-di-capire">Nessuna regola sullo strumento, solo sull'aspettativa di capire</h2>
+<p>Torvalds respinge le regole del tipo "non usare l'AI per X". Sanfilippo riporta un'iperbole con cui Torvalds ridicolizza questo approccio: si potrebbe imporre la regola opposta, "non usare i compilatori" per qualsiasi contributo al kernel, perché chi non sa mostrare di capire cosa fa la macchina scrivendo in assembler non sarebbe abbastanza competente. Sanfilippo precisa che è appunto un'iperbole retorica, ma che rivela come Torvalds pensi ai LLM in termini ingegneristici, cioè come strumento. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Quello che Torvalds chiede, nella versione di Sanfilippo, è che le persone facciano il loro meglio e capiscano ciò che stanno facendo. Questa aspettativa valeva prima dell'AI e vale ancora di più adesso, perché gli strumenti di AI permettono cambiamenti che a prima vista sembrano frutto di comprensione e che invece, forse, ha capito soltanto il modello. Sanfilippo conferma il rischio: oggi chi non capisce niente può produrre una patch funzionante del kernel anche senza capirla, se usa un modello di frontiera e non gli ha chiesto esplicitamente di sbagliare. L'LLM può anche correggere un bug solo perché stava guardando quel codice, come è successo a Torvalds con la libreria di array associativi.</p>
+<p>Il problema della valutazione dei contributi, però, secondo Sanfilippo è meno grave di come sembra. Molti contributor del kernel sono ricorrenti. Chi invia una pull request deve spiegare a parole cosa voleva fare, e già da poche righe si capisce se vale la pena leggere il resto. Si possono inoltre usare gli stessi LLM per capire se un contributo arrivato da uno sconosciuto ha senso oppure no. Chi lavora bene con i <a href="../../../ai-llm/concepts/coding-agent/">Coding Agent</a> resta quindi valutabile.</p>
+<h2 id="dove-lanalogia-col-compilatore-regge-e-dove-no">Dove l'analogia col compilatore regge e dove no</h2>
+<p>Sanfilippo accetta la caratterizzazione come strumento perché serve a un argomento pragmatico, ma osserva che l'analogia col compilatore va usata con cautela. Quando si scrive in C invece che in assembly si rinuncia al basso livello. Tra il C e ciò che accade sotto ci sono contratti a volte oscuri, e chi sceglie il C si accontenta di una rappresentazione meno precisa ma più densa di ciò che avverrà. È comunque un layer di traduzione che ha delle sorprese ma è largamente prevedibile. Un compilatore, in altre parole, non ha una parte di comprensione: traduce. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Con un LLM le regole cambiano e il salto non è lo stesso che c'è tra assembly e compilatore. Per Sanfilippo è un salto anche più interessante, perché permette di scrivere un prompt e affidarsi alla comprensione e all'esperienza del modello. Sanfilippo fa l'esempio del tipo di richiesta che si può fare: "questo codice si capisce poco, dividilo in funzioni, commentalo, assicurati che non ci siano nuovi bug, anzi fixane altri tre".</p>
+<h2 id="il-livello-di-comprensione-si-sposta">Il livello di comprensione si sposta</h2>
+<p>Sanfilippo cita Torvalds, per il quale la comprensione ha davvero poco a che fare con i tool usati, e dice di non essere d'accordo. Come scrivere in C invece che in assembly, anche i LLM allontanano da qualcosa: chi li usa ha ancora una comprensione del codice, ma a un layer diverso. Prima bisognava capire riga per riga cosa facesse il codice; ora bisogna capire a livello concettuale cosa fa e come lo fa. Affermare che la comprensione c'entra poco con i tool, aggiunge Sanfilippo, da certi punti di vista forse non ci fa accettare fino in fondo che dobbiamo spostarci a un altro livello. <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Per Sanfilippo questa idea è implicita nel comportamento dello stesso Torvalds. Quando gli ha chiesto di dividere il codice e commentarlo, Torvalds si è fidato del modello e ha delegato a lui quella parte di comprensione semantica.</p>
+<h2 id="umano-contro-ai-e-lo-slop">Umano contro AI, e lo "slop"</h2>
+<p>Sanfilippo prende il caso dei quattro bug (quello segnalato e i tre trovati dai test) per smontare il discorso sull'"AI slop", che definisce una barzelletta. Immagina un'IA libera di esprimersi, senza condizionamenti e senza il fine tuning che la porta a rispondere in modo educato: potrebbe chiedere perché dal 2013 nessuno si sia accorto di quei bug, e come si scriva il codice, o dire all'autore "ragazzetto, ma che cazzo fai?". I bug esistono anche nel codice umano. Per questo il dualismo tra umano e AI è, nelle parole di Sanfilippo, una cazzata: bisogna usare insieme le capacità umane e quelle dell'AI per ottenere il meglio possibile nel momento attuale. <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
 <h2 id="intelligenza-e-apertura-mentale">Intelligenza e apertura mentale</h2>
-<p>"Le persone che rispetto e chiamo intelligenti non sono quelle con ritrosia verso un nuovo tool" (Torvalds) — e Sanfilippo è completamente d'accordo: in media i programmatori davvero capaci oppongono poca resistenza ai LLM. Capiscono che si perde parte del bello e che è uno shift totale di paradigma — non sei più tu a scrivere il codice, diventi l'architetto, il project manager, "diventi altro" — ma riconoscono che il cambiamento è <strong>profondamente positivo</strong> per qualità e quantità del software creabile. L'intelligenza di solito combacia con l'apertura mentale. <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="il-caso-concreto-sorted-set-di-redis">Il caso concreto: sorted set di Redis</h2>
-<p>Sanfilippo ha usato i LLM per patch che riducono la memoria dei sorted set: risultati <strong>di gran lunga superiori</strong> a quelli di Valkey e a una patch scritta a mano da un altro contributor — circa il 50% di RAM in meno sui grandi sorted set, cioè la bolletta di Redis dimezzata per molti. "Come si fa a dire di no a una cosa del genere?" <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Sanfilippo riporta anche una frase di Torvalds: le persone che rispetta e chiama intelligenti non sono quelle riluttanti a usare un nuovo tool interessante. Sanfilippo si dice completamente d'accordo, sulla base della propria esperienza. In media i programmatori davvero capaci oppongono poca resistenza ai LLM. Capiscono che si perde una parte del bello e che c'è uno shift totale di paradigma: non si è più chi scrive il codice, si diventa l'architetto, il project manager, "altro". Si rendono però conto che il cambiamento è profondamente positivo per la qualità e la quantità del software che si può creare. <sup id="fnref7:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Per Sanfilippo l'intelligenza di solito combacia con l'apertura mentale, anche se non sempre e non per l'intelligenza matematico-logica. Vale per chi ha una visione vera del software: l'esperienza utente, la semplicità, la progettazione. Le persone che hanno fatto grandi cose, come Torvalds o altre che Sanfilippo conosce, di solito hanno capito col tempo che questo strumento è qui per rimanere e ha potenzialità grandissime. Sanfilippo aggiunge, in tono di scommessa, che se l'AI funziona per il kernel di Linux ci sono pochi progetti per cui non possa funzionare.</p>
+<h2 id="il-caso-concreto-di-sanfilippo-la-memoria-dei-sorted-set">Il caso concreto di Sanfilippo: la memoria dei sorted set</h2>
+<p>Sanfilippo porta come esempio la propria esperienza. Spingendo un po' i colleghi, ha scritto con i LLM patch che riducono la memoria usata dai sorted set, destinate a entrare a breve in una release candidate. Secondo lui i risultati sono di gran lunga superiori a quelli di Valkey e a quelli di una patch scritta a mano da un altro contributor. Il motivo, dice, è una leva incredibile: con le dovute accortezze ha potuto applicare idee sofisticate per ottimizzare cose che di solito non ci si mette a ottimizzare fino a quel punto. Sui grandi sorted set il risparmio è circa il 50% della RAM, e per alcune persone dopo il rilascio la bolletta di Redis scenderà a metà. La conclusione di Sanfilippo è una domanda retorica: "come si fa a dire di no a una cosa del genere?" <sup id="fnref8:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
 <p>Vedi anche: <a href="../../entities/linus-torvalds/">Linus Torvalds</a>, <a href="../ownership-collettiva-codice/">Ownership collettiva del codice</a>, <a href="../pensare-in-grande-con-ai/">Pensare in Grande con l'AI</a>, <a href="../../entities/kent-beck/">Kent Beck</a>, <a href="../../../ai-llm/concepts/coding-agent/">Coding Agent</a>, <a href="../../../ai-llm/entities/salvatore-sanfilippo/">Salvatore Sanfilippo (antirez)</a></p>
 <hr />
 <h2 id="fonti-e-riferimenti">Fonti e Riferimenti</h2>
@@ -6422,7 +6478,7 @@
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/wDinQnn9mUw" target="_blank">Linus Torvalds promuove l'AI sempre più</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/wDinQnn9mUw" target="_blank">Linus Torvalds promuove l'AI sempre più</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

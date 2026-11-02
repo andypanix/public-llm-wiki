@@ -1040,10 +1040,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prefill-conta-il-calcolo-e-il-driver" class="md-nav__link">
+  <a href="#quali-carichi-pesano-su-ciascuna-fase" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Prefill: conta il calcolo (e il driver)
+        Quali carichi pesano su ciascuna fase
       </span>
     </span>
   </a>
@@ -1051,10 +1051,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#decode-conta-la-banda-di-memoria" class="md-nav__link">
+  <a href="#prefill-un-lavoro-di-calcolo" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Decode: conta la banda di memoria
+        Prefill: un lavoro di calcolo
       </span>
     </span>
   </a>
@@ -1062,10 +1062,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#carichi-compute-bound" class="md-nav__link">
+  <a href="#decode-limitato-dalla-banda-di-memoria" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Carichi compute-bound
+        Decode: limitato dalla banda di memoria
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parametri-attivi-e-lunghezza-del-contesto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Parametri attivi e lunghezza del contesto
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#carichi-compute-bound-fuori-dagli-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Carichi compute-bound fuori dagli LLM
       </span>
     </span>
   </a>
@@ -6154,10 +6176,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prefill-conta-il-calcolo-e-il-driver" class="md-nav__link">
+  <a href="#quali-carichi-pesano-su-ciascuna-fase" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Prefill: conta il calcolo (e il driver)
+        Quali carichi pesano su ciascuna fase
       </span>
     </span>
   </a>
@@ -6165,10 +6187,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#decode-conta-la-banda-di-memoria" class="md-nav__link">
+  <a href="#prefill-un-lavoro-di-calcolo" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Decode: conta la banda di memoria
+        Prefill: un lavoro di calcolo
       </span>
     </span>
   </a>
@@ -6176,10 +6198,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#carichi-compute-bound" class="md-nav__link">
+  <a href="#decode-limitato-dalla-banda-di-memoria" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Carichi compute-bound
+        Decode: limitato dalla banda di memoria
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parametri-attivi-e-lunghezza-del-contesto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Parametri attivi e lunghezza del contesto
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#carichi-compute-bound-fuori-dagli-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Carichi compute-bound fuori dagli LLM
       </span>
     </span>
   </a>
@@ -6364,42 +6408,63 @@
 
 
 <h1 id="prefill-e-decode">Prefill e Decode</h1>
-<p>Le due fasi dell'inferenza di un LLM. Il <strong>prefill</strong> elabora il prompt in ingresso ed è un lavoro di calcolo; il <strong>decode</strong> genera i token uno alla volta ed è limitato dalla banda di memoria. Per questo le due fasi rispondono a colli di bottiglia diversi e vanno misurate separatamente nell'<a href="../inferenza-locale/">Inferenza Locale</a>. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="prefill-conta-il-calcolo-e-il-driver">Prefill: conta il calcolo (e il driver)</h2>
+<p><strong>Prefill</strong> e <strong>decode</strong> sono le due fasi dell'inferenza di un LLM. Nel prefill il modello elabora il prompt che riceve: Alex Ziskind lo chiama anche "prompt processing". Nel decode il modello scrive la risposta, e la sua velocità si misura in token al secondo. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Le due fasi hanno colli di bottiglia diversi. Secondo Ziskind il prefill è il lavoro di calcolo della GPU, mentre la velocità del decode dipende dalla banda di memoria. Per questo nell'<a href="../inferenza-locale/">inferenza locale</a> le due fasi vanno misurate separatamente: una macchina, un sistema operativo o un driver possono cambiare di molto l'una e lasciare identica l'altra.</p>
+<h2 id="quali-carichi-pesano-su-ciascuna-fase">Quali carichi pesano su ciascuna fase</h2>
+<p>Il prefill pesa quando il prompt è lungo. Ziskind lo contrappone alla richiesta breve "scrivi una storia": un prompt lungo richiede tempo solo per essere elaborato, come quando si incolla un intero repository di codice e si chiede al modello di valutarlo. È il carico tipico di RAG, agenti e assistenti di coding. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Il decode pesa quando il modello genera una risposta, come nella chat. Nei test di Ziskind il modello che scrive la storia è un carico di decode, e i risultati si confrontano in token al secondo generati.</p>
+<p>Le due fasi possono girare su componenti diversi della stessa macchina. Su Windows il Lemonade Server di AMD ha ricette ibride che usano la NPU per il prefill e la GPU per il decode. Nel decode Lemonade è alla pari con llama.cpp su Vulkan, a circa l'1% di distanza con un modello da 3 miliardi di parametri, mentre la NPU si fa notare appena si usano prompt lunghi.</p>
+<h2 id="prefill-un-lavoro-di-calcolo">Prefill: un lavoro di calcolo</h2>
+<p>Durante i test sul GEEKOM A9 Max la GPU lavorava al 100%. Ziskind spiega che quella è la parte di prefill, cioè i calcoli. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Il GEEKOM A9 Max è un mini PC con APU AMD Ryzen AI 9 HX 470 (Strix Point), 12 core Zen 5, iGPU Radeon 890M e NPU da 50 TOPS. Ziskind ci ha fatto girare gli stessi modelli con gli stessi prompt su Windows, su WSL e su Linux bare metal. Con un modello da 14 miliardi di parametri, il prefill di un prompt lungo su Linux con il driver open source RADV è stato circa tre volte più veloce che su Windows: "non il 3%, tre volte". Ziskind sottolinea che è un driver open source che batte il driver proprietario di AMD sull'hardware della stessa AMD.</p>
+<p>Il prefill procede molto più veloce del decode. Ziskind ha misurato sulla scheda MaxSun Dual B60, con un modello da 27 miliardi di parametri, una generazione di circa 26,7 token al secondo e un prompt processing che è partito da 1789 token al secondo ed è salito fino a 2200. <sup id="fnref:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup> La scheda è descritta in <a href="../../entities/intel-b60/">Intel B60</a>.</p>
+<h2 id="decode-limitato-dalla-banda-di-memoria">Decode: limitato dalla banda di memoria</h2>
+<p>Sul GEEKOM il decode dava quasi lo stesso risultato con ogni backend e su ogni sistema operativo, e restava più basso di quanto il chip dovesse fare. Ziskind ha escluso il chip, perché lo stesso chip andava bene nel Beelink SER10 provato poche settimane prima. L'indizio era un altro: la GPU era al 100% nella parte di calcolo, ma il decode era comunque lento. Il decode "avviene in memoria", e la banda di memoria determina quanto è veloce. <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Aprendo la macchina Ziskind ha trovato due slot e un solo banco di RAM. Il chip è progettato per leggere da due canali in parallelo: con un solo banco lavora con la banda di un singolo canale, cioè circa metà di quella prevista. Questo spiegava perché ogni backend su ogni sistema operativo si fermava allo stesso muro. "Non puoi aggirare con il calcolo un collo di bottiglia di banda di memoria."</p>
+<p>Con un secondo banco, per 64 GB in dual channel, ogni carico di decode è circa raddoppiato.</p>
 <ul>
-<li>Il prefill di prompt lunghi è il carico tipico di RAG, agenti e assistenti di coding: è come incollare un intero repository e chiedere al modello di valutarlo. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Sul GEEKOM A9 Max (AMD Ryzen AI 9 HX 470, iGPU Radeon 890M, NPU da 50 TOPS) Alex Ziskind ha misurato con un modello da 14B un prefill di prompt lunghi circa <strong>3 volte più veloce</strong> su Linux bare metal con il driver open source RADV che su Windows: un driver open source che batte quello proprietario di AMD sul suo stesso hardware.</li>
-<li>Su Windows il Lemonade Server di AMD ha ricette ibride che usano la NPU per il prefill e la GPU per il decode; nel decode è alla pari con llama.cpp Vulkan.</li>
+<li>llama.cpp con Vulkan su Windows è diventato 2,13 volte più veloce.</li>
+<li>llama.cpp con RADV su Linux è diventato più di 2 volte più veloce.</li>
+<li>Ollama con ROCm è diventato 1,86 volte più veloce.</li>
 </ul>
-<h2 id="decode-conta-la-banda-di-memoria">Decode: conta la banda di memoria</h2>
+<p>Secondo Ziskind questo raddoppio è la firma da manuale di un carico limitato dalla banda di memoria: il calcolo della GPU non era mai stato il collo di bottiglia, il bus della RAM sì. Con il dual channel il chip arriva a circa 9 token al secondo con un modello da 14 miliardi di parametri, 17 con uno da 7 miliardi e 37 con uno da 3 miliardi, valori vicini a quelli del Beelink SER10, che esce dalla fabbrica già in dual channel. Per escludere un effetto legato al modello Qwen 2.5, Ziskind ha ripetuto il test con Gemma 4 da 12 miliardi, un'architettura diversa: nel decode Windows e Linux restano praticamente pari, WSL poco sotto.</p>
+<p>Il consiglio pratico di Ziskind è controllare la configurazione della RAM prima di comprare: se un mini PC AMD è venduto in single channel, con un solo SODIMM, bisogna mettere in conto una coppia di banchi uguali. Ziskind stima circa 80 dollari, e poi corregge scherzando in 300 "ai prezzi di oggi".</p>
+<p>La stessa regola vale tra GPU diverse. Le GPU NVIDIA usano memoria GDDR7, di nuova generazione, e hanno una banda di memoria molto superiore a quella delle Intel B60: per questo, secondo Ziskind, sono più veloci nella generazione dei token. <sup id="fnref2:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
+<p>Manolo Remiddi descrive lo stesso limite sulla sua macchina da 128 GB con l'hardware del <a href="../../entities/dgx-spark/">DGX Spark</a>. La macchina è molto stabile, perché progettata da NVIDIA, ma la RAM non è abbastanza veloce: la velocità di generazione dei token in chat può scendere fino a livelli frustranti, a seconda della dimensione e dell'architettura del modello. Secondo Remiddi una RAM più veloce darebbe un'interazione migliore. <sup id="fnref:cit-3"><a class="footnote-ref" href="#fn:cit-3">3</a></sup></p>
+<h2 id="parametri-attivi-e-lunghezza-del-contesto">Parametri attivi e lunghezza del contesto</h2>
+<p>Remiddi mostra quanto conta l'architettura del modello per la velocità di generazione. Sulla sua macchina usa Qwen 3.6 da 35 miliardi di parametri con 3 miliardi di parametri attivi: secondo lui ha la velocità di un modello da 3 miliardi e l'intelligenza di uno da 35. Il modello Qwen da 27 miliardi è più piccolo, ma usa tutti i suoi parametri in ogni momento; Remiddi spiega che deve fare molto più calcolo, e che in cambio è più intelligente ma molto più lento. <sup id="fnref2:cit-3"><a class="footnote-ref" href="#fn:cit-3">3</a></sup></p>
+<p>I suoi numeri rendono la differenza concreta.</p>
 <ul>
-<li>Sul GEEKOM ogni backend su ogni sistema operativo si fermava allo stesso muro: la macchina aveva un solo banco di RAM, quindi lavorava in single channel con circa metà della banda prevista. Con due banchi (dual channel) ogni carico di decode è circa raddoppiato (Vulkan su Windows 2,13×, RADV su Linux oltre 2×, Ollama con ROCm 1,86×), arrivando a circa 9 tok/s su 14B, 17 su 7B e 37 su 3B. "Non puoi aggirare con il calcolo un collo di bottiglia di banda di memoria." <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>Consiglio pratico di Ziskind: se un mini PC AMD è venduto in single channel (1× SODIMM), mettere in conto l'acquisto di una coppia di banchi uguali.</li>
-<li>Manolo Remiddi indica lo stesso limite sulla sua macchina con l'hardware del <a href="../../entities/dgx-spark/">DGX Spark</a>: molto stabile, ma la RAM non è abbastanza veloce e i token al secondo possono scendere a livelli frustranti. <sup id="fnref:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></li>
-<li>Le GPU NVIDIA hanno memoria GDDR7 e una banda molto superiore a quella delle Intel B60, quindi sono più veloci nella generazione dei token; vedi <a href="../../entities/intel-b60/">Intel B60</a>. <sup id="fnref2:cit-3"><a class="footnote-ref" href="#fn:cit-3">3</a></sup></li>
+<li>Qwen 3.6 da 35 miliardi con 3 miliardi attivi genera circa 70 token al secondo, a volte di più.</li>
+<li>Gemma 4 da 27 miliardi con 4 miliardi attivi genera circa 50 token al secondo.</li>
+<li>Il modello Qwen da 27 miliardi, che usa tutti i parametri, si muove attorno ai 10 token al secondo.</li>
 </ul>
-<h2 id="carichi-compute-bound">Carichi compute-bound</h2>
-<p>La generazione video è compute-bound, non memory-bound: con LTX2 in ComfyUI una B70 (più potenza di calcolo) genera in 167 secondi contro circa 225 di una B60, e la VRAM in più non aiuta. <sup id="fnref:cit-3"><a class="footnote-ref" href="#fn:cit-3">3</a></sup> Vedi anche <a href="../generazione-video-ai/">Generazione Video AI</a>.</p>
+<p>Remiddi considera 10 token al secondo usabili ma frustranti, perché la velocità deve tenere il passo con quella del suo pensiero; a 70 token al secondo, invece, la sensazione è quella di lavorare con un modello nel cloud. Quando la finestra di contesto cresce, la generazione rallenta un poco, in modo lineare.</p>
+<p>La velocità di generazione è anche il motivo per cui Remiddi non consiglia 512 GB di memoria. Su un Mac Studio da 512 GB si può caricare un modello enorme, come MiniMax da circa 250 miliardi di parametri quantizzato, ma girerebbe lento, e un modello troppo lento non si usa. Secondo Remiddi il punto di equilibrio è 128 GB: abbastanza per un modello grande con una finestra di contesto ampia, e ancora con una velocità che permette di usarlo.</p>
+<h2 id="carichi-compute-bound-fuori-dagli-llm">Carichi compute-bound fuori dagli LLM</h2>
+<p>Non tutti i carichi sono limitati dalla memoria. Ziskind spiega che la generazione video è compute-bound e non memory-bound: conta la potenza di calcolo grezza. Con il modello LTX2 in ComfyUI, una pipeline text-to-video, una Intel B70 genera il video in 167 secondi, contro 226,7 di una B60 e 224,6 di una GPU della MaxSun Dual B60. La B70 vince perché ha più potenza di calcolo, e la VRAM in più della scheda doppia non aiuta, anche perché LTX2 gira su una sola GPU. <sup id="fnref3:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup> Vedi anche <a href="../generazione-video-ai/">Generazione Video AI</a>.</p>
 <h2 id="sistema-operativo-e-backend">Sistema operativo e backend</h2>
+<p>Le misure di Ziskind sul GEEKOM mostrano dove sistema operativo e backend cambiano i risultati. <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
 <ul>
-<li>Su Windows Ollama ignora l'iGPU AMD e gira su CPU anche con Vulkan attivo; llama.cpp con Vulkan usa la GPU, con un guadagno dal 14% (1,5B) al 10% (14B). <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></li>
-<li>In WSL l'iGPU è invisibile finché non si installa il driver Mesa Dozen (repository kisak-mesa); dopo, llama.cpp Vulkan funziona ma cede circa un sesto del throughput rispetto a Windows nativo.</li>
-<li>Su Linux bare metal Ollama, llama.cpp Vulkan (RADV) e llama.cpp ROCm usano tutti la GPU e nel decode stanno entro pochi punti percentuali.</li>
+<li>Su Windows Ollama usa il 100% della CPU e ignora l'iGPU AMD, anche con Vulkan attivo. llama.cpp con Vulkan usa la GPU, con un guadagno sulla CPU che scende dal 14% con un modello da 1,5 miliardi al 10% con uno da 14 miliardi, perché i modelli più grandi sono tutti più lenti.</li>
+<li>In WSL Ollama gira ancora sulla CPU, e per llama.cpp l'iGPU resta invisibile finché non si installa il driver Mesa Dozen dal repository kisak-mesa. Dopo, llama.cpp con Vulkan usa la GPU ma cede circa un sesto del throughput rispetto a Windows nativo.</li>
+<li>Su Linux bare metal Ollama, llama.cpp con Vulkan e RADV e llama.cpp con ROCm usano tutti la GPU, e nel decode stanno entro pochi punti percentuali l'uno dall'altro.</li>
 </ul>
-<p>Vedi anche: <a href="../inferenza-locale/">Inferenza Locale</a>, <a href="../speculative-decoding/">Speculative Decoding</a>, <a href="../../entities/dgx-spark/">DGX Spark</a></p>
+<p>La conclusione di Ziskind segue la divisione tra le due fasi. Il sistema operativo conta per il prefill, dove Linux con RADV vince di tre volte. Per il decode ogni sistema operativo e ogni backend danno più o meno lo stesso risultato, perché il limite è la memoria e non il sistema operativo. Per la chat Windows va bene, a patto di non passare da Ollama.</p>
+<p>Vedi anche: <a href="../inferenza-locale/">Inferenza Locale</a>, <a href="../speculative-decoding/">Speculative Decoding</a>, <a href="../../entities/dgx-spark/">DGX Spark</a>, <a href="../../entities/intel-b60/">Intel B60</a></p>
 <hr />
 <h2 id="fonti-e-riferimenti">Fonti e Riferimenti</h2>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/QeAHC1jGxck" target="_blank">Your OS Changes Everything for Local AI</a> (Alex Ziskind) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/QeAHC1jGxck" target="_blank">Your OS Changes Everything for Local AI</a> (Alex Ziskind) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cit-2">
-<p>Fonte: <a href="https://youtu.be/xGmxf90feSc" target="_blank">The Local AI Hardware Mistake Everyone Makes</a> (Manolo Remiddi) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/c6u87wtQzTw" target="_blank">192GB of VRAM in One PC… The Cheap Way</a> (Alex Ziskind) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cit-3">
-<p>Fonte: <a href="https://youtu.be/c6u87wtQzTw" target="_blank">192GB of VRAM in One PC… The Cheap Way</a> (Alex Ziskind) ↗&#160;<a class="footnote-backref" href="#fnref:cit-3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/xGmxf90feSc" target="_blank">The Local AI Hardware Mistake Everyone Makes</a> (Manolo Remiddi) ↗&#160;<a class="footnote-backref" href="#fnref:cit-3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

@@ -4139,10 +4139,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#la-scala-di-effort-abbinare-il-processo-alla-posta-in-gioco" class="md-nav__link">
+  <a href="#perche-non-serve-tutto-il-processo-su-ogni-modifica" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        La scala di effort: abbinare il processo alla posta in gioco
+        Perché non serve tutto il processo su ogni modifica
       </span>
     </span>
   </a>
@@ -4150,10 +4150,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#potare-agentsmd-e-il-costo-delle-skill-in-eccesso" class="md-nav__link">
+  <a href="#la-scala-di-effort-in-cinque-livelli" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Potare <code>agents.md</code> e il costo delle skill in eccesso
+        La scala di effort in cinque livelli
       </span>
     </span>
   </a>
@@ -4161,10 +4161,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#le-skill-come-buone-pratiche-codificate-e-manuali-oreilly" class="md-nav__link">
+  <a href="#potare-agentsmd-e-le-skill-installate" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Le skill come buone pratiche codificate e manuali O'Reilly
+        Potare <code>agents.md</code> e le skill installate
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-skill-come-buone-pratiche-codificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Le skill come buone pratiche codificate
       </span>
     </span>
   </a>
@@ -6143,10 +6154,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#la-scala-di-effort-abbinare-il-processo-alla-posta-in-gioco" class="md-nav__link">
+  <a href="#perche-non-serve-tutto-il-processo-su-ogni-modifica" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        La scala di effort: abbinare il processo alla posta in gioco
+        Perché non serve tutto il processo su ogni modifica
       </span>
     </span>
   </a>
@@ -6154,10 +6165,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#potare-agentsmd-e-il-costo-delle-skill-in-eccesso" class="md-nav__link">
+  <a href="#la-scala-di-effort-in-cinque-livelli" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Potare <code>agents.md</code> e il costo delle skill in eccesso
+        La scala di effort in cinque livelli
       </span>
     </span>
   </a>
@@ -6165,10 +6176,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#le-skill-come-buone-pratiche-codificate-e-manuali-oreilly" class="md-nav__link">
+  <a href="#potare-agentsmd-e-le-skill-installate" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Le skill come buone pratiche codificate e manuali O'Reilly
+        Potare <code>agents.md</code> e le skill installate
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-skill-come-buone-pratiche-codificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Le skill come buone pratiche codificate
       </span>
     </span>
   </a>
@@ -6360,41 +6382,48 @@
 
 
 <h1 id="cerimonia-proporzionata-al-rischio">Cerimonia Proporzionata al Rischio</h1>
-<p>Principio operativo per l'uso dei coding agent secondo cui <strong>il livello di cerimonia metodologica deve corrispondere alla posta in gioco (<em>ceremony should match the stakes</em>)</strong>, evitando di applicare indiscriminatamente interi pack di skill a ogni progetto e potando regolarmente il contesto dell'agente. <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<h2 id="la-scala-di-effort-abbinare-il-processo-alla-posta-in-gioco">La scala di effort: abbinare il processo alla posta in gioco</h2>
-<p>Di fronte alla proliferazione di repository di skill (vedi <a href="../../comparisons/pack-di-skill-a-confronto/">Pack di Skill a Confronto</a>), usare l'intero arsenale su ogni singola modifica costituisce un enorme <em>overkill</em>: per cambiare il colore di un bottone non servono un PRD, una scomposizione in task atomici, una review in arena su cinque assi di Pstack o un security auditor. <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Rob Shocks articola una <strong>scala di effort in cinque livelli</strong>:</p>
+<p>"Ceremony should match the stakes": la quantità di processo con cui si lavora insieme a un coding agent deve dipendere da quanto si rischia con la modifica. Il principio è di Rob Shocks (canale Switch Dimension), che lo propone alla fine di un confronto tra i tre pack di skill più diffusi, quelli di <a href="../../entities/matt-pocock/">Matt Pocock</a>, di Lauren Tan (Pstack) e di <a href="../../entities/addy-osmani/">Addy Osmani</a> (vedi <a href="../../comparisons/pack-di-skill-a-confronto/">Pack di Skill a Confronto</a>). <sup id="fnref:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Per "cerimonia" si intendono gli strumenti di processo che questi pack offrono: PRD, scomposizione in task, interviste sui requisiti, review strutturate e controlli di sicurezza.</p>
+<h2 id="perche-non-serve-tutto-il-processo-su-ogni-modifica">Perché non serve tutto il processo su ogni modifica</h2>
+<p>Secondo Shocks non servono tutte queste skill su ogni progetto: usarle sempre è un "massive overkill". <sup id="fnref2:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Il suo esempio è il cambio di colore di un bottone. Per farlo non servono un PRD, una scomposizione in task, una review in arena su cinque assi di Pstack né un security auditor: basta cambiare il bottone e guardarlo.</p>
+<p>Ciascuno di quegli strumenti ha un costo che si giustifica solo quando la posta è alta. Nel pack di Osmani la skill di spec scrive un PRD vero e proprio, che copre obiettivi, struttura, stile del codice, test e confini prima che esista una riga di codice. Il piano lo divide poi in piccoli task atomici, ciascuno con i suoi criteri di accettazione. Il security auditor è una delle quattro personas di review del pack, accanto allo staff engineer, al test engineer e al web performance auditor (vedi <a href="../lifecycle-skill-osmani/">Lifecycle delle Skill di Osmani</a>).</p>
+<p>Shocks dice di usare personalmente un misto dei tre pack, mai tutti insieme. Sceglie skill diverse in momenti diversi e tiene una versione leggera, una media e una pesante del suo "skill runtime".</p>
+<h2 id="la-scala-di-effort-in-cinque-livelli">La scala di effort in cinque livelli</h2>
+<p>Shocks ragiona per livello di effort, e collega a ogni tipo di lavoro una quantità crescente di processo. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
 <ol>
-<li><strong>Ritocco piccolo (<em>small tweak</em>)</strong>: eseguirlo direttamente e verificare il risultato di persona.</li>
-<li><strong>Prototipo o modifica visiva (<em>visual / prototype-based</em>)</strong>: farlo direttamente iterando rapidamente con l'agente, controllare a vista, fare refresh e procedere oltre.</li>
-<li><strong>Feature piccola (<em>small feature</em>)</strong>: una sessione rapida di <code>grill-me</code> (vedi <a href="../ai-skills-e-grill-me/">AI Skills e Grill-Me</a>) o di discovery per allinearsi sui requisiti, seguita da test-driven development (TDD).</li>
-<li><strong>Feature grande o fumosa (<em>big or fuzzy feature</em>)</strong>: redigere una specifica (<code>spec</code>) e un piano (<code>plan</code>) suddivisi in fasi distinte, verificando ciascuna fase nel mezzo prima di passare alla successiva.</li>
-<li><strong>Produzione, sicurezza o azioni irreversibili</strong>: dispiegare il processo completo con review strutturata, <em>doubt-driven development</em> (vedi <a href="../lifecycle-skill-osmani/">Lifecycle delle Skill di Osmani</a>) e tutte le verifiche di <em>security hardening</em>.</li>
+<li>Un ritocco piccolo (<em>small tweak</em>) si fa e basta, poi lo si controlla di persona.</li>
+<li>Un lavoro molto visivo o da prototipo si fa direttamente iterando con l'agente: si controlla a vista, si fa refresh e si va avanti.</li>
+<li>Una feature piccola richiede prima una breve sessione di <code>grill-me</code> o di discovery, per essere allineati con l'agente su cosa costruire, e poi un po' di test-driven development.</li>
+<li>Una feature grande o ancora fumosa (<em>big or fuzzy</em>) richiede una spec e un piano divisi in fasi, con una verifica alla fine di ciascuna fase prima di passare alla successiva.</li>
+<li>Il lavoro in produzione, quello che tocca la sicurezza e qualunque azione irreversibile richiedono la review completa, il <em>doubt-driven development</em> e tutto l'hardening di sicurezza che ne segue.</li>
 </ol>
-<h2 id="potare-agentsmd-e-il-costo-delle-skill-in-eccesso">Potare <code>agents.md</code> e il costo delle skill in eccesso</h2>
-<p>Man mano che i modelli diventano più capaci, le skill servono sempre meno a insegnare all'agente nozioni che non possiede e sempre più a esprimere <em>"questo è il modo in cui mi piace lavorare"</em>. <sup id="fnref3:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Di conseguenza, una delle azioni ad alto impatto consiste nel <strong>passare in rassegna il proprio file <code>agents.md</code> e le skill installate per sfoltirli e potarli (<em>prune</em>)</strong>:</p>
+<p><code>grill-me</code> è la skill più popolare di Pocock: l'agente interroga lo sviluppatore prima di scrivere qualunque cosa, per verificare che entrambi siano d'accordo su cosa si sta costruendo (vedi <a href="../ai-skills-e-grill-me/">AI Skills e Grill-Me</a>). Il test-driven development (TDD) è la pratica di scrivere un test prima del codice che deve farlo passare. <sup id="fnref:gk"><a class="footnote-ref" href="#fn:gk">2</a></sup></p>
+<p>Il <em>doubt-driven development</em>, skill del pack di Osmani, è una review avversaria durante la costruzione e non solo alla fine. Per ogni decisione non banale o importante l'agente avvia una review in un contesto nuovo, il cui unico compito è dubitare dell'affermazione fatta. La sequenza è "claim, extract, doubt, reconcile, stop".</p>
+<p>La scala ha un riscontro anche nella scelta del pack. Shocks prende le skill di Pocock quando il problema è fumoso o quando si lavora a un codebase con cui si vivrà per anni e il design conta. Prende quelle di Osmani quando un team rilascia in produzione e vuole un processo prevedibile che tutti riconoscono, con le quality gate già pronte. Prende Pstack per i casi più ostici: un bug che non si riesce a riprodurre, una migrazione, agenti che girano a lungo o di notte.</p>
+<h2 id="potare-agentsmd-e-le-skill-installate">Potare <code>agents.md</code> e le skill installate</h2>
+<p>Secondo Shocks gli agenti stanno diventando molto capaci, e una delle cose più utili da fare è rileggere il proprio file <code>agents.md</code> e le skill già installate per sfoltirle (<em>prune</em>). <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> La sua ipotesi è che oggi una skill serva più a dire "questo è il modo in cui mi piace lavorare" che a insegnare all'agente qualcosa che non sa. Chi pota, dice, resta sorpreso di quanto i modelli siano potenti da soli.</p>
+<p>Shocks indica due costi concreti delle skill in eccesso. Il primo è il contesto: file di skill molto lunghi e troppe skill installate gonfiano e confondono la context window dell'agente. Il secondo è l'attivazione: ogni skill installata è qualcosa che l'agente deve prendere in considerazione, e una skill può attivarsi da sola per sbaglio (<em>auto-trigger</em>) quando non la si vuole. La sua conclusione è che più skill non significano necessariamente un agente più intelligente.</p>
+<p>Shocks nota che lo dice anche Osmani a proposito del proprio pack. La guida di adozione prevede un rollout graduale, partendo dalla verifica (<em>verification-first</em>), su un codebase esistente. Installare tutte le 25 skill e provare a usarle insieme, commenta Shocks, è un sovraccarico completo.</p>
+<h2 id="le-skill-come-buone-pratiche-codificate">Le skill come buone pratiche codificate</h2>
+<p>La lezione che Shocks trae dal confronto è che imparare queste skill significa imparare le buone pratiche dello sviluppo software. <sup id="fnref5:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Le pratiche che elenca sono queste:</p>
 <ul>
-<li><strong>Gonfiaggio della finestra di contesto</strong>: file di skill troppo lunghi e un numero eccessivo di skill installate gonfiano e confondono la context window dell'agente.</li>
-<li><strong>Rischio di auto-attivazione indesiderata</strong>: ogni skill installata rappresenta un'opzione che l'agente deve prendere in considerazione a ogni turno, col rischio concreto di <strong>auto-innescare (<em>auto-trigger</em>) per errore</strong> skill pesanti quando non sono richieste.</li>
-<li><strong>Più skill non significa un agente più intelligente</strong>: lo stesso <a href="../../entities/addy-osmani/">Addy Osmani</a>, nella guida di adozione del proprio pack, raccomanda un <strong>rollout graduale <em>verification-first</em></strong> su un codebase esistente, sconsigliando categoricamente di installare tutte le 25 skill in blocco pretendendo di attivarle insieme fin dal primo giorno.</li>
+<li>Il test-driven development e il lavoro per piccole <em>vertical slices</em>: nel pack di Osmani la fase di build implementa una sola slice verticale sottile alla volta, la testa, la verifica e ne fa il commit.</li>
+<li>Accordarsi sui requisiti prima di costruire e mettere per iscritto perché si è presa una decisione.</li>
+<li>Il recinto di Chesterton (<em>Chesterton's fence</em>) impone di non eliminare nulla finché non si sa con precisione perché è lì.</li>
+<li>Provare che il software funziona contro il sistema reale, perché vedere i test verdi non vuol dire che l'applicazione funzioni.</li>
 </ul>
-<h2 id="le-skill-come-buone-pratiche-codificate-e-manuali-oreilly">Le skill come buone pratiche codificate e manuali O'Reilly</h2>
-<p>La lezione più profonda che emerge dallo studio dei pack di skill è che <strong>imparare queste skill equivale a imparare le buone pratiche fondamentali dello sviluppo software</strong>: <sup id="fnref4:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<ul>
-<li>Test-driven development (TDD) e implementazione per piccole <em>vertical slices</em>.</li>
-<li>Accordarsi sui requisiti prima di costruire e mettere per iscritto il perché di una decisione architetturale.</li>
-<li>Rispettare lo steccato di Chesterton (non cancellare nulla finché non si sa specificamente perché si trova lì).</li>
-<li>Dimostrare che il software funziona contro il sistema reale, perché <strong>vedere i test verdi non basta a provare che l'applicazione funzioni davvero</strong>.</li>
-</ul>
-<p>Nessuno dei creatori dei pack ha inventato questi concetti: <a href="../../entities/matt-pocock/">Matt Pocock</a> attinge a <em>The Pragmatic Programmer</em> e <em>Domain-Driven Design</em>, Osmani codifica la cultura ingegneristica di Google, e Lauren Tan condensa anni di esperienza su React e in Meta; le skill non sono altro che quelle idee classiche riformulate in un formato che un agente può eseguire.</p>
-<p>Per questo i pack non vanno mai vissuti come una religione, ma trattati <strong>come un manuale O'Reilly</strong>: si installano, si leggono per studiare come ragionano i top performer, <strong>si ruba ciò che funziona e si costruiscono sopra le proprie skill</strong>, dando forma al proprio <strong><a href="../harness-engineering/">harness</a> su misura</strong> da condividere col team. E ogni volta che l'agente commette un errore, invece di imprecare contro il modello, si interviene da "giardinieri" del processo (vedi <a href="../programmazione-strategica-e-giardiniere/">Programmazione Strategica, Osservabilità e Ruolo del Giardiniere</a>) <strong>aggiornando la skill in base a ciò che si è appena imparato</strong> — esattamente il modo in cui sono nati tutti e tre i grandi pack.</p>
-<p>Vedi anche: <a href="../../comparisons/pack-di-skill-a-confronto/">Pack di Skill a Confronto</a>, <a href="../programmazione-strategica-e-giardiniere/">Programmazione Strategica, Osservabilità e Ruolo del Giardiniere</a>, <a href="../harness-engineering/">Harness Engineering</a>, <a href="../lifecycle-skill-osmani/">Lifecycle delle Skill di Osmani</a>, <a href="../ai-skills-e-grill-me/">AI Skills e Grill-Me</a></p>
+<p>Secondo Shocks nessuno degli autori dei pack ha inventato queste idee. Pocock cita come fonti <em>The Pragmatic Programmer</em> e <em>Domain-Driven Design</em>, il pack di Osmani è in sostanza il libro di ingegneria di Google, e Lauren Tan porta anni di esperienza con React e in Meta. Le skill sono quelle idee messe in un formato che un agente può seguire.</p>
+<p>Per questo Shocks consiglia di non trattare nessun pack come una religione ma come un manuale O'Reilly. Lo si installa, lo si legge per studiare come ragionano i top performer, si prende ciò che funziona e si costruiscono sopra le proprie skill. Per Shocks una skill scritta da un ingegnere esperto è il suo modo di ragionare "compresso in markdown": dove prima si leggevano tanti libri O'Reilly sulle buone pratiche, oggi si studiano le skill dei top performer. L'insieme delle proprie skill codifica il proprio modo di lavorare e la propria soglia di qualità, si condivide con il team e diventa un <a href="../harness-engineering/">harness</a> personale o di squadra, fatto su misura. Ogni volta che l'agente sbaglia, dice Shocks, invece di imprecare contro di lui si aggiorna la skill con ciò che si è imparato: è così che sono nati tutti e tre i pack.</p>
+<p>Vedi anche: <a href="../../comparisons/pack-di-skill-a-confronto/">Pack di Skill a Confronto</a>, <a href="../lifecycle-skill-osmani/">Lifecycle delle Skill di Osmani</a>, <a href="../ai-skills-e-grill-me/">AI Skills e Grill-Me</a>, <a href="../harness-engineering/">Harness Engineering</a>, <a href="../programmazione-strategica-e-giardiniere/">Programmazione Strategica, Osservabilità e Ruolo del Giardiniere</a></p>
 <hr />
 <h2 id="fonti-e-riferimenti">Fonti e Riferimenti</h2>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:cit-1">
-<p>Fonte: <a href="https://youtu.be/sU9MW8Ycq2M" target="_blank">Pocock vs Pstack vs Osmani: Which Skill Pack Wins?</a> (Rob Shocks - Switch Dimension) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Fonte: <a href="https://youtu.be/sU9MW8Ycq2M" target="_blank">Pocock vs Pstack vs Osmani: Which Skill Pack Wins?</a> (Rob Shocks - Switch Dimension) ↗&#160;<a class="footnote-backref" href="#fnref:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:gk">
+<p><em>Dato consolidato di dominio (senza fonte primaria singola).</em>&#160;<a class="footnote-backref" href="#fnref:gk" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -6413,14 +6442,14 @@
       
       
       
-        <span class="md-tag">craft</span>
+        <span class="md-tag">coding-agent</span>
       
     
       
       
       
       
-        <span class="md-tag">career</span>
+        <span class="md-tag">craft</span>
       
     
   </nav>

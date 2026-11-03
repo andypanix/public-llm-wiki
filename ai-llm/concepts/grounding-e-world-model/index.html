@@ -901,6 +901,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#intelligenza-spaziale-e-le-tre-funzioni-dei-world-model-secondo-fei-fei-li" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Intelligenza spaziale e le tre funzioni dei world model secondo Fei-Fei Li
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cosa-se-ne-ricava" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -1315,6 +1326,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1567,6 +1582,33 @@
     
   
   Enkk
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../entities/fei-fei-li/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Fei-Fei Li
 
     
   </span>
@@ -1864,6 +1906,33 @@
     
   
   StackChan
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../entities/world-labs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  World Labs
 
     
   </span>
@@ -6362,6 +6431,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#intelligenza-spaziale-e-le-tre-funzioni-dei-world-model-secondo-fei-fei-li" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Intelligenza spaziale e le tre funzioni dei world model secondo Fei-Fei Li
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cosa-se-ne-ricava" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -6578,9 +6658,19 @@
 <p>La multimodalità serve quando bisogna agire nel mondo attraverso i sensi. Black Forest Labs, con Flux 3, predice il fotogramma successivo dei video e così si fa un'idea del mondo fisico e di come funzionano le relazioni tra gli oggetti. Un adapter usa questa conoscenza per guidare i movimenti di una mano robotica. Per questo Sanfilippo ritiene che chi deve agire nel mondo abbia bisogno di un world model fisico predittivo. <sup id="fnref3:cit-3"><a class="footnote-ref" href="#fn:cit-3">3</a></sup></p>
 <p>Per la matematica e la programmazione, invece, probabilmente non serve. Più che fare pretraining su architetture diverse, per Sanfilippo è molto più promettente il reinforcement learning su simulazioni accurate del mondo fisico: corpi sotto forze, collisioni, sistemi complessi e caotici, e anche, con il ray tracing, le caratteristiche fisiche ricavabili dall'immagine di un sistema illuminato. Il massimo sarà addestrare nativamente il Transformer su token e immagini insieme, per ottenere rappresentazioni condivise del world model, che unisca la fisica scritta nei libri e quella osservata nei video di un bicchiere che cade. Per Sanfilippo ci si arriverà, ma ciò non vuol dire che un punto di vista diverso, che oggi rende molto meno degli LLM, sia la soluzione.</p>
 <p>Sanfilippo prevede anche che i sostenitori degli approcci alternativi non ammetteranno mai di aver avuto torto. Quando gli LLM addestrati anche su input sensoriali diventeranno più potenti, diranno di averlo sempre detto, e a suo avviso non ci sarà modo di replicare che gli LLM scalavano già prima. Lo giudica un caso di mancanza di onestà intellettuale.</p>
+<h2 id="intelligenza-spaziale-e-le-tre-funzioni-dei-world-model-secondo-fei-fei-li">Intelligenza spaziale e le tre funzioni dei world model secondo Fei-Fei Li</h2>
+<p>Sul fronte opposto rispetto a chi punta tutto sui modelli linguistici si colloca <a href="../../entities/fei-fei-li/">Fei-Fei Li</a>, pioniera della computer vision con ImageNet e co-fondatrice nel 2024 della startup <a href="../../entities/world-labs/">World Labs</a>. Mentre gli LLM come ChatGPT e Claude predicono la parola successiva in una frase, i world model su cui lavora Li mirano a predire che cosa succede dopo nel mondo reale. Li illustra il confine con due domande retoriche — se le parole possano spegnere un incendio o cucinare un'omelette — a cui il servizio di Bloomberg affianca la differenza tra descrivere a parole come prendere una palla al volo e prenderla davvero nel mondo fisico. <sup id="fnref:cit-4"><a class="footnote-ref" href="#fn:cit-4">4</a></sup></p>
+<p>Per Li costruire world model e <strong>spatial intelligence</strong> (intelligenza spaziale) non significa essere "anti-LLM", ma affrontare il capitolo successivo dell'AI: il solo linguaggio non basta se si vuole spingere avanti la scoperta scientifica e avere macchine e robot come partner degli esseri umani. Poiché l'espressione "world model" è ormai sovraccarica di significati, Li scompone l'intelligenza spaziale in tre funzioni distinte:</p>
+<ul>
+<li>Il <strong>rendering</strong>, in cui il world model produce pixel destinati agli esseri umani, come fa Sora di OpenAI; vedi anche <a href="../generazione-video-ai/">Generazione Video AI</a>.</li>
+<li>La <strong>simulation</strong> (simulazione), che non serve solo agli umani ma anche alle macchine e si concentra sul catturare la struttura effettiva del mondo e la sua geometria basata sulla fisica.</li>
+<li>Il <strong>planning</strong> (pianificazione), che indica quale sia l'azione successiva da compiere — per esempio, di fronte a una tazza, fa sapere al robot di prenderla e posarla altrove — ed è strettamente accoppiato alla robotica.</li>
+</ul>
+<p>Il primo passo di World Labs in questa direzione è <strong>Marble</strong>, una piattaforma che genera da un singolo prompt visivo o testuale un mondo 3D coerente, modificabile ed esplorabile come un videogioco, usata nella virtual production cinematografica, nello sviluppo di videogiochi e in una collaborazione con NVIDIA per arricchire l'addestramento dei robot. Secondo Li questi modelli vengono addestrati su dati in pixel preparati appositamente — più sfumati di quelli linguistici perché un'immagine contiene più informazioni, incluse quelle sulla telecamera — e su architetture generative pensate per creare mondi 3D e in prospettiva 4D.</p>
+<p>Il settore dei world model ha già raccolto 3 miliardi di dollari di investimenti (di cui un miliardo per World Labs), ma secondo il reportage di Bloomberg non ha ancora trovato un consenso su come costruirli. Li concorda con il paragone di Emily Chang con il 2019 per i chatbot — quando tutti inseguivano gli LLM senza aver ancora trovato la formula risolutiva — aggiungendo che i world model sono in una fase ancora più precoce e richiederanno probabilmente più potenza di calcolo e più capitali per uscire dalla fase di demo. Quanto alla <a href="../../../tech-economy/concepts/robotica-umanoide/">robotica umanoide</a>, dove i finanziamenti hanno toccato i 6 miliardi di dollari senza che i robot sappiano ancora caricare una lavastoviglie velocemente quanto un umano o ritirare i pacchi di Amazon, Li ritiene che 6 miliardi siano ancora troppo pochi rispetto a quanto hanno richiesto le auto a guida autonoma e i modelli linguistici, e vede nell'intelligenza spaziale e fisica la tecnologia critica per colmare il divario tra hype e realtà.</p>
 <h2 id="cosa-se-ne-ricava">Cosa se ne ricava</h2>
 <p>Il modello mentale che Enkk propone riassume la posizione: i large language model sono predittori di testo molto sofisticati, integrati in sistemi sempre più complessi, in grado di costruire rappresentazioni e adattarsi alle informazioni disponibili, ma con capacità irregolari e dipendenti dal dominio, e con una tensione costante tra plausibilità e verità. <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup> Nella prima puntata di ZIP, parlando di Anthropic e delle emozioni, i due concordano che una rappresentazione interna utile non equivale a un'esperienza vissuta, e che le rappresentazioni trovate dai ricercatori vanno prese per quello che sono. <sup id="fnref3:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
-<p>Vedi anche: <a href="../pappagallo-stocastico/">Pappagallo Stocastico (Stochastic Parrot)</a>, <a href="../plausibilita-vs-validita/">Plausibilità vs Validità Logica</a>, <a href="../../entities/salvatore-sanfilippo/">Salvatore Sanfilippo (antirez)</a>, <a href="../../entities/enk/">Enkk</a>, <a href="../../entities/anthropic/">Anthropic</a></p>
+<p>Vedi anche: <a href="../pappagallo-stocastico/">Pappagallo Stocastico (Stochastic Parrot)</a>, <a href="../plausibilita-vs-validita/">Plausibilità vs Validità Logica</a>, <a href="../../entities/salvatore-sanfilippo/">Salvatore Sanfilippo (antirez)</a>, <a href="../../entities/enk/">Enkk</a>, <a href="../../entities/anthropic/">Anthropic</a>, <a href="../../entities/fei-fei-li/">Fei-Fei Li</a>, <a href="../../entities/world-labs/">World Labs</a></p>
 <hr />
 <h2 id="fonti-e-riferimenti">Fonti e Riferimenti</h2>
 <div class="footnote">
@@ -6594,6 +6684,9 @@
 </li>
 <li id="fn:cit-3">
 <p>Fonte: <a href="https://youtu.be/g_DCfGiDUuc" target="_blank">Considerazioni durante un viaggio di ritorno da Portopalo a Catania</a> (Salvatore Sanfilippo) ↗&#160;<a class="footnote-backref" href="#fnref:cit-3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:cit-4">
+<p>Fonte: <a href="https://youtu.be/ITxsc3mgqts" target="_blank">What's Beyond ChatGPT? The 'Godmother of AI' Has a Plan | The Circuit</a> (Bloomberg Originals) ↗&#160;<a class="footnote-backref" href="#fnref:cit-4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

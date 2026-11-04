@@ -14,7 +14,7 @@
       
       
       
-        <link rel="prev" href="../flotta-di-agenti/">
+        <link rel="prev" href="../guardrail-di-build-sessioni-e-verifica/">
       
       
         <link rel="next" href="../lavoro-intellettuale-ai/">
@@ -4002,6 +4002,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -4308,6 +4314,33 @@
     
   
   Flotta di Agenti
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guardrail-di-build-sessioni-e-verifica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Guardrail di Build, Sessioni Parallele e Verifica
 
     
   </span>
@@ -4855,6 +4888,60 @@
     
   
   Reimplementazione del software via LLM
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../review-rilascio-e-chiusura-del-ciclo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Review, Rilascio e Chiusura Autonoma del Ciclo
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sdlc-nativo-ia-e-catena-artefatti/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  SDLC Nativo IA e Catena degli Artefatti
 
     
   </span>
@@ -6683,6 +6770,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -6746,8 +6839,8 @@
 </ol>
 <p>Per "shiftare a sinistra" Lopopolo intende rendere gli interventi su modello, ambiente e tool il più economici possibile da realizzare. Gli agenti vivono di testo, quindi dare loro più testo in modi sempre più sofisticati e automatici significa spostare l'intervento a sinistra. Aggiungere testo al prompt è l'estremo destro. Dare al modello i tool e la possibilità di ragionare sul proprio corpus di documentazione è più a sinistra. Dargli i mezzi per scoprire da solo il contesto è ancora più a sinistra. Alla fine i tool, spiega, funzionano come una forma di memoria e di enforcement di ciò che si ritiene buono. (Sul fronte della sicurezza vedi <a href="../shift-left-security/">Shift Left Security</a>.)</p>
 <h3 id="perche-funzionano-i-tool-delle-buone-pratiche">Perché funzionano i tool delle buone pratiche</h3>
-<p>Secondo Lopopolo i tool delle best practice ingegneristiche sono molto ben rappresentati nei dati di addestramento, quindi il modello li sa usare bene e si compongono con naturalezza. Se un problema di osservabilità si riduce a qualcosa che ha la forma di PromQL (il linguaggio di interrogazione di Prometheus <sup id="fnref:gk"><a class="footnote-ref" href="#fn:gk">3</a></sup>), il modello sa già come muoversi. La raccolta e l'aggregazione dei dati si spostano in uno strumento eccellente allo scopo, e il modello riceve una CLI che porta il ragionamento nel determinismo e gli dà accesso facile al contesto in un formato denso. Lopopolo aggiunge che oggi il codice costa pochissimo da produrre, quindi si possono permettere pratiche ingegneristiche molto onerose. <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<p>Un suo trucco personale è strutturare il markdown mettendo i link non dentro il flusso della prosa ma come ancora a fine paragrafo o elenco. Così l'agente legge la prosa in modo efficiente, il testo resta leggibile per chi rivede e un test controlla che il link sia vicino al testo a cui appartiene. Lopopolo conferma alla conduttrice che risolve così sia il problema del "loss in the middle" sia la leggibilità per l'umano. Il "loss in the middle" è la tendenza dei modelli a usare peggio le informazioni che stanno a metà di un contesto lungo. <sup id="fnref2:gk"><a class="footnote-ref" href="#fn:gk">3</a></sup> Per il tema vedi <a href="../../../ai-llm/concepts/context-rot/">Context Rot</a>.</p>
+<p>Secondo Lopopolo i tool delle best practice ingegneristiche sono molto ben rappresentati nei dati di addestramento, quindi il modello li sa usare bene e si compongono con naturalezza. Se un problema di osservabilità si riduce a qualcosa che ha la forma di PromQL (il linguaggio di interrogazione di Prometheus <sup id="fnref:gk"><a class="footnote-ref" href="#fn:gk">4</a></sup>), il modello sa già come muoversi. La raccolta e l'aggregazione dei dati si spostano in uno strumento eccellente allo scopo, e il modello riceve una CLI che porta il ragionamento nel determinismo e gli dà accesso facile al contesto in un formato denso. Lopopolo aggiunge che oggi il codice costa pochissimo da produrre, quindi si possono permettere pratiche ingegneristiche molto onerose. <sup id="fnref6:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
+<p>Un suo trucco personale è strutturare il markdown mettendo i link non dentro il flusso della prosa ma come ancora a fine paragrafo o elenco. Così l'agente legge la prosa in modo efficiente, il testo resta leggibile per chi rivede e un test controlla che il link sia vicino al testo a cui appartiene. Lopopolo conferma alla conduttrice che risolve così sia il problema del "loss in the middle" sia la leggibilità per l'umano. Il "loss in the middle" è la tendenza dei modelli a usare peggio le informazioni che stanno a metà di un contesto lungo. <sup id="fnref2:gk"><a class="footnote-ref" href="#fn:gk">4</a></sup> Per il tema vedi <a href="../../../ai-llm/concepts/context-rot/">Context Rot</a>.</p>
 <p>Lopopolo chiede inoltre che il codice prodotto sia abbastanza leggibile da poter "sbirciare sotto il cofano" dell'esecuzione. Giudica l'artefatto finale, che sia codice o un Google Sheet, e se non è ragionevole deve poter risalire a quale sciocchezza l'ha prodotto, per "dare una botta in testa" all'agente e impedirgli di ripetere l'errore.</p>
 <h2 id="coerenza-nel-lungo-periodo-la-dimensione-del-loop">Coerenza nel lungo periodo: la dimensione del loop</h2>
 <p>Lopopolo dice che la sfida che cerca di risolvere con l'harness engineering è una sola: gli agenti restano coerenti su orizzonti temporali lunghi? Il lavoro delle organizzazioni umane è iterativo, nessuno ha costruito Google in un colpo solo. Perché gli agenti partecipino davvero alla produzione di lavoro, i loro risultati vanno riallineati di continuo al "golden thread", il filo d'oro di ciò che l'organizzazione considera buono. Tutto l'harness engineering, dice, è un insieme sempre più sofisticato di trucchi per riportare l'agente a quella linea di base. <sup id="fnref7:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
@@ -6773,7 +6866,7 @@
 <ul>
 <li>Un <strong>harness lineare</strong> senza loop ispeziona un file, produce una raccomandazione ed esce, oppure risponde subito se non serve il file. Segue sempre lo stesso flusso, ed è utile quando serve un certo determinismo.</li>
 <li>Un <strong>closed loop</strong> gira finché non si raggiunge uno stato di uscita, ed è il pattern comune per modificare codice. Applica una modifica, esegue i test, cattura l'output del fallimento, e non il solo esito pass o fail, rimanda l'errore in memoria e riprova finché i test passano, oppure si ferma dopo un numero fissato di iterazioni (nell'esempio, circa cinque).</li>
-<li>Un harness costruito con <strong>ADK</strong> (l'Agent Development Kit di Google <sup id="fnref3:gk"><a class="footnote-ref" href="#fn:gk">3</a></sup>) aggiunge guardrail e compaction della memoria già pronti, pur lasciando molta più personalizzazione di uno strumento chiavi in mano. Nell'esempio una funzione blocca i comandi distruttivi, come cancellare file, fare drop del database o fare push su GitHub, prima di eseguire il codice.</li>
+<li>Un harness costruito con <strong>ADK</strong> (l'Agent Development Kit di Google <sup id="fnref3:gk"><a class="footnote-ref" href="#fn:gk">4</a></sup>) aggiunge guardrail e compaction della memoria già pronti, pur lasciando molta più personalizzazione di uno strumento chiavi in mano. Nell'esempio una funzione blocca i comandi distruttivi, come cancellare file, fare drop del database o fare push su GitHub, prima di eseguire il codice.</li>
 </ul>
 <p>Lo stesso presentatore osserva che Antigravity, Claude Code e Cursor funzionano bene non perché il modello sia più intelligente ma per l'harness engineering attorno ai modelli, progettato con principi ingegneristici e con i tool giusti per scrivere software. Per problemi specifici può servire qualcosa di più opinionated.</p>
 <h2 id="lo-stack-a-tre-layer">Lo stack a tre layer</h2>
@@ -6786,9 +6879,10 @@
 <p>Il whitepaper indica gli stessi meccanismi come leve economiche. Il contesto statico, sempre caricato (regole, <code>AGENTS.md</code>, memoria globale), costa token in ogni interazione, mentre il contesto dinamico, come le skill, si carica solo quando serve. Il routing intelligente dei modelli manda i compiti complessi (requisiti, architettura, prima implementazione) ai modelli grandi e quelli deterministici (generazione di test, code review, monitoraggio CI/CD) a modelli più piccoli, veloci ed economici. <sup id="fnref8:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup></p>
 <h2 id="lharness-come-asset-condiviso-del-team">L'harness come asset condiviso del team</h2>
 <p>Il whitepaper chiede ai leader di trattare <code>AGENTS.md</code>, system prompt, eval suite e librerie di skill come codice: rivisti nelle pull request, versionati con il progetto e con proprietari nominati. Senza questa disciplina, avvertono gli autori, l'harness deriva e il comportamento dell'agente diventa irriproducibile nel team. <sup id="fnref9:cit-2"><a class="footnote-ref" href="#fn:cit-2">2</a></sup> Prompt di sistema riusabili, librerie di skill, connessioni a server MCP e harness di valutazione si compongono tra i progetti, quindi vanno trattati come infrastruttura documentata, mantenuta e migliorata di proposito. Per gli autori i team che ricavano più valore dall'AI sono quelli che costruiscono l'harness una volta e lo raffinano molte volte.</p>
+<p>Nel playbook di <a href="../../../ai-llm/entities/anthropic/">Anthropic</a> sull'<a href="../sdlc-nativo-ia-e-catena-artefatti/">SDLC nativo IA</a> (Louis Claxton, agosto 2026) questa disciplina viene tradotta in tre livelli operativi (vedi <a href="../guardrail-di-build-sessioni-e-verifica/">Guardrail di Build, Sessioni Parallele e Verifica</a> e <a href="../review-rilascio-e-chiusura-del-ciclo/">Review, Rilascio e Chiusura Autonoma del Ciclo</a>): le Skills agiscono come controlli consultivi che codificano la conoscenza istituzionale e rendono rare le violazioni di policy, gli hook fungono da livello deterministico sottostante che blocca le azioni vietate o sospende il rilascio in attesa di un'approvazione umana, e una suite di eval da 20–50 attività reali gira in CI a ogni modifica a <code>CLAUDE.md</code> o a <code>.claude/**</code> come test di regressione dell'harness. <sup id="fnref:cit-3"><a class="footnote-ref" href="#fn:cit-3">3</a></sup></p>
 <h2 id="perche-lopopolo-lavora-su-questo">Perché Lopopolo lavora su questo</h2>
 <p>La motivazione di fondo di Lopopolo è il "capability overhang": i modelli sono bravi molto oltre quanto riusciamo a estrarne oggi in lavoro utile. Il suo obiettivo da applied engineer è assorbirne il più possibile, aumentando l'ambizione e gli spazi in cui si usa l'AI. In Google Cloud lavora ad agenti che aiutano a operare il cloud, un sistema molto complesso che lui descrive come un grande computer. Dare un computer all'agente è parte del suo successo, e Lopopolo vuole che Google Cloud diventi "il miglior computer per gli agenti". <sup id="fnref11:cit-1"><a class="footnote-ref" href="#fn:cit-1">1</a></sup></p>
-<p>Vedi anche: <a href="../shift-left-security/">Shift Left Security</a>, <a href="../pensare-in-grande-con-ai/">Pensare in Grande con l'AI</a>, <a href="../llm-come-strumento/">LLM come strumento</a>, <a href="../spettro-vibe-coding-agentic-engineering/">Spettro Vibe Coding e Agentic Engineering</a>, <a href="../context-engineering/">Context Engineering</a>, <a href="../modello-fabbrica-e-ruoli/">Modello Fabbrica, Conduttori e Orchestratori</a>, <a href="../../../ai-llm/concepts/agentic-harness/">Agentic Harness</a>, <a href="../../../ai-llm/concepts/coding-agent/">Coding Agent</a>, <a href="../../../ai-llm/concepts/context-rot/">Context Rot</a>, <a href="../../../ai-llm/entities/hermes-agent/">Hermes Agent</a></p>
+<p>Vedi anche: <a href="../shift-left-security/">Shift Left Security</a>, <a href="../pensare-in-grande-con-ai/">Pensare in Grande con l'AI</a>, <a href="../llm-come-strumento/">LLM come strumento</a>, <a href="../spettro-vibe-coding-agentic-engineering/">Spettro Vibe Coding e Agentic Engineering</a>, <a href="../context-engineering/">Context Engineering</a>, <a href="../modello-fabbrica-e-ruoli/">Modello Fabbrica, Conduttori e Orchestratori</a>, <a href="../sdlc-nativo-ia-e-catena-artefatti/">SDLC Nativo IA e Catena degli Artefatti</a>, <a href="../guardrail-di-build-sessioni-e-verifica/">Guardrail di Build, Sessioni Parallele e Verifica</a>, <a href="../review-rilascio-e-chiusura-del-ciclo/">Review, Rilascio e Chiusura Autonoma del Ciclo</a>, <a href="../../../ai-llm/concepts/agentic-harness/">Agentic Harness</a>, <a href="../../../ai-llm/concepts/coding-agent/">Coding Agent</a>, <a href="../../../ai-llm/concepts/context-rot/">Context Rot</a>, <a href="../../../ai-llm/entities/hermes-agent/">Hermes Agent</a></p>
 <hr />
 <h2 id="fonti-e-riferimenti">Fonti e Riferimenti</h2>
 <div class="footnote">
@@ -6800,8 +6894,11 @@
 <li id="fn:cit-2">
 <p>Fonte: <a href="https://www.kaggle.com/whitepaper-the-new-SDLC-with-vibe-coding" target="_blank">The New SDLC With Vibe Coding: From ad-hoc prompting to Agentic Engineering</a> (Addy Osmani, Shubham Saboo, Sokratis Kartakis (Google)) ↗&#160;<a class="footnote-backref" href="#fnref:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:cit-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
+<li id="fn:cit-3">
+<p>Fonte: <a href="https://claude.com/it/resources/articles/the-ai-native-sdlc-playbook" target="_blank">Il playbook per l'SDLC nativo IA</a> (Louis Claxton) ↗&#160;<a class="footnote-backref" href="#fnref:cit-3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
 <li id="fn:gk">
-<p><em>Dato consolidato di dominio (senza fonte primaria singola).</em>&#160;<a class="footnote-backref" href="#fnref:gk" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:gk" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:gk" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p><em>Dato consolidato di dominio (senza fonte primaria singola).</em>&#160;<a class="footnote-backref" href="#fnref:gk" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:gk" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:gk" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

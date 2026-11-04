@@ -346,6 +346,9 @@
         <loc>https://wiki.andypanix.com/software-engineering/concepts/flotta-di-agenti/</loc>
       </url>
       <url>
+        <loc>https://wiki.andypanix.com/software-engineering/concepts/guardrail-di-build-sessioni-e-verifica/</loc>
+      </url>
+      <url>
         <loc>https://wiki.andypanix.com/software-engineering/concepts/harness-engineering/</loc>
       </url>
       <url>
@@ -383,6 +386,12 @@
       </url>
       <url>
         <loc>https://wiki.andypanix.com/software-engineering/concepts/reimplementazione-software/</loc>
+      </url>
+      <url>
+        <loc>https://wiki.andypanix.com/software-engineering/concepts/review-rilascio-e-chiusura-del-ciclo/</loc>
+      </url>
+      <url>
+        <loc>https://wiki.andypanix.com/software-engineering/concepts/sdlc-nativo-ia-e-catena-artefatti/</loc>
       </url>
       <url>
         <loc>https://wiki.andypanix.com/software-engineering/concepts/shift-left-security/</loc>
